@@ -1,38 +1,13 @@
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSER, process.env.PGPASSWORD, {
-	host: process.env.PGHOST,
-	dialect: 'postgres',
-	operatorsAliases: false
-});
+const Enigma = require('../models').enigma;
+// const Winner = require('../models').winner;
+let sequelize = require('../models').sequelize;
 
-const Enigma = sequelize.define('enigma', {
-	name: { type: Sequelize.STRING, allowNull: false },
-	enigma_text: { type: Sequelize.STRING, allowNull: false },
-	url: { type: Sequelize.STRING, allowNull: false },
-	type: Sequelize.ENUM('GEO', 'FLAG'),
-	latA: Sequelize.FLOAT,
-	longA: Sequelize.FLOAT,
-	latB: Sequelize.FLOAT,
-	longB: Sequelize.FLOAT,
-	flag: Sequelize.STRING,
-	fist_time_visited: Sequelize.DATE,
-	delay_to_int: Sequelize.INTEGER,
-	hint: Sequelize.STRING
-});
-
-const Winner = sequelize.define('winner', {
-	name: { type: Sequelize.STRING, allowNull: false },
-	date: { type: Sequelize.DATE, allowNull: false }
-});
-
-Enigma.hasOne(Enigma, {as: 'Next'});
-Enigma.hasOne(Winner, {as: 'Winner'});
 const data = [
 	{
 		name: 'test1',
 		enigma_text: 'enigma_text_test1',
-		url: 'coucou',
-		type: 'GEO',
+		url: 'url1fdvafvfdvqfvqfvqfdsvqfsdv',
+		type: 'geo',
 		latA: 1.23,
 		longA: 1.23,
 		latB: 1.25,
@@ -44,8 +19,8 @@ const data = [
 	{
 		name: 'test2',
 		enigma_text: 'enigma_text_test2',
-		url: 'coucou',
-		type: 'FLAG',
+		url: 'qfdsvervtnzrgbzdvaebvdvqfvbfzfa5814v651v6ae',
+		type: 'flag',
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
 		delay_to_int: 4,
@@ -54,8 +29,8 @@ const data = [
 	{
 		name: 'test3',
 		enigma_text: 'enigma_text_test3',
-		url: 'coucou',
-		type: 'FLAG',
+		url: 'fd65v1965e1v6a51fedv651aef6v1q',
+		type: 'flag',
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
 		delay_to_int: 2,
@@ -65,7 +40,7 @@ const data = [
 		name: 'test4',
 		enigma_text: 'enigma_text_test4',
 		url: 'coucou',
-		type: 'GEO',
+		type: 'geo',
 		latA: 1.255,
 		longA: 1.2564,
 		latB: 2.355,

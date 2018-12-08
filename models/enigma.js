@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
 		name: { type: Sequelize.STRING, allowNull: false },
 		enigma_text: { type: Sequelize.STRING, allowNull: false },
 		url: { type: Sequelize.STRING, allowNull: false },
-		type: Sequelize.ENUM('GEO', 'FLAG'),
+		type: Sequelize.ENUM('geo', 'flag'),
 		latA: Sequelize.FLOAT,
 		longA: Sequelize.FLOAT,
 		latB: Sequelize.FLOAT,
@@ -19,6 +19,14 @@ module.exports = function (sequelize, DataTypes) {
 		classMethods: {
 			associate: function (models) {
 				// associations can be defined here
+			}
+		},
+		getterMethods: {
+			url: function () {
+				return this.getDataValue('url');
+			},
+			type: function () {
+				return this.getDataValue('type');
 			}
 		}
 	});

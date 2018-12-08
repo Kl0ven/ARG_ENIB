@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const app = module.exports = require('express')();
+let enigmaController = require('../controllers/enigma');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {});
+app.get('/', function (req, res, next) {
+	res.render('index', {});
 });
 
-
-module.exports = router;
+app.all('*', enigmaController.index);
