@@ -13,7 +13,7 @@ const data = [
 		latB: 1.25,
 		longB: 1.58,
 		fist_time_visited: null,
-		delay_to_int: 2,
+		delay_to_hint: 2,
 		hint: 'hint n1 '
 	},
 	{
@@ -23,7 +23,7 @@ const data = [
 		type: 'flag',
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
-		delay_to_int: 4,
+		delay_to_hint: 4,
 		hint: 'hint n2 '
 	},
 	{
@@ -33,7 +33,7 @@ const data = [
 		type: 'flag',
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
-		delay_to_int: 2,
+		delay_to_hint: 2,
 		hint: 'hint n3 '
 	},
 	{
@@ -46,8 +46,10 @@ const data = [
 		latB: 2.355,
 		longB: 2.654,
 		fist_time_visited: null,
-		delay_to_int: 2,
-		hint: 'hint n3'
+		delay_to_hint: 2,
+		hint: 'hint n3',
+		custom_js: 'custom1.js',
+		custom_html: 'enigma1'
 	}
 ];
 

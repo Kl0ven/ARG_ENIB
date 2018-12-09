@@ -4,7 +4,9 @@
 	<p>
 		{{enigma_text}}
 	</p>
-
+	{{#if custom_html}}
+	{{> (lookup . 'custom_html') }}
+	{{/if}}
 	<form name="sendrep" id="repfrom" onsubmit="event.preventDefault(); sendRep();">
 		<label>Latitude </label>
 		<input id='Latitude' type=number step=any /><br />

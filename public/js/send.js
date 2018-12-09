@@ -14,7 +14,7 @@ function sendRep () {
 	$.ajax({
 		url: './verify',
 		type: 'POST',
-		data: data,
+		data: JSON.stringify(data),
 		cache: false,
 		contentType: 'application/json',
 		success: function () {

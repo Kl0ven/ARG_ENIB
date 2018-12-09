@@ -1,6 +1,6 @@
 var enigma = require('../models').enigma;
 
-function index (req, res) {
+function enigmaIndex (req, res) {
 	enigma.findAll().then((enigmas) => {
 		let find = false;
 		for (var i = 0; i < enigmas.length; i++) {
@@ -9,7 +9,12 @@ function index (req, res) {
 			// is object a function?
 			if (typeof fn === 'function' && req.url === '/' + enigmas[i].url && req.method === 'GET') {
 				find = true;
+				if (enigmas[i].fist_time_visited == null) {
+					enigmas[i].fist_time_visited = Date.now();
+					enigmas[i].save();
+				}
 				fn(req, res, enigmas[i]);
+				break;
 			}
 		}
 		if (!find) {
@@ -17,7 +22,9 @@ function index (req, res) {
 		}
 	});
 }
-
+function index (req, res, next) {
+	res.render('partials/index', {});
+}
 function flag (req, res, e) {
 	res.render('partials/flag', e.getInfo);
 }
@@ -25,9 +32,15 @@ function flag (req, res, e) {
 function geo (req, res, e) {
 	res.render('partials/geo', e.getInfo);
 }
+
+function verify (req, res) {
+	// console.log(req.body.url);
+}
 // export function
 module.exports = {
+	index: index,
 	flag: flag,
 	geo: geo,
-	index: index
+	verify: verify,
+	enigmaIndex: enigmaIndex
 };
