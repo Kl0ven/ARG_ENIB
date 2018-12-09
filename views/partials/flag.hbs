@@ -1,0 +1,14 @@
+<div>
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+
+	<form name="sendrep" id="repfrom" onsubmit="event.preventDefault(); sendRep();">
+		<label>reponse </label>
+		<input type="text" id="flag" name="name" required size="20"><br />
+		<div id="success"></div>
+		<button type="submit" class="" id="sendMessageButton">envoyer</button>
+	</form>
+</div>

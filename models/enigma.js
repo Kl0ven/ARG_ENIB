@@ -27,6 +27,12 @@ module.exports = function (sequelize, DataTypes) {
 			},
 			type: function () {
 				return this.getDataValue('type');
+			},
+			getInfo: function () {
+				return {
+					name: this.getDataValue('name'),
+					enigma_text: this.getDataValue('enigma_text')
+				};
 			}
 		}
 	});

@@ -7,9 +7,9 @@ function index (req, res) {
 			// find object
 			var fn = module.exports[enigmas[i].type];
 			// is object a function?
-			if (typeof fn === 'function' && req.url === '/'+enigmas[i].url && req.method === 'GET') {
+			if (typeof fn === 'function' && req.url === '/' + enigmas[i].url && req.method === 'GET') {
 				find = true;
-				fn(req, res);
+				fn(req, res, enigmas[i]);
 			}
 		}
 		if (!find) {
@@ -18,12 +18,12 @@ function index (req, res) {
 	});
 }
 
-function flag (req, res) {
-	res.send('flag');
+function flag (req, res, e) {
+	res.render('partials/flag', e.getInfo);
 }
 
-function geo (req, res) {
-	res.send('geo');
+function geo (req, res, e) {
+	res.render('partials/geo', e.getInfo);
 }
 // export function
 module.exports = {
