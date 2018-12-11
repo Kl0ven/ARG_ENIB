@@ -49,7 +49,8 @@ const data = [
 		delay_to_hint: 2,
 		hint: 'hint n3',
 		custom_js: 'custom1.js',
-		custom_html: 'enigma1'
+		custom_html: 'enigma1',
+		custom_css: 'custom1.css'
 	}
 ];
 

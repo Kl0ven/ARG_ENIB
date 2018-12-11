@@ -1,5 +1,4 @@
-var minify = require('express-minify');
-var uglifyEs = require('uglify-es');
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -19,12 +18,6 @@ app.engine('hbs', hbs({
 	partialsDir: path.join(__dirname, '/views/partials/')
 }));
 app.set('view engine', 'hbs');
-
-if (process.env.NODE_ENV === 'production') {
-	app.use(minify({
-		uglifyJsModule: uglifyEs
-	}));
-}
 
 app.use(logger('dev'));
 app.use(express.json());

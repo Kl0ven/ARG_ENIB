@@ -15,7 +15,8 @@ module.exports = function (sequelize, DataTypes) {
 		delay_to_hint: Sequelize.INTEGER,
 		hint: Sequelize.STRING,
 		custom_js: Sequelize.STRING,
-		custom_html: Sequelize.STRING
+		custom_html: Sequelize.STRING,
+		custom_css: Sequelize.STRING
 	}, {
 		underscored: true,
 		classMethods: {
@@ -38,7 +39,8 @@ module.exports = function (sequelize, DataTypes) {
 					name: this.getDataValue('name'),
 					enigma_text: this.getDataValue('enigma_text'),
 					custom_html: this.getDataValue('custom_html'),
-					custom_js: this.getDataValue('custom_js')
+					custom_js: this.getDataValue('custom_js'),
+					custom_css: this.getDataValue('custom_css')
 				};
 			}
 		},
