@@ -37,6 +37,18 @@ module.exports = function (sequelize, DataTypes) {
 			custom_html: function () {
 				return this.getDataValue('custom_html');
 			},
+			latA: function () {
+				return this.getDataValue('latA');
+			},
+			latB: function () {
+				return this.getDataValue('latB');
+			},
+			longA: function () {
+				return this.getDataValue('longA');
+			},
+			longB: function () {
+				return this.getDataValue('longB');
+			},
 			getInfo: function () {
 				return {
 					name: this.getDataValue('name'),

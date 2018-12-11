@@ -1,5 +1,5 @@
 var enigma = require('../models').enigma;
-
+const isInRectangle = require('../utils/geo').isInRectangle;
 // this function catch every routes
 function enigmaIndex (req, res) {
 	// request every enigma to see if match exist
@@ -65,7 +65,11 @@ function flagVerify (req, res, e) {
 
 // this function verify a geo typed enigma
 function geoVerify (req, res, e) {
-	
+	if (isInRectangle(e.latA, e.longA, e.latB, e.longB, req.body.Latitude, req.body.Longitude)) {
+		res.send({status: 1});
+	} else {
+		res.send({status: 0});
+	}
 }
 
 function sendErr (reg, res, err) {
