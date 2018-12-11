@@ -10,7 +10,7 @@ function enigmaIndex (req, res) {
 					enigmas[i].fist_time_visited = Date.now();
 					enigmas[i].save();
 				}
-				res.render('partials/' + enigmas[i].type, enigmas[i].getInfo);
+				res.render('enigma/' + enigmas[i].custom_html, enigmas[i].getInfo);
 				break;
 			}
 		}

@@ -14,6 +14,7 @@ const data = [
 		longB: 1.58,
 		fist_time_visited: null,
 		delay_to_hint: 2,
+		custom_html: 'enigma1',
 		hint: 'hint n1 '
 	},
 	{
@@ -24,6 +25,7 @@ const data = [
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
 		delay_to_hint: 4,
+		custom_html: 'enigma2',
 		hint: 'hint n2 '
 	},
 	{
@@ -34,6 +36,7 @@ const data = [
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
 		delay_to_hint: 2,
+		custom_html: 'enigma3',
 		hint: 'hint n3 '
 	},
 	{
@@ -49,7 +52,7 @@ const data = [
 		delay_to_hint: 2,
 		hint: 'hint n3',
 		custom_js: 'custom1.js',
-		custom_html: 'enigma1',
+		custom_html: 'enigma4',
 		custom_css: 'custom1.css'
 	}
 ];

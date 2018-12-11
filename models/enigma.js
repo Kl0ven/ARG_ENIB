@@ -34,6 +34,9 @@ module.exports = function (sequelize, DataTypes) {
 			fist_time_visited: function () {
 				return this.getDataValue('fist_time_visited');
 			},
+			custom_html: function () {
+				return this.getDataValue('custom_html');
+			},
 			getInfo: function () {
 				return {
 					name: this.getDataValue('name'),
