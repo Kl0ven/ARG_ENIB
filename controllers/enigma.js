@@ -22,7 +22,7 @@ function enigmaIndex (req, res) {
 		}
 		// if not found retrun 404
 		if (!find) {
-			res.status(404).send('404 page not found ');
+			res.status(404).render('404', {layout: false});
 		}
 	});
 }
