@@ -12,11 +12,12 @@ module.exports = function (sequelize, DataTypes) {
 		longB: Sequelize.FLOAT,
 		flag: Sequelize.STRING,
 		fist_time_visited: Sequelize.DATE,
-		delay_to_hint: Sequelize.INTEGER,
-		hint: Sequelize.STRING,
+		delay_to_hint: { type: Sequelize.INTEGER, allowNull: false },
+		hint: { type: Sequelize.STRING, allowNull: false },
 		custom_js: Sequelize.STRING,
 		custom_html: Sequelize.STRING,
-		custom_css: Sequelize.STRING
+		custom_css: Sequelize.STRING,
+		end_text: { type: Sequelize.STRING, allowNull: false }
 	}, {
 		underscored: true,
 		classMethods: {
@@ -48,6 +49,9 @@ module.exports = function (sequelize, DataTypes) {
 			},
 			longB: function () {
 				return this.getDataValue('longB');
+			},
+			end_text: function () {
+				return this.getDataValue('end_text');
 			},
 			getInfo: function () {
 				return {

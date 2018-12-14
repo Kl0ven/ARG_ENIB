@@ -17,17 +17,25 @@ function sendRep () {
 		cache: false,
 		contentType: 'application/json',
 		success: function (mes) {
-			console.log(mes);
-			// Success message
-			$('#success').html("<div class='alert alert-success'>");
-			$('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-			.append('</button>');
-			$('#success > .alert-success')
-			.append('<strong>Your message has been sent. </strong>');
-			$('#success > .alert-success')
-			.append('</div>');
-			// clear all fields
-			$('#contactForm').trigger('reset');
+			if (mes.status) {
+				console.log(mes.status);
+				$('#winningModalLabel').text('Congratulations');
+				$('#modaltext').text(mes.text);
+				let url = window.location.protocol + '//' + window.location.host + '/' + mes.url;
+				$('#nextstep').html('<a href="' + url + '">' + url + '</a>');
+				$('#winningModal').modal();
+			} else {
+				// display wrong status
+				$('#success').html("<div class='alert alert-danger'>");
+				$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+				.append('</button>');
+				$('#success > .alert-danger')
+				.append('<strong>Sorry you failed :(</strong>');
+				$('#success > .alert-danger')
+				.append('</div>');
+				// clear all fields
+				$('#repfrom').trigger('reset');
+			}
 		},
 		error: function (e) {
 			// Fail message
@@ -37,7 +45,7 @@ function sendRep () {
 			$('#success > .alert-danger').append($('<strong>').text('Sorry , it seems that the server is not responding. Please try again later!'));
 			$('#success > .alert-danger').append('</div>');
 			// clear all fields
-			$('#contactForm').trigger('reset');
+			$('#repfrom').trigger('reset');
 		},
 		complete: function () {
 			setTimeout(function () {

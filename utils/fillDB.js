@@ -7,6 +7,7 @@ const data = [
 		name: 'test1',
 		enigma_text: 'enigma_text_test1',
 		url: 'url1fdvafvfdvqfvqfvqfdsvqfsdv',
+		end_text: 'end_text_1',
 		type: 'geo',
 		latA: 1.23,
 		longA: 1.23,
@@ -21,6 +22,7 @@ const data = [
 		name: 'test2',
 		enigma_text: 'enigma_text_test2',
 		url: 'qfdsvervtnzrgbzdvaebvdvqfvbfzfa5814v651v6ae',
+		end_text: 'end_text_1',
 		type: 'flag',
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
@@ -32,6 +34,7 @@ const data = [
 		name: 'test3',
 		enigma_text: 'enigma_text_test3',
 		url: 'fd65v1965e1v6a51fedv651aef6v1q',
+		end_text: 'end_text_1',
 		type: 'flag',
 		flag: 'dcjaecvpajenfvpm',
 		fist_time_visited: null,
@@ -42,7 +45,25 @@ const data = [
 	{
 		name: 'test4',
 		enigma_text: 'enigma_text_test4',
+		end_text: 'end_text_1',
 		url: 'coucou',
+		type: 'geo',
+		latA: 10,
+		longA: 10,
+		latB: 0,
+		longB: 0,
+		fist_time_visited: null,
+		delay_to_hint: 2,
+		hint: 'hint n3',
+		custom_js: 'custom1.js',
+		custom_html: 'enigma4',
+		custom_css: 'custom1.css'
+	},
+	{
+		name: 'test5',
+		enigma_text: 'enigma_text_test5',
+		end_text: 'end_text_5',
+		url: 'cou2',
 		type: 'geo',
 		latA: 10,
 		longA: 10,
@@ -72,8 +93,8 @@ sequelize.sync({force: true}).then(function () {
 		console.log("c'est good");
 		promise = [];
 
-		for (var i = obj.length - 1; i >= 0; i--) {
-			promise.push(obj[i].setNext(obj[i - 1]));
+		for (var i = 0; i < obj.length - 1; i++) {
+			promise.push(obj[i].setNext(obj[i + 1]));
 		}
 		Promise.all(promise).then(function () {
 			display().then(() => {

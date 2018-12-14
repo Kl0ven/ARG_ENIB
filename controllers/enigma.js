@@ -46,7 +46,17 @@ function verify (req, res) {
 			// is object a function?
 			if (typeof fn === 'function') {
 				// call the specific verify function
-				fn(req, res, e);
+				if (fn(req, res, e)) {
+					e.getNext().then(nextEnigma => {
+						if (nextEnigma != null) {
+							res.send({status: 1, text: e.end_text, url: nextEnigma.url});
+						}
+					}).catch(err => {
+						console.log(err);
+					});
+				} else {
+					res.send({status: 0});
+				}
 			}
 		}
 	}).catch(err => {
@@ -56,20 +66,12 @@ function verify (req, res) {
 
 // this function verify a flag typed enigma
 function flagVerify (req, res, e) {
-	if (e.flag === req.body.flag) {
-		res.send({status: 1});
-	} else {
-		res.send({status: 0});
-	}
+	return e.flag === req.body.flag;
 }
 
 // this function verify a geo typed enigma
 function geoVerify (req, res, e) {
-	if (isInRectangle(e.latA, e.longA, e.latB, e.longB, req.body.Latitude, req.body.Longitude)) {
-		res.send({status: 1});
-	} else {
-		res.send({status: 0});
-	}
+	return isInRectangle(e.latA, e.longA, e.latB, e.longB, req.body.Latitude, req.body.Longitude);
 }
 
 function sendErr (reg, res, err) {

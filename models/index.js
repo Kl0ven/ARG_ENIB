@@ -31,7 +31,7 @@ Object.keys(db).forEach(modelName => {
 });
 
 db.enigma.hasOne(db.enigma, {as: 'Next'});
-db.enigma.hasOne(db.winner, {as: 'Winner'});
+db.enigma.hasMany(db.winner, {as: 'Winners'});
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 module.exports = db;

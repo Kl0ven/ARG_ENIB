@@ -2,5 +2,5 @@
 /* global $:true alert:true */
 
 $(document).ready(function () {
-	alert('custom js');
+	// alert('custom js');
 });
