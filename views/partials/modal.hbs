@@ -20,14 +20,16 @@
 
 
 				<h6><b>For posterity's sake</b></h6>
-				<div class="form-group">
+				<div class="form-group" id="formwinner">
 					<label for="recipient-name" class="col-form-label">Your/Team name</label>
-					<input type="text" class="form-control" id="recipient-name">
+					<input type="text" class="form-control" id="winnername" required>
+					<input type="text" class="form-control" id="idunique" style="display: none;">
 				</div>
+				<div id="winnersuccess"></div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Send</button>
+				<button type="button" class="btn btn-primary" id="sendWinnerbtn" onclick="sendWinnerName();">Send</button>
 			</div>
 		</div>
 	</div>

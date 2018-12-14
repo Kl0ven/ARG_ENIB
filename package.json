@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-	"test": "jest",
+    "test": "jest",
     "start": "node server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "crypto": "^1.0.1",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-handlebars": "^3.0.0",

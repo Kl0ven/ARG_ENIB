@@ -1,0 +1,43 @@
+var enigma = require('../models').enigma;
+var winner = require('../models').winner;
+var antiCheatId = require('../models').antiCheatId;
+
+function saveWinner (req, res) {
+	antiCheatId.findOne({
+		where: {id: req.body.idunique}
+	}).then(aci => {
+		if (aci == null) {
+			sendErr(req, res, 'no result found in saveWinner function');
+		} else {
+			aci.destroy({ force: true }).then(() => {
+				enigma.findOne({
+					where: {url: req.body.url.substring(1)}
+				}).then(e => {
+					winner.create({name: req.body.winnername, date: Date.now()}).then(w => {
+						e.addWinners(w).then(() => {
+							res.send({name: req.body.winnername});
+						}).catch(err => {
+							sendErr(req, res, err);
+						});
+					}).catch(err => {
+						sendErr(req, res, err);
+					});
+				}).catch(err => {
+					sendErr(req, res, err);
+				});
+			});
+		}
+	}).catch(err => {
+		sendErr(req, res, err);
+	});
+}
+
+function sendErr (req, res, err) {
+	console.log(err);
+	res.status(418).send('oupsie');
+}
+
+// export function
+module.exports = {
+	saveWinner: saveWinner
+};

@@ -1,5 +1,8 @@
 var enigma = require('../models').enigma;
+var antiCheatId = require('../models').antiCheatId;
 const isInRectangle = require('../utils/geo').isInRectangle;
+const hash = require('../utils/hash');
+
 // this function catch every routes
 function enigmaIndex (req, res) {
 	// request every enigma to see if match exist
@@ -49,10 +52,16 @@ function verify (req, res) {
 				if (fn(req, res, e)) {
 					e.getNext().then(nextEnigma => {
 						if (nextEnigma != null) {
-							res.send({status: 1, text: e.end_text, url: nextEnigma.url});
+							let t = new Date().toLocaleTimeString();
+							let id = hash(t + e.url);
+							antiCheatId.create({id: id}).then(aci => {
+								res.send({status: 1, text: e.end_text, url: nextEnigma.url, id: id});
+							}).catch(err => {
+								sendErr(req, res, err);
+							})
 						}
 					}).catch(err => {
-						console.log(err);
+						sendErr(req, res, err);
 					});
 				} else {
 					res.send({status: 0});
@@ -74,10 +83,11 @@ function geoVerify (req, res, e) {
 	return isInRectangle(e.latA, e.longA, e.latB, e.longB, req.body.Latitude, req.body.Longitude);
 }
 
-function sendErr (reg, res, err) {
+function sendErr (req, res, err) {
 	console.log(err);
 	res.status(418).send('oupsie');
 }
+
 // export function
 module.exports = {
 	index: index,
