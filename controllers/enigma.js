@@ -59,6 +59,14 @@ function verify (req, res) {
 							}).catch(err => {
 								sendErr(req, res, err);
 							});
+						} else {
+							let t = new Date().toLocaleTimeString();
+							let id = hash(t + e.url);
+							antiCheatId.create({id: id}).then(aci => {
+								res.send({status: 1, text: e.end_text, url: 'E8FA58F5583E9B42D382255A72AC3BE99BDA351D142D90DE62FED0465FD637C6609AA2DD79AE8DB1B68E65CA3DBEFFF39CE7703F204005B1A5D94FC194D8DD51', id: id});
+							}).catch(err => {
+								sendErr(req, res, err);
+							});
 						}
 					}).catch(err => {
 						sendErr(req, res, err);
@@ -88,11 +96,15 @@ function sendErr (req, res, err) {
 	res.status(418).send('oupsie');
 }
 
+function endPage (req, res) {
+	res.render('partials/endPage', {});
+}
 // export function
 module.exports = {
 	index: index,
 	verify: verify,
 	flagVerify: flagVerify,
 	geoVerify: geoVerify,
+	endPage: endPage,
 	enigmaIndex: enigmaIndex
 };

@@ -22,7 +22,7 @@ function sendRep () {
 				$('#winningModalLabel').text('Congratulations');
 				$('#modaltext').text(mes.text);
 				let url = window.location.protocol + '//' + window.location.host + '/' + mes.url;
-				$('#nextstep').html('<a target="_blank" href="' + url + '">' + url + '</a>');
+				$('#nextstep').html('<a target="_blank" href="' + url + '">Next step</a>');
 				$('#idunique').val(mes.id);
 				$('#winningModal').modal();
 			} else {
