@@ -8,8 +8,8 @@ function display () {
 	}).then(data => {
 		for (var e in data) {
 			console.log(data[e].dataValues);
-			// if (data[e].dataValues.fist_time_visited != null) {
-			// 	console.log('first_time_visited in france = ' + data[e].dataValues.fist_time_visited.toLocaleDateString('fr-FR') + ' ' + data[e].dataValues.fist_time_visited.toLocaleTimeString());
+			// if (data[e].dataValues.first_time_visited != null) {
+			// 	console.log('first_time_visited in france = ' + data[e].dataValues.first_time_visited.toLocaleDateString('fr-FR') + ' ' + data[e].dataValues.first_time_visited.toLocaleTimeString());
 			// }
 		}
 		sequelize.close();

@@ -14,8 +14,8 @@ function enigmaIndex (req, res) {
 			if (req.url === '/' + enigmas[i].url && req.method === 'GET') {
 				find = true;
 				// setting up first time visited variable
-				if (enigmas[i].fist_time_visited == null) {
-					enigmas[i].fist_time_visited = Date.now();
+				if (enigmas[i].first_time_visited == null) {
+					enigmas[i].first_time_visited = Date.now();
 					enigmas[i].save();
 				}
 				// render page
@@ -58,7 +58,7 @@ function verify (req, res) {
 								res.send({status: 1, text: e.end_text, url: nextEnigma.url, id: id});
 							}).catch(err => {
 								sendErr(req, res, err);
-							})
+							});
 						}
 					}).catch(err => {
 						sendErr(req, res, err);

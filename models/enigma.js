@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
 		latB: Sequelize.FLOAT,
 		longB: Sequelize.FLOAT,
 		flag: Sequelize.STRING,
-		fist_time_visited: Sequelize.DATE,
+		first_time_visited: Sequelize.DATE,
 		delay_to_hint: { type: Sequelize.INTEGER, allowNull: false },
 		hint: { type: Sequelize.STRING, allowNull: false },
 		custom_js: Sequelize.STRING,
@@ -32,8 +32,8 @@ module.exports = function (sequelize, DataTypes) {
 			type: function () {
 				return this.getDataValue('type');
 			},
-			fist_time_visited: function () {
-				return this.getDataValue('fist_time_visited');
+			first_time_visited: function () {
+				return this.getDataValue('first_time_visited');
 			},
 			custom_html: function () {
 				return this.getDataValue('custom_html');
@@ -54,18 +54,27 @@ module.exports = function (sequelize, DataTypes) {
 				return this.getDataValue('end_text');
 			},
 			getInfo: function () {
-				return {
+				let result = {
 					name: this.getDataValue('name'),
 					enigma_text: this.getDataValue('enigma_text'),
 					custom_html: this.getDataValue('custom_html'),
 					custom_js: this.getDataValue('custom_js'),
 					custom_css: this.getDataValue('custom_css')
 				};
+
+				if (this.first_time_visited != null && typeof this.first_time_visited !== 'undefined') {
+					let date = new Date(this.first_time_visited);
+					let day = this.getDataValue('delay_to_hint');
+					if (date.setDate(date.getDate() + day) < Date.now()) {
+						result.hint = this.getDataValue('hint');
+					}
+				}
+				return result;
 			}
 		},
 		setterMethods: {
-			fist_time_visited: function (value) {
-				this.setDataValue('fist_time_visited', value);
+			first_time_visited: function (value) {
+				this.setDataValue('first_time_visited', value);
 			}
 		}
 	});
