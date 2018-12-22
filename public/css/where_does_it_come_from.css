@@ -1,9 +1,9 @@
 #wdicfphoto{
 	height: 100px;
-	border-radius: 5px;
 	cursor: pointer;
 	transition: 0.3s;
 	margin: 20px;
+	border : solid 3px #00e50b;
 }
 
 #wdicfphoto:hover {opacity: 0.7;}
