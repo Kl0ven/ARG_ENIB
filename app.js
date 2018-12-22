@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('express-handlebars');
-
 var Router = require('./routes/index');
-
+const obfuscator = require('./utils/obfuscator');
+const env = process.env.NODE_ENV || 'development';
 var app = express();
 
 // view engine setup
@@ -19,6 +19,15 @@ app.engine('hbs', hbs({
 }));
 app.set('view engine', 'hbs');
 
+if (env !== 'development') {
+	console.log('using minify');
+
+	app.use(obfuscator({
+		src: `${__dirname}/public/`,
+		version: 'prod'
+	}));
+}
+console.log(`${__dirname}/public`);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

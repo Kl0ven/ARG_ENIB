@@ -2,7 +2,7 @@ var enigma = require('../models').enigma;
 var antiCheatId = require('../models').antiCheatId;
 const isInRectangle = require('../utils/geo').isInRectangle;
 const hash = require('../utils/hash');
-
+const env = process.env.NODE_ENV || 'development';
 // this function catch every routes
 function enigmaIndex (req, res) {
 	// request every enigma to see if match exist
@@ -19,7 +19,7 @@ function enigmaIndex (req, res) {
 					enigmas[i].save();
 				}
 				// render page
-				res.render('enigma/' + enigmas[i].custom_html, enigmas[i].getInfo);
+				res.render('enigma/' + enigmas[i].custom_html, Object.assign({}, enigmas[i].getInfo, {useAntiDebug: env !== 'development'}));
 				break;
 			}
 		}

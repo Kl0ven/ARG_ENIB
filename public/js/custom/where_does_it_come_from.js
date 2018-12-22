@@ -1,4 +1,4 @@
-/* global $:true  */
+/* global $:true   */
 
 $('document').ready(() => {
 	// Get the modal
