@@ -1,0 +1,20 @@
+<div id="wdicf">
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+	<img src="images/photo-vacances-2015-avecmaman-et-papa .jpg" id="wdicfphoto" alt="">
+
+
+
+	<div id="wdicfphotomodal" class="wdicfmodal">
+		<span class="wdicfclose">&times;</span>
+		<img class="wdicfmodal-content" id="wdicfphoto1">
+	</div>
+	{{#if hint}}
+	{{> hint}}
+	{{/if}}
+	{{> form_geo}}
+	{{> modal}}
+</div>
