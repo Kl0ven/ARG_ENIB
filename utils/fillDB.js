@@ -4,9 +4,9 @@ let sequelize = require('../models').sequelize;
 
 const data = [
 	{
-		name: 'Ou a été prise cette photo',
-		enigma_text: '? ',
-		end_text: 'histoire',
+		name: 'Où a été prise cette photo',
+		enigma_text: '',
+		end_text: 'histoire0',
 		url: '852488ddd9570bc877783bf4397563e0',
 		hint: 'Le grand frère en mange pour le petit dej`',
 		type: 'geo',
