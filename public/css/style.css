@@ -1,8 +1,27 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: black;
+  font: 14px 'Share Tech Mono', monospace;
+  color : #00e50b;
 }
 
-a {
-  color: #00B7FF;
+.arg-form input[type=text] {
+	color : #00e50b;
+	background-color: transparent;
+	border : solid 3px #00e50b;
+}
+
+.arg-form button[type=submit] {
+	color : #00e50b;
+	background-color: transparent;
+	border : solid 3px #00e50b;
+}
+
+.arg-card {
+	border : solid 3px #00e50b;
+	padding : 2%;
+}
+
+.arg-std-txt {
+	font-size: 1.5em;
 }
