@@ -8,7 +8,7 @@ $('document').ready(() => {
 	var img = $('#wdicfphoto');
 	var modalImg = $('#wdicfphoto1');
 	img.click(function () {
-		modal.css('display', 'block');
+		modal.show();
 		modalImg.attr('src', this.src);
 	});
 
@@ -17,6 +17,13 @@ $('document').ready(() => {
 
 	// When the user clicks on <span> (x), close the modal
 	span.click(function () {
-		modal.css('display', 'none');
+		modal.hide();
+	});
+	$(document).mouseup(function (e) {
+		let container = $('#wdicfphoto1');
+		// if the target of the click isn't the container nor a descendant of the container
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
+			modal.hide();
+		}
 	});
 });
