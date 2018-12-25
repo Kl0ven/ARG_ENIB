@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
-const env = process.env.NODE_ENV || 'development';
+const config = require('../config');
 const db = {};
 
 let sequelize;
@@ -10,7 +10,7 @@ console.log(process.env.DATABASE_URL);
 sequelize = new Sequelize(process.env.DATABASE_URL, {
 	dialect: 'postgres',
 	operatorsAliases: false,
-	logging: (env === 'development') ? console.log : false
+	logging: (config.env === 'development') ? console.log : false
 });
 
 fs

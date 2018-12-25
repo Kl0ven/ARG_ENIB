@@ -6,7 +6,8 @@ var logger = require('morgan');
 var hbs = require('express-handlebars');
 var Router = require('./routes/index');
 const obfuscator = require('./utils/obfuscator');
-const env = process.env.NODE_ENV || 'development';
+const config = require('./config');
+
 var app = express();
 
 // view engine setup
@@ -19,7 +20,7 @@ app.engine('hbs', hbs({
 }));
 app.set('view engine', 'hbs');
 
-if (env !== 'development') {
+if (config.env !== 'development') {
 	console.log('using minify');
 
 	app.use(obfuscator({

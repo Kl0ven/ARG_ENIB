@@ -8,7 +8,7 @@ const data = [
 		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
 		end_text: 'histoire0',
 		url: '852488ddd9570bc877783bf4397563e0',
-		hint: 'Le grand frère en aime ce genre de detaille ;)',
+		hint: 'Le grand frère aime ce genre de detaille ;)',
 		type: 'geo',
 		latA: 2.292228269475794,
 		longA: -73.8783434260763,
@@ -19,6 +19,18 @@ const data = [
 		custom_js: 'where_does_it_come_from.js',
 		custom_html: 'where_does_it_come_from',
 		custom_css: 'where_does_it_come_from.css'
+	},
+	{
+		name: 'test2',
+		enigma_text: 'enigma_text_test2',
+		url: 'qfdsvervtnzrgbzdvaebvdvqfvbfzfa5814v651v6ae',
+		end_text: 'end_text_1',
+		type: 'flag',
+		flag: 'dcjaecvpajenfvpm',
+		first_time_visited: null,
+		delay_to_hint: 4,
+		custom_html: 'enigma2',
+		hint: 'hint n2 '
 	}
 ];
 

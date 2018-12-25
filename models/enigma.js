@@ -53,6 +53,32 @@ module.exports = function (sequelize, DataTypes) {
 			end_text: function () {
 				return this.getDataValue('end_text');
 			},
+			time_before_hint: function () {
+				let time = {};
+				let day = this.getDataValue('delay_to_hint');
+				console.log('time remaining ' + day * 24 * 3600 * 1000);
+				if (this.first_time_visited != null && typeof this.first_time_visited !== 'undefined') {
+					let date = new Date(this.first_time_visited);
+					let timeRemaining = date.setDate(date.getDate() + day) - Date.now();
+					if (timeRemaining > 0) {
+						time.percent = 1 - (timeRemaining / (day * 24 * 3600 * 1000));
+						time.remaining = timeRemaining;
+					} else {
+						time.percent = 100;
+						time.remaining = 0;
+					}
+				} else {
+					time.percent = 0;
+					time.remaining = day * 24 * 3600 * 1000;
+				}
+				return time;
+			},
+			name: function () {
+				return this.getDataValue('name');
+			},
+			id: function () {
+				return this.getDataValue('id');
+			},
 			getInfo: function () {
 				let result = {
 					name: this.getDataValue('name'),
