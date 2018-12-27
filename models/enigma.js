@@ -56,7 +56,6 @@ module.exports = function (sequelize, DataTypes) {
 			time_before_hint: function () {
 				let time = {};
 				let day = this.getDataValue('delay_to_hint');
-				console.log('time remaining ' + day * 24 * 3600 * 1000);
 				if (this.first_time_visited != null && typeof this.first_time_visited !== 'undefined') {
 					let date = new Date(this.first_time_visited);
 					let timeRemaining = date.setDate(date.getDate() + day) - Date.now();
