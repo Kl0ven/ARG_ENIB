@@ -21,16 +21,18 @@ const data = [
 		custom_css: 'where_does_it_come_from.css'
 	},
 	{
-		name: 'test2',
-		enigma_text: 'enigma_text_test2',
-		url: 'qfdsvervtnzrgbzdvaebvdvqfvbfzfa5814v651v6ae',
-		end_text: 'end_text_1',
+		name: 'Heure du décè 5h26...',
+		enigma_text: 'Accident dans une soirée etudiante à brest en 2006',
+		url: '1dc1d90e3fb72097ad99e2537dc69eac',
+		hint: 'Ils etaient tous en fluo',
+		end_text: 'histoire1',
 		type: 'flag',
-		flag: 'dcjaecvpajenfvpm',
+		flag: 'pb130091',
 		first_time_visited: null,
-		delay_to_hint: 4,
-		custom_html: 'enigma2',
-		hint: 'hint n2 '
+		delay_to_hint: 2,
+		custom_js: 'photo_enib.js',
+		custom_html: 'photo_enib',
+		custom_css: 'photo_enib.css'
 	}
 ];
 
