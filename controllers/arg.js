@@ -1,6 +1,7 @@
 var enigma = require('../models').enigma;
 var antiCheatId = require('../models').antiCheatId;
 var winner = require('../models').winner;
+const Op = require('../models').Sequelize.Op;
 
 function index (req, res) {
 	let dataEnigma = [];
@@ -38,6 +39,22 @@ function index (req, res) {
 	});
 }
 
+function resestAntiCheatId (req, res) {
+	antiCheatId.destroy({
+		where: {
+			created_at: {[Op.lt]: new Date(new Date() - 1 * 60 * 60 * 1000)}
+		}
+	}).then(() => {
+		antiCheatId.count().then(c => {
+			res.send({status: true, count: c});
+		}).catch(e => {
+			sendErr(req, res, e);
+		});
+	}).catch(e => {
+		sendErr(req, res, e);
+	});
+}
+
 function sendErr (req, res, err) {
 	console.log(err);
 	res.status(418).send('oupsie');
@@ -45,5 +62,6 @@ function sendErr (req, res, err) {
 
 // export function
 module.exports = {
-	index: index
+	index: index,
+	resestAntiCheatId: resestAntiCheatId
 };

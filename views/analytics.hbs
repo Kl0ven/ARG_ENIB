@@ -12,8 +12,11 @@
 </head>
 <body>
 	<div class="container" style="text-align: center;">
-		<div class="alert alert-success">
-			{{pending}} pending antiCheatId
+		<div class="container" id="logmes">
+			<div class="alert alert-info">
+				<span id="count"> {{pending}}</span> pending antiCheatId
+				<button type="button" name="button" onclick="resestAntiCheatId()">Reset</button>
+			</div>
 		</div>
 		<table class="table table-dark table-striped">
 			<thead>
