@@ -44,7 +44,7 @@ const data = [
 		custom_js: 'data_log_3.js',
 		custom_html: 'data_log_3',
 		custom_css: 'data_log_3.css'
-	},
+	}
 ];
 
 let obj = [];

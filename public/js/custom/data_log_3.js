@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: "off" */
-/* global $:true alert:true */
-let ctx1,ctx2,ctx3;
+/* global $:true alert:true ctx:true canvas:true canvas1:true canvas2:true canvas3:true output:true  */
+let ctx1, ctx2, ctx3;
 
 function drawGradient () {
 	let grd = ctx.createLinearGradient(0, 0, canvas.width, 0);
