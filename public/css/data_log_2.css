@@ -1,0 +1,19 @@
+.arg-led-border {
+	width : 100px;
+	height : 100px;
+	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50);
+	border: solid 4px #111111;
+	border-radius : 1000px;
+}
+.arg-led {
+	border-radius : 1000px;
+	width : 100%;
+	height : 100%;
+}
+.arg-green {
+	background-color : #00e50b;
+	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50),0px 0px 70px 0px rgba(27, 232, 4,0.75);
+}
+.arg-dark-green {
+	background-color : #117705;
+}

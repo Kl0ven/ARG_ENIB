@@ -1,0 +1,21 @@
+<div class="arg-card">
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+	{{#if hint}}
+		{{> hint}}
+	{{/if}}
+
+	<div class="arg-card" align="center">
+		<div id="qtext" class="my-3">
+		</div>
+		<button id="deny" type="button"></button>
+		<button id="allow" type="button"></button>
+	</div>
+
+	{{> form_flag}}
+
+	{{> modal}}
+</div>

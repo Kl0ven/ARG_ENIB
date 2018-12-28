@@ -1,0 +1,29 @@
+<div class="arg-card">
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+	{{#if hint}}
+		{{> hint}}
+	{{/if}}
+
+	<div class="py-5" align="center">
+		<div class="arg-led-container my-3">
+			<div class="arg-led-border arg-dark-green">
+				<div id="green-led-1" class="arg-led arg-green">
+				</div>
+			</div>
+		</div>
+		<div class="arg-led-container my-3">
+			<div class="arg-led-border arg-dark-green">
+				<div id="green-led-2" class="arg-led arg-green">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{> form_flag}}
+
+	{{> modal}}
+</div>

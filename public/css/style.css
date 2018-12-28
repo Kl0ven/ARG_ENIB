@@ -5,7 +5,19 @@ body {
   color : #00e50b;
 }
 
+button {
+	color : #00e50b;
+	background-color: transparent;
+	border : solid 3px #00e50b;
+}
+
 .arg-form input[type=text] {
+	color : #00e50b;
+	background-color: transparent;
+	border : solid 3px #00e50b;
+}
+
+.arg-form input[type=number] {
 	color : #00e50b;
 	background-color: transparent;
 	border : solid 3px #00e50b;
