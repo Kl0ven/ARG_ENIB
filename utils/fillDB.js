@@ -7,7 +7,7 @@ const data = [
 		name: 'Une preuve de leur existance ?',
 		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
 		end_text: 'histoire0',
-		url: '852488ddd9570bc877783bf4397563e0',
+		url: '852488ddd9570bc877783bf4397563e0', // earth
 		hint: 'Le grand frère aime ce genre de detaille ;)',
 		type: 'geo',
 		latA: 2.292228269475794,
@@ -23,7 +23,7 @@ const data = [
 	{
 		name: 'Heure du décè 5h26...',
 		enigma_text: 'Accident dans une soirée etudiante à brest en 2006',
-		url: '1dc1d90e3fb72097ad99e2537dc69eac',
+		url: 'b65c055bda730e900eca91ca524f0387', // no limit
 		hint: 'Ils etaient tous en fluo',
 		end_text: 'histoire1',
 		type: 'flag',
@@ -33,6 +33,24 @@ const data = [
 		custom_js: 'photo_enib.js',
 		custom_html: 'photo_enib',
 		custom_css: 'photo_enib.css'
+	},
+	{
+		name: 'Dans les archives',
+		enigma_text: 'J\'ai trouvé la référence d\'une archives (REF), à toi de la trouver !',
+		url: 'e4a754746dfd9d8bab082f3a5bda280e', // centre de ressources documentaire
+		hint: `<b>Lundi</b> : 8h30 – 17h30</br>
+			   <b>Mardi</b> : 8h30 – 17h30</br>
+			   <b>Mercredi</b> : 8h30 – 17h30</br>
+			   <b>jeudi</b> : 8h30 – 17h30</br>
+			   <b>Vendredi</b> : 8h30 – 12h00`,
+		end_text: 'histoire2',
+		type: 'flag',
+		flag: 'test',
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'mot_d_un_livre.js',
+		custom_html: 'mot_d_un_livre',
+		custom_css: 'mot_d_un_livre.css'
 	}
 ];
 
