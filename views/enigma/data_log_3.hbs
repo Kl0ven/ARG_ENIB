@@ -1,0 +1,24 @@
+<div class="arg-card">
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+	{{#if hint}}
+		{{> hint}}
+	{{/if}}
+
+	<div class="">
+		<canvas id="canvas" width="500" height="100"></canvas><br>
+		<input oninput="onSliderChange()" id="firstSlider" class="range-input" type="range" name="" value="0" min="0" max="500"><br>
+		<input oninput="onSliderChange()" id="secondSlider" class="range-input" type="range" name="" value="500" min="0" max="500">
+		<canvas id="canvas1" width="50" height="50"></canvas>
+		<canvas id="canvas2" width="50" height="50"></canvas>
+		<canvas id="canvas3" width="50" height="50"></canvas>
+		<input id="output" type="text" readonly name="" value="">
+	</div>
+	
+	{{> form_flag}}
+
+	{{> modal}}
+</div>

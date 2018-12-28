@@ -3,7 +3,7 @@ const Enigma = require('../models').enigma;
 let sequelize = require('../models').sequelize;
 
 const data = [
-	{
+    {
 		name: 'Une preuve de leur existance ?',
 		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
 		end_text: 'histoire0',
@@ -51,6 +51,48 @@ const data = [
 		custom_js: 'mot_d_un_livre.js',
 		custom_html: 'mot_d_un_livre',
 		custom_css: 'mot_d_un_livre.css'
+	},
+	{
+		name: 'data_log_1',
+		enigma_text: '',
+		url: 'data_log_1',
+		end_text: 'end_text_1',
+		type: 'flag',
+		flag: '0123456789',
+		first_time_visited: null,
+		delay_to_hint: 5,
+		hint: 'hint n2 ',
+		custom_js: 'data_log_1.js',
+		custom_html: 'data_log_1',
+		custom_css: 'data_log_1.css'
+	},
+	{
+		name: 'data_log_2',
+		enigma_text: '',
+		url: 'data_log_2',
+		end_text: 'end_text_2',
+		type: 'flag',
+		flag: 'bonjour toi',
+		first_time_visited: null,
+		delay_to_hint: 5,
+		hint: 'hint n2 ',
+		custom_js: 'data_log_2.js',
+		custom_html: 'data_log_2',
+		custom_css: 'data_log_2.css'
+	},
+	{
+		name: 'data_log_3',
+		enigma_text: '',
+		url: 'data_log_3',
+		end_text: 'end_text_3',
+		type: 'flag',
+		flag: '0123456789',
+		first_time_visited: null,
+		delay_to_hint: 5,
+		hint: 'hint n2 ',
+		custom_js: 'data_log_3.js',
+		custom_html: 'data_log_3',
+		custom_css: 'data_log_3.css'
 	}
 ];
 
