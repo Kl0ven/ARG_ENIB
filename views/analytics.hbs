@@ -32,7 +32,7 @@
 				<tr>
 					<th scope="row">{{id}}</th>
 					<td>{{name}}</td>
-					<td>{{first_time_visited}}</td>
+					<td class="date">{{first_time_visited}}</td>
 					<td class="{{#unless hold_update}}updateTime{{/unless}}" id="{{remaining.remaining}}">{{#if hold_update}}{{symbole}}{{/if}}</td>
 				</tr>
 				{{/each}}
@@ -51,7 +51,7 @@
 				<tr>
 					<th scope="row">{{name}}</th>
 					<td>{{id_enigma}}</td>
-					<td>{{date}}</td>
+					<td class="date">{{date}}</td>
 				</tr>
 				{{/each}}
 			</tbody>
