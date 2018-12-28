@@ -1,6 +1,12 @@
 /* global $:true  confirm:true */
 /* eslint no-unused-vars: "off" */
 $('document').ready(() => {
+	$('.date').each(function (i) {
+		// e[i].first_time_visited.toLocaleDateString('fr-FR') + ' ' + e[i].first_time_visited.toLocaleTimeString('fr-FR', { hour12: false })
+		let date = new Date($(this).text());
+		let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
+		$(this).text(dateString);
+	});
 	let refreshRate = 1000;
 	setInterval(update, refreshRate, refreshRate);
 });

@@ -32,7 +32,7 @@
 				<tr>
 					<th scope="row">{{id}}</th>
 					<td>{{name}}</td>
-					<td class="date">{{first_time_visited}}</td>
+					<td class="{{#unless first_time_visited_null}}date{{/unless}}">{{first_time_visited}}</td>
 					<td class="{{#unless hold_update}}updateTime{{/unless}}" id="{{remaining.remaining}}">{{#if hold_update}}{{symbole}}{{/if}}</td>
 				</tr>
 				{{/each}}
