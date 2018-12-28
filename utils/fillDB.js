@@ -3,7 +3,7 @@ const Enigma = require('../models').enigma;
 let sequelize = require('../models').sequelize;
 
 const data = [
-    {
+	{
 		name: 'Une preuve de leur existance ?',
 		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
 		end_text: 'histoire0',
@@ -39,10 +39,10 @@ const data = [
 		enigma_text: 'J\'ai trouvé la référence d\'une archives (REF), à toi de la trouver !',
 		url: 'e4a754746dfd9d8bab082f3a5bda280e', // centre de ressources documentaire
 		hint: `<b>Lundi</b> : 8h30 – 17h30</br>
-			   <b>Mardi</b> : 8h30 – 17h30</br>
-			   <b>Mercredi</b> : 8h30 – 17h30</br>
-			   <b>jeudi</b> : 8h30 – 17h30</br>
-			   <b>Vendredi</b> : 8h30 – 12h00`,
+		<b>Mardi</b> : 8h30 – 17h30</br>
+		<b>Mercredi</b> : 8h30 – 17h30</br>
+		<b>jeudi</b> : 8h30 – 17h30</br>
+		<b>Vendredi</b> : 8h30 – 12h00`,
 		end_text: 'histoire2',
 		type: 'flag',
 		flag: 'test',

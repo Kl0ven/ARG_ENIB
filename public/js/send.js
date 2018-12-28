@@ -18,7 +18,6 @@ function sendRep () {
 		contentType: 'application/json',
 		success: function (mes) {
 			if (mes.status) {
-				console.log(mes);
 				$('#winningModalLabel').text('Congratulations');
 				$('#modaltext').text(mes.text);
 				let url = window.location.protocol + '//' + window.location.host + '/' + mes.url;
