@@ -46,6 +46,7 @@ function getBlend () {
 	let secondSliderHSV = secondSliderPosition / 500.0 * 0.85;
 	let firstData = HSVtoRGB(firstSliderHSV, 1.0, 1.0);
 	let secondData = HSVtoRGB(secondSliderHSV, 1.0, 1.0);
+	// console.log(firstData, secondData);
 	let blendData = [Math.round(Math.min((firstData.r + secondData.r) / 2, 255)), Math.round(Math.min((firstData.g + secondData.g) / 2, 255)), Math.round(Math.min((firstData.b + secondData.b) / 2, 255))];
 	ctx3.fillStyle = 'rgb(' + blendData[0] + ',' + blendData[1] + ',' + blendData[2] + ')';
 	ctx3.fillRect(0, 0, canvas3.width, canvas3.height);

@@ -56,7 +56,7 @@ const data = [
 		name: 'data_log_1',
 		enigma_text: '',
 		url: 'data_log_1',
-		end_text: 'end_text_1',
+		end_text: 'histoire3',
 		type: 'flag',
 		flag: '0123456789',
 		first_time_visited: null,
@@ -71,25 +71,27 @@ const data = [
 		enigma_text: '',
 		url: 'data_log_2',
 		end_text: 'end_text_2',
+		hint: 'histoire4 ',
 		type: 'flag',
 		flag: 'bonjour toi',
 		first_time_visited: null,
 		delay_to_hint: 5,
-		hint: 'hint n2 ',
 		custom_js: 'data_log_2.js',
 		custom_html: 'data_log_2',
 		custom_css: 'data_log_2.css'
 	},
 	{
+		// 0 255 151
+		// 156 0 255
 		name: 'data_log_3',
-		enigma_text: '',
-		url: 'data_log_3',
+		enigma_text: 'Le lien inconnu, les couleurs relira et la sortie vous montrera',
+		url: '4f4adcbf8c6f66dcfc8a3282ac2bf10a', // 404
 		end_text: 'end_text_3',
+		hint: 'histoire5 ',
 		type: 'flag',
-		flag: '0123456789',
+		flag: '#4e80cb',
 		first_time_visited: null,
 		delay_to_hint: 5,
-		hint: 'hint n2 ',
 		custom_js: 'data_log_3.js',
 		custom_html: 'data_log_3',
 		custom_css: 'data_log_3.css'
