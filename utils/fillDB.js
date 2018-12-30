@@ -98,23 +98,15 @@ const data = [
 	}
 ];
 
-let obj = [];
-for (var i = 0; i < data.length; i++) {
-	obj.push(Enigma.build(data[i]));
-}
-
 sequelize.sync({force: true}).then(function () {
-	let promise = [];
-	for (var i = 0; i < obj.length; i++) {
-		promise.push(obj[i].save());
-	}
-
-	Promise.all(promise).then(function () {
+	Enigma.bulkCreate(data).then(() => {
+		return Enigma.findAll();
+	}).then(function (enigmas) {
 		console.log("c'est good");
-		promise = [];
+		let promise = [];
 
-		for (var i = 0; i < obj.length - 1; i++) {
-			promise.push(obj[i].setNext(obj[i + 1]));
+		for (var i = 0; i < enigmas.length - 1; i++) {
+			promise.push(enigmas[i].setNext(enigmas[i + 1]));
 		}
 		Promise.all(promise).then(function () {
 			display().then(() => {
