@@ -84,7 +84,8 @@ module.exports = function (sequelize, DataTypes) {
 					enigma_text: this.getDataValue('enigma_text'),
 					custom_html: this.getDataValue('custom_html'),
 					custom_js: this.getDataValue('custom_js'),
-					custom_css: this.getDataValue('custom_css')
+					custom_css: this.getDataValue('custom_css'),
+					number: this.getDataValue('id')
 				};
 
 				if (this.first_time_visited != null && typeof this.first_time_visited !== 'undefined') {

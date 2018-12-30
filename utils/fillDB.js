@@ -16,9 +16,9 @@ const data = [
 		longB: -73.8779840100683,
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'where_does_it_come_from.js',
-		custom_html: 'where_does_it_come_from',
-		custom_css: 'where_does_it_come_from.css'
+		custom_js: 'log1.js',
+		custom_html: 'log1',
+		custom_css: 'log1.css'
 	},
 	{
 		name: 'Heure du décè 5h26...',
@@ -30,9 +30,9 @@ const data = [
 		flag: 'pb130091',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'photo_enib.js',
-		custom_html: 'photo_enib',
-		custom_css: 'photo_enib.css'
+		custom_js: 'log2.js',
+		custom_html: 'log2',
+		custom_css: 'log2.css'
 	},
 	{
 		name: 'Dans les archives',
@@ -48,12 +48,12 @@ const data = [
 		flag: 'test',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'mot_d_un_livre.js',
-		custom_html: 'mot_d_un_livre',
-		custom_css: 'mot_d_un_livre.css'
+		custom_js: 'log3.js',
+		custom_html: 'log3',
+		custom_css: 'log3.css'
 	},
 	{
-		name: 'data_log_1',
+		name: 'nom1',
 		enigma_text: '',
 		url: 'data_log_1',
 		end_text: 'histoire3',
@@ -62,12 +62,12 @@ const data = [
 		first_time_visited: null,
 		delay_to_hint: 5,
 		hint: 'hint n2 ',
-		custom_js: 'data_log_1.js',
-		custom_html: 'data_log_1',
-		custom_css: 'data_log_1.css'
+		custom_js: 'log4.js',
+		custom_html: 'log4',
+		custom_css: 'log4.css'
 	},
 	{
-		name: 'data_log_2',
+		name: 'nom2',
 		enigma_text: '',
 		url: 'data_log_2',
 		end_text: 'end_text_2',
@@ -76,14 +76,14 @@ const data = [
 		flag: 'bonjour toi',
 		first_time_visited: null,
 		delay_to_hint: 5,
-		custom_js: 'data_log_2.js',
-		custom_html: 'data_log_2',
-		custom_css: 'data_log_2.css'
+		custom_js: 'log5.js',
+		custom_html: 'log5',
+		custom_css: 'log5.css'
 	},
 	{
 		// 0 255 151
 		// 156 0 255
-		name: 'data_log_3',
+		name: 'nom3',
 		enigma_text: 'Le lien inconnu, les couleurs relira et la sortie vous montrera',
 		url: '4f4adcbf8c6f66dcfc8a3282ac2bf10a', // 404
 		end_text: 'end_text_3',
@@ -92,9 +92,9 @@ const data = [
 		flag: '#4e80cb',
 		first_time_visited: null,
 		delay_to_hint: 5,
-		custom_js: 'data_log_3.js',
-		custom_html: 'data_log_3',
-		custom_css: 'data_log_3.css'
+		custom_js: 'log6.js',
+		custom_html: 'log6',
+		custom_css: 'log6.css'
 	}
 ];
 
