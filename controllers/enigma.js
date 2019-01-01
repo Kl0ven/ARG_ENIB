@@ -32,7 +32,7 @@ function enigmaIndex (req, res) {
 
 // this function is use to render the main page
 function index (req, res, next) {
-	res.render('partials/index', {});
+	res.render('partials/index', {number: 0});
 }
 
 // this function is use to verify the enigma if it find is it's call
