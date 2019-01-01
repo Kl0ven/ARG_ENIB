@@ -6,8 +6,12 @@ var hbs = require('express-handlebars');
 var Router = require('./routes/index');
 const obfuscator = require('./utils/obfuscator');
 const config = require('./config');
+const helmet = require('helmet');
 
 var app = express();
+
+// protection against various attack vector
+app.use(helmet());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
