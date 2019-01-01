@@ -19,7 +19,7 @@ function enigmaIndex (req, res) {
 					enigmas[i].save();
 				}
 				// render page
-				res.render('enigma/' + enigmas[i].custom_html, Object.assign({}, enigmas[i].getInfo, {useAntiDebug: config.env !== 'development'}));
+				res.render('enigma/' + enigmas[i].custom_html, Object.assign(enigmas[i].getInfo, {useAntiDebug: config.env !== 'development'}));
 				break;
 			}
 		}

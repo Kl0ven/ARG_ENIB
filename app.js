@@ -1,7 +1,6 @@
 
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('express-handlebars');
 var Router = require('./routes/index');
@@ -20,19 +19,25 @@ app.engine('hbs', hbs({
 }));
 app.set('view engine', 'hbs');
 
+// if on production
 if (config.env !== 'development') {
 	console.log('using minify');
-
+	app.enable('trust proxy');
 	app.use(obfuscator({
 		src: `${__dirname}/public/`,
 		version: 'prod'
 	}));
+} else {
+	app.use(logger('dev'));
 }
-console.log(`${__dirname}/public`);
-app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+// setting static path
 app.use(express.static(path.join(__dirname, 'public')));
+
+// setting up routes using limiter
 app.use(Router);
+
 module.exports = app;
