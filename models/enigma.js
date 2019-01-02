@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
 		name: { type: Sequelize.STRING, allowNull: false },
 		enigma_text: { type: Sequelize.STRING, allowNull: false },
 		url: { type: Sequelize.STRING, allowNull: false },
-		type: Sequelize.ENUM('geo', 'flag'),
+		type: Sequelize.ENUM('geo', 'flag', 'eval'),
 		latA: Sequelize.FLOAT,
 		longA: Sequelize.FLOAT,
 		latB: Sequelize.FLOAT,
