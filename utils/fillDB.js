@@ -95,6 +95,20 @@ const data = [
 		custom_js: 'log6.js',
 		custom_html: 'log6',
 		custom_css: 'log6.css'
+	},
+	{
+		name: 'Le coup de grâce',
+		enigma_text: 'Tu joues les blancs, tu as 5 coups pour les mettre en echec et mat => NAA',
+		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
+		hint: 'Cf7#',
+		end_text: 'histoire6',
+		type: 'flag',
+		flag: 'De8+ Cxe8 Cf7#',
+		first_time_visited: null,
+		delay_to_hint: 3,
+		custom_js: 'log7.js',
+		custom_html: 'log7',
+		custom_css: 'log7.css'
 	}
 ];
 
