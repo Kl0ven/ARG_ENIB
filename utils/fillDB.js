@@ -83,7 +83,7 @@ const data = [
 	{
 		// 0 255 151
 		// 156 0 255
-		name: 'nom3',
+		name: 'Les codes couleurs',
 		enigma_text: 'Le lien inconnu, les couleurs relira et la sortie vous montrera',
 		url: '4f4adcbf8c6f66dcfc8a3282ac2bf10a', // 404
 		end_text: 'end_text_3',
@@ -97,11 +97,25 @@ const data = [
 		custom_css: 'log6.css'
 	},
 	{
+		name: 'Le compte est bon',
+		enigma_text: '',
+		url: '8732a49c2224037527f75c117f1e9b77', // Le compte est bon
+		hint: '',
+		end_text: 'histoire6',
+		type: 'eval',
+		flag: '42',
+		first_time_visited: null,
+		delay_to_hint: 3,
+		custom_js: 'log8.js',
+		custom_html: 'log8',
+		custom_css: 'log8.css'
+	},
+	{
 		name: 'Le coup de grâce',
 		enigma_text: 'Tu joues les blancs, tu as 5 coups pour les mettre en echec et mat => NAA',
 		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
 		hint: 'Cf7#',
-		end_text: 'histoire6',
+		end_text: 'histoire7',
 		type: 'flag',
 		flag: 'De8+ Cxe8 Cf7#',
 		first_time_visited: null,

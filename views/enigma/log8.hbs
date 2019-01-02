@@ -1,0 +1,45 @@
+<div id="" class="arg-card">
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+	<div id="magasin" class="row">
+		<div class="col-1"></div>
+		<div class="col-10">
+			<ul class="sortable arg-card">
+				<li class="arg-card draggable">18</li>
+				<li class="arg-card draggable">+</li>
+				<li class="arg-card draggable">5</li>
+				<li class="arg-card draggable">334</li>
+				<li class="arg-card draggable">(</li>
+				<li class="arg-card draggable">(</li>
+				<li class="arg-card draggable">)</li>
+				<li class="arg-card draggable">+</li>
+				<li class="arg-card draggable">1</li>
+				<li class="arg-card draggable">)^</li>
+				<li class="arg-card draggable">3</li>
+				<li class="arg-card draggable">/</li>
+				<li class="arg-card draggable">11</li>
+				<li class="arg-card draggable">*</li>
+				<li class="arg-card draggable">+</li>
+				<li class="arg-card draggable">23</li>
+			</ul>
+		</div>
+		<div class="col-1"></div>
+	</div>
+
+	<div  id="equation" class="row">
+
+		<div class="end col-1 text-center" id="start">&gt;&gt;</div>
+		<div class="col-10">
+			<ul class="sortable arg-card"></ul>
+		</div>
+		<div class="end col-1 text-center" id="end">	= 42</div>
+	</div>
+	{{#if hint}}
+	{{> hint}}
+	{{/if}}
+	{{> form_eval}}
+	{{> modal}}
+</div>

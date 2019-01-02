@@ -3,6 +3,8 @@ var antiCheatId = require('../models').antiCheatId;
 const isInRectangle = require('../utils/geo').isInRectangle;
 const hash = require('../utils/hash');
 const config = require('../config');
+const math = require('mathjs');
+
 // this function catch every routes
 function enigmaIndex (req, res) {
 	// request every enigma to see if match exist
@@ -91,6 +93,22 @@ function geoVerify (req, res, e) {
 	return isInRectangle(e.latA, e.longA, e.latB, e.longB, req.body.Latitude, req.body.Longitude);
 }
 
+// this function verify a eval typed enigma
+function evalVerify (req, res, e) {
+	var v;
+	try {
+		v = math.eval(req.body.evalequation);
+	} catch (error) {
+		console.error(error);
+		return false;
+	}
+	if (v === parseInt(e.flag)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function sendErr (req, res, err) {
 	console.log(err);
 	res.status(418).send('oupsie');
@@ -106,5 +124,6 @@ module.exports = {
 	flagVerify: flagVerify,
 	geoVerify: geoVerify,
 	endPage: endPage,
+	evalVerify: evalVerify,
 	enigmaIndex: enigmaIndex
 };

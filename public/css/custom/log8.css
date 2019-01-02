@@ -1,0 +1,36 @@
+.draggable {
+	width: 3vw;
+    height: 3vw;
+    padding: 5px;
+    float: left;
+    margin: 0 10px 10px 0;
+    font-size: .9em;
+    list-style-type: none;
+    font-size: 1vw;
+    line-height: 2vw;
+    text-align: center;
+}
+
+.end{
+	height: 200px;
+	width: 90px;
+	line-height: 200px;
+
+}
+
+#start{
+	font-size: 500%;
+}
+
+#end {
+	font-size: x-large;
+}
+
+#equation {
+	margin-bottom: 20px;
+}
+.sortable {
+	padding: 50px;
+	height: 200px;
+	width: 100%;
+}
