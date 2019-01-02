@@ -4,6 +4,9 @@
 	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50);
 	border: solid 4px #111111;
 	border-radius : 1000px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 70px;
 }
 .arg-led {
 	border-radius : 1000px;
@@ -16,4 +19,40 @@
 }
 .arg-dark-green {
 	background-color : #117705;
+}
+
+
+.arg-red {
+	background-color : #e60000;
+	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50),0px 0px 70px 0px rgba(232, 3, 3, 0.75);
+}
+.arg-dark-red {
+	background-color : #770505;
+}
+
+
+.arg-orange {
+	background-color : #e65a00;
+	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50),0px 0px 70px 0px rgba(232, 86, 3, 0.75);
+}
+.arg-dark-orange {
+	background-color : #773105;
+}
+
+
+.arg-purple {
+	background-color : #e600e3;
+	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50),0px 0px 70px 0px rgba(232, 3, 182, 0.75);
+}
+.arg-dark-purple {
+	background-color : #77056f;
+}
+
+
+.arg-blue {
+	background-color : #0010e6;
+	box-shadow: inset 0px 0px 50px 12px rgba(0,0,0,0.50),0px 0px 70px 0px rgba(3, 54, 232, 0.75);
+}
+.arg-dark-blue {
+	background-color : #050977;
 }
