@@ -112,11 +112,28 @@ const data = [
 		custom_css: 'log8.css'
 	},
 	{
+		name: 'Dans un bureau, les lettres tu trouveras ',
+		enigma_text: ` <b>1</b> 48.390394<b>;</b>-4.4860760000000255 </br>
+					   <b>2</b> 49.1193089<b>;</b>6.1757155999999895 </br>
+					   <b>3</b> 43.23295100000001<b>;</b>0.07808199999999488 </br>
+					   <b>4</b> 45.439695<b>;</b>4.387177899999983 </br>`,
+		url: '7ec8336709bf8a8d71d0ffff69127903', // inter
+		hint: 'R.I.P.',
+		end_text: 'histoire7',
+		type: 'flag',
+		flag: '?',
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log9.js',
+		custom_html: 'log9',
+		custom_css: 'log9.css'
+	},
+	{
 		name: 'Le coup de grâce',
 		enigma_text: 'Tu joues les blancs, tu as 5 coups pour les mettre en echec et mat => NAA',
 		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
 		hint: 'Cf7#',
-		end_text: 'histoire7',
+		end_text: 'histoire8',
 		type: 'flag',
 		flag: 'De8+ Cxe8 Cf7#',
 		first_time_visited: null,
