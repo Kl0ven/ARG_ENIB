@@ -45,6 +45,9 @@ app.engine('hbs', hbs({
 }));
 app.set('view engine', 'hbs');
 
+// use flash message
+app.use(flash());
+
 // if on production
 if (config.env !== 'development') {
 	console.log('using minify');
@@ -54,7 +57,6 @@ if (config.env !== 'development') {
 		version: 'prod'
 	}));
 } else {
-	app.use(flash());
 	app.use(logger('dev'));
 }
 
