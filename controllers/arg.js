@@ -1,6 +1,7 @@
 var enigma = require('../models').enigma;
 var antiCheatId = require('../models').antiCheatId;
 var winner = require('../models').winner;
+var session = require('../models').Session;
 const Op = require('../models').Sequelize.Op;
 
 function index (req, res) {
@@ -18,17 +19,20 @@ function index (req, res) {
 				symbole: e[i].first_time_visited == null ? '-' : 'Done'
 			});
 		}
-
-		antiCheatId.count().then(c => {
-			winner.findAll({order: ['enigma_id', 'date']}).then(w => {
-				for (var i = 0; i < w.length; i++) {
-					dataWinner.push({
-						id_enigma: w[i].enigma_id,
-						name: w[i].name,
-						date: w[i].date
-					});
-				}
-				res.render('analytics', {enigmas: dataEnigma, winners: dataWinner, pending: c, layout: false});
+		session.count().then(d => {
+			antiCheatId.count().then(c => {
+				winner.findAll({order: ['enigma_id', 'date']}).then(w => {
+					for (var i = 0; i < w.length; i++) {
+						dataWinner.push({
+							id_enigma: w[i].enigma_id,
+							name: w[i].name,
+							date: w[i].date
+						});
+					}
+					res.render('analytics', {enigmas: dataEnigma, winners: dataWinner, pending: c, session: d, layout: false});
+				}).catch(e => {
+					sendErr(req, res, e);
+				});
 			}).catch(e => {
 				sendErr(req, res, e);
 			});

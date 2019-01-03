@@ -1,5 +1,6 @@
 const Enigma = require('../models').enigma;
 const Winner = require('../models').winner;
+const User = require('../models').user;
 let sequelize = require('../models').sequelize;
 
 function display () {
@@ -16,7 +17,12 @@ function display () {
 			for (var i = 0; i < w.length; i++) {
 				console.log(w[i].dataValues);
 			}
-			sequelize.close();
+			User.findAll().then(u => {
+				for (var i = 0; i < u.length; i++) {
+					console.log(u[i].dataValues);
+				}
+				sequelize.close();
+			});
 		});
 	});
 }

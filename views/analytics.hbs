@@ -11,11 +11,15 @@
 	<link rel='stylesheet' href='/css/style.css' />
 </head>
 <body>
+	<a href="/logout"><button type="button" name="button">Logout</button></a>
 	<div class="container" style="text-align: center;">
 		<div class="container" id="logmes">
 			<div class="alert alert-info">
 				<span id="count"> {{pending}}</span> pending antiCheatId
 				<button type="button" name="button" onclick="resestAntiCheatId()">Reset</button>
+			</div>
+			<div class="alert alert-info">
+				<span id="countSession"> {{session}}</span> sessions actives
 			</div>
 		</div>
 		<table class="table table-dark table-striped">

@@ -2,7 +2,7 @@ var enigma = require('../models').enigma;
 var antiCheatId = require('../models').antiCheatId;
 const isInRectangle = require('../utils/geo').isInRectangle;
 const hash = require('../utils/hash');
-const config = require('../config');
+const config = require('../config/config');
 const math = require('mathjs');
 
 // this function catch every routes

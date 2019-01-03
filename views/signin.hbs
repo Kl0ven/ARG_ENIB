@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signin</title>
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<link rel='stylesheet' href='/css/style.css' />
+	<link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
+	<script  src="lib/jquery/jquery.min.js"></script>
+	<script  src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/jquery-ui/jquery-ui.min.js"></script>
+</head>
+
+<body>
+	{{#if message}}
+	<div class="alert alert-primary" role="alert">
+		{{message}}
+	</div>
+	{{/if}}
+    <form id="signin" name="signin" method="post" action="signin" align="center">
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input name="username" type="text"  required />
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input name="password" type="password" required/>
+		</div>
+
+		<input class="btn btn-primary" type="submit" value="Sign In" />
+    </form>
+
+</body>
+
+</html>
