@@ -104,6 +104,7 @@ const data = [
 		end_text: 'histoire6',
 		type: 'eval',
 		flag: '42',
+		caracter: ['18', '+', '5', '334', '(', '(', ')', '+', '1', ')^', '3', '/', '11', '*', '+', '23'],
 		first_time_visited: null,
 		delay_to_hint: 3,
 		custom_js: 'log8.js',
