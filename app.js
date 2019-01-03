@@ -23,6 +23,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// sequlize db for session id
 var myStore = new SequelizeStore({
 	db: db
 });

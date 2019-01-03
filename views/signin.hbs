@@ -18,12 +18,17 @@
 		{{message}}
 	</div>
 	{{/if}}
-    <form id="signin" name="signin" method="post" action="signin">
-        <label for="username">Username</label>
-        <input class="text" name="username" type="text"  required />
-        <label for="password">Password</label>
-        <input name="password" type="password"   required/>
-        <input class="btn" type="submit" value="Sign In" />
+    <form id="signin" name="signin" method="post" action="signin" align="center">
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input name="username" type="text"  required />
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input name="password" type="password" required/>
+		</div>
+
+		<input class="btn btn-primary" type="submit" value="Sign In" />
     </form>
 
 </body>
