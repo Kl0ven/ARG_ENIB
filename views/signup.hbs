@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Signup</title>
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<link rel='stylesheet' href='/css/style.css' />
+	<link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
+	<script  src="lib/jquery/jquery.min.js"></script>
+	<script  src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/jquery-ui/jquery-ui.min.js"></script>
+</head>
+
+<body>
+	{{#if message}}
+	<div class="alert alert-primary" role="alert">
+		{{message}}
+	</div>
+	{{/if}}
+	<form id="signup" name="signup" method="post" action="/signup">
+		<label for="username">Username</label>
+		<input name="username" type="text"  required />
+		<label for="password">Password</label>
+		<input name="password" type="password" required/>
+		<input class="btn" type="submit" value="Sign Up" />
+	</form>
+
+</body>
+
+</html>

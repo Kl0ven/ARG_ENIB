@@ -1,7 +1,7 @@
-var crypto = require('crypto');
+var bCrypt = require('bcrypt-nodejs');
 
 function hash (e) {
-	return crypto.createHash('md5').update(e).digest('hex');
+	return bCrypt.hashSync(e);
 }
 
 module.exports = hash;
