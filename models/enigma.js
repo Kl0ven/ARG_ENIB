@@ -11,6 +11,7 @@ module.exports = function (sequelize, DataTypes) {
 		latB: Sequelize.FLOAT,
 		longB: Sequelize.FLOAT,
 		flag: Sequelize.STRING,
+		caracter: Sequelize.ARRAY(Sequelize.STRING),
 		first_time_visited: Sequelize.DATE,
 		delay_to_hint: { type: Sequelize.INTEGER, allowNull: false },
 		hint: { type: Sequelize.STRING, allowNull: false },
@@ -40,6 +41,9 @@ module.exports = function (sequelize, DataTypes) {
 			},
 			latA: function () {
 				return this.getDataValue('latA');
+			},
+			caracters: function () {
+				return this.getDataValue('caracter');
 			},
 			latB: function () {
 				return this.getDataValue('latB');
@@ -85,9 +89,9 @@ module.exports = function (sequelize, DataTypes) {
 					custom_html: this.getDataValue('custom_html'),
 					custom_js: this.getDataValue('custom_js'),
 					custom_css: this.getDataValue('custom_css'),
-					number: this.getDataValue('id')
+					number: this.getDataValue('id'),
+					caracter: this.getDataValue('caracter').sort(function () { return 0.5 - Math.random(); })
 				};
-
 				if (this.first_time_visited != null && typeof this.first_time_visited !== 'undefined') {
 					let date = new Date(this.first_time_visited);
 					let day = this.getDataValue('delay_to_hint');

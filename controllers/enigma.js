@@ -99,11 +99,28 @@ function evalVerify (req, res, e) {
 	try {
 		v = math.eval(req.body.evalequation);
 	} catch (error) {
-		console.error(error);
+		// console.error(error);
 		return false;
 	}
 	if (v === parseInt(e.flag)) {
-		return true;
+		var cara = e.caracters.sort(function (a, b) {
+			return b.length - a.length;
+		});
+		var string = req.body.evalequation;
+		for (var c in cara) {
+			if (string.includes(cara[c])) {
+				string = string.replace(cara[c], '');
+			} else {
+				// console.log('there is no ' + cara[c] + ' in ' + string + '');
+				return false;
+			}
+		}
+		if (string === '') {
+			return true;
+		} else {
+			// console.log('string not empty ' + string);
+			return false;
+		}
 	} else {
 		return false;
 	}
