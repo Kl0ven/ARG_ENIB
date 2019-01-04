@@ -1,6 +1,7 @@
 var enigma = require('../models').enigma;
 var winner = require('../models').winner;
 var antiCheatId = require('../models').antiCheatId;
+var sendErr = require('../utils/error');
 
 function saveWinner (req, res) {
 	antiCheatId.findOne({
@@ -30,11 +31,6 @@ function saveWinner (req, res) {
 	}).catch(err => {
 		sendErr(req, res, err);
 	});
-}
-
-function sendErr (req, res, err) {
-	console.log(err);
-	res.status(418).send('oupsie');
 }
 
 // export function

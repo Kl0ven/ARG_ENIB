@@ -3,6 +3,7 @@ var antiCheatId = require('../models').antiCheatId;
 var winner = require('../models').winner;
 var session = require('../models').Session;
 const Op = require('../models').Sequelize.Op;
+var sendErr = require('../utils/error');
 
 function index (req, res) {
 	let dataEnigma = [];
@@ -58,11 +59,6 @@ function resestAntiCheatId (req, res) {
 	}).catch(e => {
 		sendErr(req, res, e);
 	});
-}
-
-function sendErr (req, res, err) {
-	console.log(err);
-	res.status(418).send('oupsie');
 }
 
 // export function

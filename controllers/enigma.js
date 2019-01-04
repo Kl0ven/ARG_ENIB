@@ -4,6 +4,7 @@ const isInRectangle = require('../utils/geo').isInRectangle;
 const hash = require('../utils/hash');
 const config = require('../config/config');
 const math = require('mathjs');
+var sendErr = require('../utils/error');
 
 // this function catch every routes
 function enigmaIndex (req, res) {
@@ -124,11 +125,6 @@ function evalVerify (req, res, e) {
 	} else {
 		return false;
 	}
-}
-
-function sendErr (req, res, err) {
-	console.log(err);
-	res.status(418).send('oupsie');
 }
 
 function endPage (req, res) {
