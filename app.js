@@ -32,7 +32,7 @@ app.use(session({secret: 'Arg_Enib', store: myStore, resave: true, saveUninitial
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-myStore.sync();
+// myStore.sync();
 require('./config/passport')(passport, user);
 
 // view engine setup

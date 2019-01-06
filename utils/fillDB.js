@@ -22,7 +22,7 @@ const data = [
 	},
 	{
 		name: 'Heure du décè 5h26...',
-		enigma_text: 'Accident dans une soirée etudiante à brest en 2006',
+		enigma_text: 'Accident dans une soirée étudiante à brest en 2006',
 		url: 'b65c055bda730e900eca91ca524f0387', // no limit
 		hint: 'Ils etaient tous en fluo',
 		end_text: 'histoire1',

@@ -50,7 +50,7 @@ function getBlend () {
 	let blendData = [Math.round(Math.min((firstData.r + secondData.r) / 2, 255)), Math.round(Math.min((firstData.g + secondData.g) / 2, 255)), Math.round(Math.min((firstData.b + secondData.b) / 2, 255))];
 	ctx3.fillStyle = 'rgb(' + blendData[0] + ',' + blendData[1] + ',' + blendData[2] + ')';
 	ctx3.fillRect(0, 0, canvas3.width, canvas3.height);
-	output.value = '#' + toHex(blendData[0]) + toHex(blendData[1]) + toHex(blendData[2]);
+	$('#flag').val('#' + toHex(blendData[0]) + toHex(blendData[1]) + toHex(blendData[2]));
 }
 
 function HSVtoRGB (h, s, v) {
@@ -101,8 +101,6 @@ $(document).ready(function () {
 	ctx2 = canvas2.getContext('2d');
 	let canvas3 = document.getElementById('canvas3');
 	ctx3 = canvas3.getContext('2d');
-
-	let output = document.getElementById('output');
-
+	$('#flag').prop('readonly', true);
 	onSliderChange();
 });
