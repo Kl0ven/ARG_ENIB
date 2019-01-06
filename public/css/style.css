@@ -54,3 +54,8 @@ button {
 .modal-footer{
 	border-top: 1px solid #00e50b;
 }
+
+
+a, a:link, a:hover, a:active,a:visited {
+	color: #00e50b;
+}

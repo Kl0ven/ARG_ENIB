@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
+<head>
+	<title>{{title}}</title>
 
-		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-		<link rel='stylesheet' href='/css/style.css' />
-		<link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<link rel='stylesheet' href='/css/style.css' />
+	<link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
 	{{#if custom_css}}
-		<link href="/css/custom/{{custom_css}}" rel="stylesheet">
+	<link href="/css/custom/{{custom_css}}" rel="stylesheet">
 	{{/if}}
 
 
@@ -16,20 +16,40 @@
 	<script  src="lib/jquery/jquery.min.js"></script>
 	<script  src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="lib/jquery-ui/jquery-ui.min.js"></script>
+	<script >
 
+	$('document').ready(() => {
+		let state = true;
+		function change (){
+			if (state == true) {
+				state = false;
+				console.log('hide');
+				$("#cursor").hide()
+			}
+			else {
+				console.log('show');
+				state = true;
+				$("#cursor").show()
+			}
+			setTimeout(change,500);
+		}
+		change();
+	});
+
+	</script>
 	{{#if custom_js}}
-		<script  src="js/custom/{{custom_js}}"></script>
+	<script  src="js/custom/{{custom_js}}"></script>
 	{{/if}}
 
 	{{#if useAntiDebug}}
-		<script  src="js/antiDebug.js"></script>
+	<script  src="js/antiDebug.js"></script>
 	{{/if}}
 	<script type="text/javascript" src="js/send.js"></script>
-  </head>
-  <body>
-	  <div class="align" style="text-align: center;">
-	  	<h1>Data_log_{{number}}</h1>
-	  </div>
-    {{{body}}}
-  </body>
-</html>
+	</head>
+	<body>
+	<div class="align" style="text-align: center;">
+	<h1>Data_log_{{number}}</h1>
+	</div>
+	{{{body}}}
+	</body>
+	</html>

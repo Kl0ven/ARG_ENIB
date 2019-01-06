@@ -4,6 +4,20 @@ let sequelize = require('../models').sequelize;
 
 const data = [
 	{
+		name: 'nom0',
+		enigma_text: 'test',
+		url: '94102692ffe0f1b664a863d0cd3cfefc', // entry
+		hint: '',
+		end_text: 'histoire-1',
+		type: 'flag',
+		flag: '8888-7777-9999-4444',
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log10.js',
+		custom_html: 'log10',
+		custom_css: 'log10.css'
+	},
+	{
 		name: 'Une preuve de leur existance ?',
 		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
 		end_text: 'histoire0',
