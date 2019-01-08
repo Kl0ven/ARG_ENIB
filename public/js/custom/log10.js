@@ -22,7 +22,6 @@ $('document').ready(() => {
 			chunks.push(text.substring(start, text.length));
 		}
 		if ((text.length === 4 || text.length === 8 || text.length === 12) && !backspace) {
-			console.log('trig');
 			chunks.push('');
 		}
 		$(this).val(chunks.join('-'));
