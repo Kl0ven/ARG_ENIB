@@ -1,9 +1,9 @@
-var enigma = require('../models').enigma;
-var antiCheatId = require('../models').antiCheatId;
-var winner = require('../models').winner;
-var session = require('../models').Session;
+const enigma = require('../models').enigma;
+const antiCheatId = require('../models').antiCheatId;
+const winner = require('../models').winner;
+const session = require('../models').Session;
 const Op = require('../models').Sequelize.Op;
-var sendErr = require('../utils/error');
+const sendErr = require('../utils/error');
 
 function index (req, res) {
 	let dataEnigma = [];

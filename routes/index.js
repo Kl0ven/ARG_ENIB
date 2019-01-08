@@ -1,12 +1,12 @@
 const app = module.exports = require('express')();
-let enigmaController = require('../controllers/enigma');
-let winnerController = require('../controllers/winner');
-let argController = require('../controllers/arg');
-let authController = require('../controllers/authController');
+const enigmaController = require('../controllers/enigma');
+const winnerController = require('../controllers/winner');
+const argController = require('../controllers/arg');
+const authController = require('../controllers/authController');
 const config = require('../config/config');
 const rateLimit = require('express-rate-limit');
 const isLoggedIn = require('../utils/auth');
-var passport = require('passport');
+const passport = require('passport');
 const limiter = rateLimit(Object.assign(config.limiter, {message: config.limitMessage}));
 
 /* GET home page. */

@@ -1,24 +1,28 @@
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var hbs = require('express-handlebars');
-var Router = require('./routes/index');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const hbs = require('express-handlebars');
+const Router = require('./routes/index');
 const obfuscator = require('./utils/obfuscator');
 const config = require('./config/config');
 const helmet = require('helmet');
 const user = require('./models').user;
-var flash = require('connect-flash');
-var db = require('./models').sequelize;
-var app = express();
+const flash = require('connect-flash');
+const db = require('./models').sequelize;
+const robots = require('express-robots-txt');
+const app = express();
 
 // protection against various attack vector
 app.use(helmet());
 
+// robots.txt
+app.use(robots({UserAgent: '*', Disallow: '/'}));
+
 // session initilization
-var passport = require('passport');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var SequelizeStore = require('connect-session-sequelize')(session.Store);
+const passport = require('passport');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

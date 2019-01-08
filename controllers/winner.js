@@ -1,7 +1,7 @@
-var enigma = require('../models').enigma;
-var winner = require('../models').winner;
-var antiCheatId = require('../models').antiCheatId;
-var sendErr = require('../utils/error');
+const enigma = require('../models').enigma;
+const winner = require('../models').winner;
+const antiCheatId = require('../models').antiCheatId;
+const sendErr = require('../utils/error');
 
 function saveWinner (req, res) {
 	antiCheatId.findOne({
