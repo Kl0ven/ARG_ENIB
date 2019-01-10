@@ -59,3 +59,38 @@ button {
 a, a:link, a:hover, a:active,a:visited {
 	color: #00e50b;
 }
+
+
+#startlink{
+	-webkit-animation: color-change 1s infinite;
+	-moz-animation: color-change 1s infinite;
+	-o-animation: color-change 1s infinite;
+	-ms-animation: color-change 1s infinite;
+	animation: color-change 1s infinite;
+}
+
+@-webkit-keyframes color-change {
+	0% { color: #00e50b; }
+	50% { color: #66ff6e; }
+	100% { color: #00e50b; }
+}
+@-moz-keyframes color-change {
+	0% { color: #00e50b; }
+	50% { color: #66ff6e; }
+	100% { color: #00e50b; }
+}
+@-ms-keyframes color-change {
+	0% { color: #00e50b; }
+	50% { color: #66ff6e; }
+	100% { color: #00e50b; }
+}
+@-o-keyframes color-change {
+	0% { color: #00e50b; }
+	50% { color: #66ff6e; }
+	100% { color: #00e50b; }
+}
+@keyframes color-change {
+	0% { color: #00e50b; }
+	50% { color: #66ff6e; }
+	100% { color: #00e50b; }
+}
