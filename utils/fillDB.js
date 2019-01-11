@@ -18,6 +18,23 @@ const data = [
 		custom_css: 'log10.css'
 	},
 	{
+		name: 'partition de musique',
+		enigma_text: '',
+		end_text: 'histoire0',
+		url: 'c5f543110f06ee200d5ae4265e6e368a', //  Joe Dassin
+		hint: '',
+		type: 'geo',
+		latA: 48.874288,
+		longA: 2.295462,
+		latB: 48.864564,
+		longB: 2.321055,
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log11.js',
+		custom_html: 'log11',
+		custom_css: 'log11.css'
+	},
+	{
 		name: 'Une preuve de leur existance ?',
 		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
 		end_text: 'histoire0',
