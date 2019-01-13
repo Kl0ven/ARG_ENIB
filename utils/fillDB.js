@@ -131,7 +131,7 @@ const data = [
 		name: 'Le compte est bon',
 		enigma_text: '',
 		url: '8732a49c2224037527f75c117f1e9b77', // Le compte est bon
-		hint: '',
+		hint: '(...)^.../(...)+...',
 		end_text: 'histoire6',
 		type: 'eval',
 		flag: '42',
