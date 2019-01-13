@@ -69,6 +69,47 @@ a, a:link, a:hover, a:active,a:visited {
 	animation: color-change 1s infinite;
 }
 
+.watchme {
+	-webkit-animation: color-change2 0.5s infinite;
+	-moz-animation: color-change2 0.5s infinite;
+	-o-animation: color-change2 0.5s infinite;
+	-ms-animation: color-change2 0.5s infinite;
+	animation: color-change2 0.5s infinite;
+}
+
+@-webkit-keyframes color-change2 {
+	0% { color: #00e50b; }
+	50% { color: #99ff9e; }
+	100% { color: #00e50b; }
+}
+@-moz-keyframes color-change2 {
+	0% { color: #00e50b; }
+	50% { color: #99ff9e; }
+	100% { color: #00e50b; }
+}
+@-ms-keyframes color-change2 {
+	0% { color: #00e50b; }
+	50% { color: #99ff9e; }
+	100% { color: #00e50b; }
+}
+@-o-keyframes color-change2 {
+	0% { color: #00e50b; }
+	50% { color: #99ff9e; }
+	100% { color: #00e50b; }
+}
+@keyframes color-change2 {
+	0% { color: #00e50b; }
+	50% { color: #99ff9e; }
+	100% { color: #00e50b; }
+}
+
+
+
+
+
+
+
+
 @-webkit-keyframes color-change {
 	0% { color: #00e50b; }
 	50% { color: #66ff6e; }
