@@ -41,7 +41,6 @@ function resestAntiCheatId () {
 			cache: false,
 			contentType: 'application/json',
 			success: function (mes) {
-				console.log(mes);
 				if (mes.status) {
 					$('#logmes').append('<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sucess</strong> Id older than 6 hours have been deleted.</div>');
 				} else {

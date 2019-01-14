@@ -36,15 +36,12 @@ function setQuestion (lvl) {
 
 function answered (s) {
 	if (i < r.length) {
-		console.log('rep : ', r[i], ', act rep : ', s);
 		if (r[i] === 'x') {
 			i++;
-			console.log('Bonne réponse (Peu importe)');
 		} else if (s === r[i]) {
 			i++;
-			console.log('Bonne réponse ');
 		} else {
-			i = 0; console.log('Mauvaise réponse');
+			i = 0;
 		}
 		setQuestion(i);
 	}

@@ -15,7 +15,7 @@ const data = [
 		delay_to_hint: 2,
 		custom_js: 'log10.js',
 		custom_html: 'log10',
-		custom_css: 'log10.css'
+		custom_css: ''
 	},
 	{
 		name: 'partition de musique',
@@ -50,7 +50,7 @@ const data = [
 	},
 	{
 		name: 'Dans les archives',
-		enigma_text: 'J\'ai trouvé la référence d\'une archives (REF), à toi de la trouver !',
+		enigma_text: 'J\'ai trouvé la référence d\'une archives (443ROB, orge/roma, P1703, 9ieme), à toi de la trouver !',
 		url: 'e4a754746dfd9d8bab082f3a5bda280e', // centre de ressources documentaire
 		hint: `<b>Lundi</b> : 8h30 – 17h30</br>
 		<b>Mardi</b> : 8h30 – 17h30</br>
@@ -59,12 +59,12 @@ const data = [
 		<b>Vendredi</b> : 8h30 – 12h00`,
 		end_text: 'histoire2',
 		type: 'flag',
-		flag: 'test',
+		flag: 'Recherche',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'log3.js',
+		custom_js: '',
 		custom_html: 'log3',
-		custom_css: 'log3.css'
+		custom_css: ''
 	},
 	{
 		name: 'endurance au question',
@@ -78,7 +78,7 @@ const data = [
 		hint: 'hint n2 ',
 		custom_js: 'log4.js',
 		custom_html: 'log4',
-		custom_css: 'log4.css'
+		custom_css: ''
 	},
 	{
 		name: 'Dans un bureau, les lettres tu trouveras ',
@@ -93,9 +93,9 @@ const data = [
 		flag: '?',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'log9.js',
+		custom_js: '',
 		custom_html: 'log9',
-		custom_css: 'log9.css'
+		custom_css: ''
 	},
 	{
 		name: 'note de musique',
@@ -107,9 +107,9 @@ const data = [
 		flag: '',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'log13.js',
+		custom_js: '',
 		custom_html: 'log13',
-		custom_css: 'log13a.css'
+		custom_css: ''
 	},
 	{
 		name: 'morse',
@@ -135,9 +135,9 @@ const data = [
 		flag: '',
 		first_time_visited: null,
 		delay_to_hint: 3,
-		custom_js: 'log12.js',
+		custom_js: '',
 		custom_html: 'log12',
-		custom_css: 'log12.css'
+		custom_css: ''
 	},
 	{
 		name: 'Heure du décè 5h26...',
@@ -151,7 +151,7 @@ const data = [
 		delay_to_hint: 2,
 		custom_js: 'log2.js',
 		custom_html: 'log2',
-		custom_css: 'log2.css'
+		custom_css: ''
 	},
 	{
 		name: 'Le coup de grâce',
@@ -198,7 +198,7 @@ const data = [
 		delay_to_hint: 5,
 		custom_js: 'log6.js',
 		custom_html: 'log6',
-		custom_css: 'log6.css'
+		custom_css: ''
 	},
 	{
 		name: 'Le compte est bon',

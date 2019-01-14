@@ -69,7 +69,6 @@ function sendWinnerName () {
 		data[$(this).attr('id')] = $(this).val();
 	});
 	data.url = window.location.pathname;
-	console.log(data);
 	$this = $('#sendWinnerbtn');
 	$this.prop('disabled', true); // Disable submit button until AJAX call is complete to prevent duplicate messages
 	$.ajax({
@@ -79,7 +78,6 @@ function sendWinnerName () {
 		cache: false,
 		contentType: 'application/json',
 		success: function (mes) {
-			console.log(mes);
 			// Fail message
 			$('#winnersuccess').html("<div class='alert alert-success'>");
 			$('#winnersuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
