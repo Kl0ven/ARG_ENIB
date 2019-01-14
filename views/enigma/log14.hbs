@@ -1,0 +1,20 @@
+<div id="coucou" class="arg-card">
+	<h1>{{name}}</h1>
+
+	<p>
+		{{enigma_text}}
+	</p>
+	<img src="https://www.coved.com/wp-content/uploads/2016/11/orionthemes-placeholder-image-1.png" id="coucouphoto"  alt="">
+
+
+
+	<div id="coucouphotomodal" class="coucoumodal">
+		<span class="coucouclose">&times;</span>
+		<img class="coucoumodal-content" id="coucouphoto1">
+	</div>
+	{{#if hint}}
+	{{> hint}}
+	{{/if}}
+	{{> form_flag}}
+	{{> modal}}
+</div>

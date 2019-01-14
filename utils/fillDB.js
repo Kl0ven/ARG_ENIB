@@ -4,7 +4,7 @@ let sequelize = require('../models').sequelize;
 
 const data = [
 	{
-		name: 'nom0',
+		name: 'QrCode',
 		enigma_text: 'test',
 		url: '94102692ffe0f1b664a863d0cd3cfefc', // entry
 		hint: '',
@@ -35,35 +35,18 @@ const data = [
 		custom_css: 'log11.css'
 	},
 	{
-		name: 'Une preuve de leur existance ?',
-		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
-		end_text: 'histoire0',
-		url: '852488ddd9570bc877783bf4397563e0', // earth
-		hint: 'Le grand frère aime ce genre de detaille ;)',
-		type: 'geo',
-		latA: 2.292228269475794,
-		longA: -73.8783434260763,
-		latB: 2.2919924239308145,
-		longB: -73.8779840100683,
-		first_time_visited: null,
-		delay_to_hint: 2,
-		custom_js: 'log1.js',
-		custom_html: 'log1',
-		custom_css: 'log1.css'
-	},
-	{
-		name: 'Heure du décè 5h26...',
-		enigma_text: 'Accident dans une soirée étudiante à brest en 2006',
-		url: 'b65c055bda730e900eca91ca524f0387', // no limit
-		hint: 'Ils etaient tous en fluo',
-		end_text: 'histoire1',
+		name: 'laser game',
+		enigma_text: 'test',
+		url: 'c834cb5a6bd45bc533e54a0b7b136977', // elc
+		hint: '',
+		end_text: 'histoire-1',
 		type: 'flag',
-		flag: 'pb130091',
+		flag: '',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: 'log2.js',
-		custom_html: 'log2',
-		custom_css: 'log2.css'
+		custom_js: 'log14.js',
+		custom_html: 'log14',
+		custom_css: 'log14.css'
 	},
 	{
 		name: 'Dans les archives',
@@ -84,7 +67,7 @@ const data = [
 		custom_css: 'log3.css'
 	},
 	{
-		name: 'nom1',
+		name: 'endurance au question',
 		enigma_text: '',
 		url: 'data_log_1',
 		end_text: 'histoire3',
@@ -98,7 +81,38 @@ const data = [
 		custom_css: 'log4.css'
 	},
 	{
-		name: 'nom2',
+		name: 'Dans un bureau, les lettres tu trouveras ',
+		enigma_text: ` <b>1</b> 48.390394<b>;</b>-4.4860760000000255 </br>
+		<b>2</b> 49.1193089<b>;</b>6.1757155999999895 </br>
+		<b>3</b> 43.23295100000001<b>;</b>0.07808199999999488 </br>
+		<b>4</b> 45.439695<b>;</b>4.387177899999983 </br>`,
+		url: '7ec8336709bf8a8d71d0ffff69127903', // inter
+		hint: 'R.I.P.',
+		end_text: 'histoire7',
+		type: 'flag',
+		flag: '?',
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log9.js',
+		custom_html: 'log9',
+		custom_css: 'log9.css'
+	},
+	{
+		name: 'note de musique',
+		enigma_text: 'test',
+		url: '5d9d63cd7036191540ec90e0d5c52ce2', // solfège
+		hint: '',
+		end_text: 'histoire-1',
+		type: 'flag',
+		flag: '',
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log13.js',
+		custom_html: 'log13',
+		custom_css: 'log13a.css'
+	},
+	{
+		name: 'morse',
 		enigma_text: '',
 		url: 'data_log_2',
 		end_text: 'end_text_2',
@@ -110,6 +124,65 @@ const data = [
 		custom_js: 'log5.js',
 		custom_html: 'log5',
 		custom_css: 'log5.css'
+	},
+	{
+		name: 'RickRolled',
+		enigma_text: '',
+		url: '8ff33a56bc925778858482289712bed4', // RickRolled
+		hint: '',
+		end_text: 'histoire8',
+		type: 'flag',
+		flag: '',
+		first_time_visited: null,
+		delay_to_hint: 3,
+		custom_js: 'log12.js',
+		custom_html: 'log12',
+		custom_css: 'log12.css'
+	},
+	{
+		name: 'Heure du décè 5h26...',
+		enigma_text: 'Accident dans une soirée étudiante à brest en 2006',
+		url: 'b65c055bda730e900eca91ca524f0387', // no limit
+		hint: 'Ils etaient tous en fluo',
+		end_text: 'histoire1',
+		type: 'flag',
+		flag: 'pb130091',
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log2.js',
+		custom_html: 'log2',
+		custom_css: 'log2.css'
+	},
+	{
+		name: 'Le coup de grâce',
+		enigma_text: 'Tu joues les blancs, tu as 5 coups pour les mettre en echec et mat => NAA',
+		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
+		hint: 'Cf7#',
+		end_text: 'histoire8',
+		type: 'flag',
+		flag: 'De8+ Cxe8 Cf7#',
+		first_time_visited: null,
+		delay_to_hint: 3,
+		custom_js: 'log7.js',
+		custom_html: 'log7',
+		custom_css: 'log7.css'
+	},
+	{
+		name: 'Une preuve de leur existance ?',
+		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
+		end_text: 'histoire0',
+		url: '852488ddd9570bc877783bf4397563e0', // earth
+		hint: 'Le grand frère aime ce genre de detaille ;)',
+		type: 'geo',
+		latA: 2.292228269475794,
+		longA: -73.8783434260763,
+		latB: 2.2919924239308145,
+		longB: -73.8779840100683,
+		first_time_visited: null,
+		delay_to_hint: 2,
+		custom_js: 'log1.js',
+		custom_html: 'log1',
+		custom_css: 'log1.css'
 	},
 	{
 		// 0 255 151
@@ -141,51 +214,6 @@ const data = [
 		custom_js: 'log8.js',
 		custom_html: 'log8',
 		custom_css: 'log8.css'
-	},
-	{
-		name: 'Dans un bureau, les lettres tu trouveras ',
-		enigma_text: ` <b>1</b> 48.390394<b>;</b>-4.4860760000000255 </br>
-					   <b>2</b> 49.1193089<b>;</b>6.1757155999999895 </br>
-					   <b>3</b> 43.23295100000001<b>;</b>0.07808199999999488 </br>
-					   <b>4</b> 45.439695<b>;</b>4.387177899999983 </br>`,
-		url: '7ec8336709bf8a8d71d0ffff69127903', // inter
-		hint: 'R.I.P.',
-		end_text: 'histoire7',
-		type: 'flag',
-		flag: '?',
-		first_time_visited: null,
-		delay_to_hint: 2,
-		custom_js: 'log9.js',
-		custom_html: 'log9',
-		custom_css: 'log9.css'
-	},
-	{
-		name: 'Le coup de grâce',
-		enigma_text: 'Tu joues les blancs, tu as 5 coups pour les mettre en echec et mat => NAA',
-		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
-		hint: 'Cf7#',
-		end_text: 'histoire8',
-		type: 'flag',
-		flag: 'De8+ Cxe8 Cf7#',
-		first_time_visited: null,
-		delay_to_hint: 3,
-		custom_js: 'log7.js',
-		custom_html: 'log7',
-		custom_css: 'log7.css'
-	},
-	{
-		name: 'RickRolled',
-		enigma_text: '',
-		url: '8ff33a56bc925778858482289712bed4', // RickRolled
-		hint: '',
-		end_text: 'histoire8',
-		type: 'flag',
-		flag: '',
-		first_time_visited: null,
-		delay_to_hint: 3,
-		custom_js: 'log12.js',
-		custom_html: 'log12',
-		custom_css: 'log12.css'
 	}
 ];
 
