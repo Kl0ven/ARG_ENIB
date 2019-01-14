@@ -15,7 +15,13 @@ function update (elapse) {
 	$('.updateTime').each(function (i) {
 		let text = getDate(+$(this).attr('id'));
 		$(this).text(text);
-		$(this).attr('id', parseInt($(this).attr('id')) - elapse);
+		let remaining = parseInt($(this).attr('id')) - elapse;
+		if (remaining >= 0) {
+			$(this).attr('id', remaining);
+		} else {
+			$(this).text('Done');
+			$(this).removeClass('updateTime');
+		}
 	});
 }
 
