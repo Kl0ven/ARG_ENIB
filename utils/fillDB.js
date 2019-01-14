@@ -172,6 +172,20 @@ const data = [
 		custom_js: 'log7.js',
 		custom_html: 'log7',
 		custom_css: 'log7.css'
+	},
+	{
+		name: 'RickRolled',
+		enigma_text: '',
+		url: '8ff33a56bc925778858482289712bed4', // RickRolled
+		hint: '',
+		end_text: 'histoire8',
+		type: 'flag',
+		flag: '',
+		first_time_visited: null,
+		delay_to_hint: 3,
+		custom_js: 'log12.js',
+		custom_html: 'log12',
+		custom_css: 'log12.css'
 	}
 ];
 
