@@ -33,16 +33,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">0</th>
-					<td>test</td>
-					<td class="">-</td>
-					<td class="updateTime" id="10000"></td>
-				</tr>
 				{{#each enigmas}}
 				<tr>
 					<th scope="row">{{id}}</th>
-					<td>{{name}}</td>
+					<td><a onclick="fetchData({{id}});" style="cursor: pointer;">{{name}}</a></td>
 					<td class="{{#unless first_time_visited_null}}date{{/unless}}">{{first_time_visited}}</td>
 					<td class="{{#unless hold_update}}updateTime{{/unless}}" id="{{remaining.remaining}}">{{#if hold_update}}{{symbole}}{{/if}}</td>
 				</tr>

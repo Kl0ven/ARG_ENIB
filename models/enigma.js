@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 module.exports = function (sequelize, DataTypes) {
 	var Enigma = sequelize.define('enigma', {
 		name: { type: Sequelize.STRING, allowNull: false },
-		enigma_text: { type: Sequelize.STRING, allowNull: false },
+		enigma_text: { type: Sequelize.TEXT, allowNull: false },
 		url: { type: Sequelize.STRING, allowNull: false },
 		type: Sequelize.ENUM('geo', 'flag', 'eval'),
 		latA: Sequelize.FLOAT,
@@ -14,11 +14,11 @@ module.exports = function (sequelize, DataTypes) {
 		caracter: Sequelize.ARRAY(Sequelize.STRING),
 		first_time_visited: Sequelize.DATE,
 		delay_to_hint: { type: Sequelize.INTEGER, allowNull: false },
-		hint: { type: Sequelize.STRING, allowNull: false },
+		hint: { type: Sequelize.TEXT, allowNull: false },
 		custom_js: Sequelize.STRING,
 		custom_html: Sequelize.STRING,
 		custom_css: Sequelize.STRING,
-		end_text: { type: Sequelize.STRING, allowNull: false }
+		end_text: { type: Sequelize.TEXT, allowNull: false }
 	}, {
 		underscored: true,
 		classMethods: {
