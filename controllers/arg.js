@@ -61,13 +61,19 @@ function resestAntiCheatId (req, res) {
 	});
 }
 
-function getinfos (req, res) {
+function getInfos (req, res) {
 	console.log(req.body);
-	res.send({status: false});
+	enigma.findOne({
+		where: {id: req.body.id}
+	}).then(e => {
+		res.send(Object.assign({status: true}, e.getInfoModif));
+	}).catch(e => {
+		sendErr(req, res, e);
+	});
 }
 // export function
 module.exports = {
 	index: index,
 	resestAntiCheatId: resestAntiCheatId,
-	getinfos: getinfos
+	getInfos: getInfos
 };

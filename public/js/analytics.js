@@ -70,7 +70,28 @@ function fetchData (item) {
 		contentType: 'application/json',
 		success: function (mes) {
 			if (mes.status) {
-				$('#logmes').append('<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sucess</strong> Id older than 6 hours have been deleted.</div>');
+				$('#exampleModalLabel').text(mes.name);
+				if (mes.type === 'geo') {
+					$('#geo_type_form').show();
+					$('#flag_type_form').hide();
+					$('#latA').val(mes.latA);
+					$('#longA').val(mes.longA);
+					$('#latB').val(mes.latB);
+					$('#longB').val(mes.longB);
+				} else if (mes.type === 'flag') {
+					$('#geo_type_form').hide();
+					$('#flag_type_form').show();
+					$('#flag').val(mes.flag);
+				} else {
+					$('#geo_type_form').hide();
+					$('#flag_type_form').hide();
+				}
+				$('#type').val(mes.type);
+				$('#enigmatext').val(mes.enigma_text);
+				$('#url').val(mes.url);
+				$('#delay').val(mes.delay_to_hint);
+				$('#hint').val(mes.hint);
+				$('#exampleModal').modal();
 			} else {
 				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
 			}
@@ -80,4 +101,14 @@ function fetchData (item) {
 			$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
 		}
 	});
+}
+
+function saveData () {
+	var txt;
+	var r = confirm('Es tu sur de toi !');
+	if (r === true) {
+
+	}
+
+	$('#exampleModal').modal('hide');
 }

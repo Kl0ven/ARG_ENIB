@@ -102,6 +102,22 @@ module.exports = function (sequelize, DataTypes) {
 					}
 				}
 				return result;
+			},
+			getInfoModif: function () {
+				let result = {
+					name: this.getDataValue('name'),
+					enigma_text: this.getDataValue('enigma_text'),
+					url: this.getDataValue('url'),
+					type: this.getDataValue('type'),
+					delay_to_hint: this.getDataValue('delay_to_hint'),
+					hint: this.getDataValue('hint'),
+					flag: this.getDataValue('flag'),
+					latA: this.getDataValue('latA'),
+					longA: this.getDataValue('longA'),
+					latB: this.getDataValue('latB'),
+					longB: this.getDataValue('longB')
+				};
+				return result;
 			}
 		},
 		setterMethods: {

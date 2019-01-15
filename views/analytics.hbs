@@ -62,5 +62,73 @@
 			</tbody>
 		</table>
 	</div>
+
+	<!-- Modal -->
+	<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="enigmatext">Enigma text</label>
+						<textarea class="form-control" id="enigmatext" rows="3"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="url">URL</label>
+						<input type="text" class="form-control" id="url">
+					</div>
+					<div class="form-group row">
+						<label for="type" class="col-sm-2 col-form-label">Type</label>
+						<div class="col-sm-10">
+							<input type="text" readonly class="form-control" id="type" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="delay">delay to hint</label>
+						<input type="number" class="form-control" id="delay">
+					</div>
+					<div class="form-group">
+						<label for="hint">Hint</label>
+						<textarea class="form-control" id="hint" rows="3"></textarea>
+					</div>
+					<div id="flag_type_form">
+						<div class="form-group">
+							<label for="flag">flag</label>
+							<input type="text" class="form-control" id="flag">
+						</div>
+					</div>
+					<div id="geo_type_form">
+						<div class="form-group">
+							<label for="latA">latA</label>
+							<input type="text" class="form-control" id="latA">
+						</div>
+						<div class="form-group">
+							<label for="longA">longA</label>
+							<input type="text" class="form-control" id="longA">
+						</div>
+						<div class="form-group">
+							<label for="latB">latB</label>
+							<input type="text" class="form-control" id="latB">
+						</div>
+						<div class="form-group">
+							<label for="longB">longB</label>
+							<input type="text" class="form-control" id="longB">
+						</div>
+
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" onclick="saveData();">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
