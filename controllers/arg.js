@@ -61,8 +61,13 @@ function resestAntiCheatId (req, res) {
 	});
 }
 
+function getinfos (req, res) {
+	console.log(req.body);
+	res.send({status: false});
+}
 // export function
 module.exports = {
 	index: index,
-	resestAntiCheatId: resestAntiCheatId
+	resestAntiCheatId: resestAntiCheatId,
+	getinfos: getinfos
 };

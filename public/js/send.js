@@ -18,10 +18,10 @@ function sendRep () {
 		contentType: 'application/json',
 		success: function (mes) {
 			if (mes.status) {
-				$('#winningModalLabel').text('Congratulations');
-				$('#modaltext').text(mes.text);
+				$('#winningModalLabel').text('Félicitations');
+				$('#modaltext').html(mes.text);
 				let url = window.location.protocol + '//' + window.location.host + '/' + mes.url;
-				$('#nextstep').html('<a target="_blank" href="' + url + '">Next step</a>');
+				$('#nextstep').html('<a target="_blank" href="' + url + '" class="watchme">Prochaine étape !</a>');
 				$('#idunique').val(mes.id);
 				$('#winningModal').modal();
 			} else {
@@ -30,7 +30,7 @@ function sendRep () {
 				$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 				.append('</button>');
 				$('#success > .alert-danger')
-				.append('<strong>Sorry you have failed :(</strong>');
+				.append('<strong>Désolé, mauvaise réponse :(</strong>');
 				$('#success > .alert-danger')
 				.append('</div>');
 				// clear all fields
@@ -82,7 +82,7 @@ function sendWinnerName () {
 			$('#winnersuccess').html("<div class='alert alert-success'>");
 			$('#winnersuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 			.append('</button>');
-			$('#winnersuccess > .alert-success').append($('<strong>').text('Your name will forever burn in history'));
+			$('#winnersuccess > .alert-success').append($('<strong>').text('Ton nom est gravé à jamais !'));
 			$('#winnersuccess > .alert-success').append('</div>');
 			$('#sendWinnerbtn').hide();
 			$('#formwinner').hide();
@@ -92,7 +92,7 @@ function sendWinnerName () {
 			$('#winnersuccess').html("<div class='alert alert-danger'>");
 			$('#winnersuccess > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 			.append('</button>');
-			$('#winnersuccess > .alert-danger').append($('<strong>').text('Sorry , it seems that the server is not responding. Please try again later!'));
+			$('#winnersuccess > .alert-danger').append($('<strong>').text('Désolé, petit problème de serveur, rééssayez plus tard'));
 			$('#winnersuccess > .alert-danger').append('</div>');
 		},
 		complete: function () {

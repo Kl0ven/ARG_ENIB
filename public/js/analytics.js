@@ -60,3 +60,24 @@ function resestAntiCheatId () {
 		});
 	}
 }
+
+function fetchData (item) {
+	$.ajax({
+		url: './E349C2FE2560FBBD0EC052DDF37F91BC0C26C3B209FBC9D2FE62C818BD4BFABD6372EE5253A17F91FE834D0F5B50663F2650F71EB45EF3FB14B7EE9F88B117BD',
+		type: 'POST',
+		cache: false,
+		data: JSON.stringify({id: item}),
+		contentType: 'application/json',
+		success: function (mes) {
+			if (mes.status) {
+				$('#logmes').append('<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sucess</strong> Id older than 6 hours have been deleted.</div>');
+			} else {
+				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
+			}
+			$('#count').text(mes.count);
+		},
+		error: function (e) {
+			$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
+		}
+	});
+}
