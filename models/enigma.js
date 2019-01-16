@@ -39,11 +39,11 @@ module.exports = function (sequelize, DataTypes) {
 			custom_html: function () {
 				return this.getDataValue('custom_html');
 			},
-			latA: function () {
-				return this.getDataValue('latA');
-			},
 			caracters: function () {
 				return this.getDataValue('caracter');
+			},
+			latA: function () {
+				return this.getDataValue('latA');
 			},
 			latB: function () {
 				return this.getDataValue('latB');
@@ -105,6 +105,7 @@ module.exports = function (sequelize, DataTypes) {
 			},
 			getInfoModif: function () {
 				let result = {
+					id: this.getDataValue('id'),
 					name: this.getDataValue('name'),
 					enigma_text: this.getDataValue('enigma_text'),
 					url: this.getDataValue('url'),
@@ -123,6 +124,33 @@ module.exports = function (sequelize, DataTypes) {
 		setterMethods: {
 			first_time_visited: function (value) {
 				this.setDataValue('first_time_visited', value);
+			},
+			latA: function (value) {
+				return this.setDataValue('latA', value);
+			},
+			latB: function (value) {
+				return this.setDataValue('latB', value);
+			},
+			longA: function (value) {
+				return this.setDataValue('longA', value);
+			},
+			longB: function (value) {
+				return this.setDataValue('longB', value);
+			},
+			enigma_text: function (value) {
+				return this.setDataValue('enigma_text', value);
+			},
+			url: function (value) {
+				return this.setDataValue('url', value);
+			},
+			flag: function (value) {
+				return this.setDataValue('flag', value);
+			},
+			delay_to_hint: function (value) {
+				return this.setDataValue('delay_to_hint', value);
+			},
+			hint: function (value) {
+				return this.setDataValue('hint', value);
 			}
 		}
 	});

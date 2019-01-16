@@ -71,9 +71,48 @@ function getInfos (req, res) {
 		sendErr(req, res, e);
 	});
 }
+
+function saveInfos (req, res) {
+	enigma.findOne({
+		where: {id: req.body.id}
+	}).then(e => {
+		let keyWordExclude = ['id', 'type'];
+		if (req.body.type === 'geo') {
+			keyWordExclude.push('flag');
+		} else if (req.body.type === 'flag') {
+			keyWordExclude.push('latA');
+			keyWordExclude.push('longA');
+			keyWordExclude.push('latB');
+			keyWordExclude.push('longB');
+		} else {
+			keyWordExclude.push('flag');
+			keyWordExclude.push('latA');
+			keyWordExclude.push('longA');
+			keyWordExclude.push('latB');
+			keyWordExclude.push('longB');
+		}
+		for (var key in req.body) {
+			if (keyWordExclude.indexOf(key) === -1) {
+				if (req.body.hasOwnProperty(key)) {
+					e[key] = req.body[key];
+				}
+			}
+		}
+		e.save().then(() => {
+			res.send({status: true});
+		}).catch((e) => {
+			console.log('error in saveInfos while saving ', e);
+			res.send({status: false});
+		});
+	}).catch(e => {
+		console.log('error in saveInfos while querying', e);
+		res.send({status: false});
+	});
+}
 // export function
 module.exports = {
 	index: index,
 	resestAntiCheatId: resestAntiCheatId,
-	getInfos: getInfos
+	getInfos: getInfos,
+	saveInfos: saveInfos
 };
