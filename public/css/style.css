@@ -11,6 +11,10 @@ button {
 	border : solid 3px #00e50b;
 }
 
+label
+{
+	width: 100px;
+}
 
 .arg-form input[type=text],
 .arg-form input[type=number]{
