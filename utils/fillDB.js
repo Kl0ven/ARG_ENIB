@@ -82,7 +82,7 @@ const data = [
 	},
 	{
 		name: 'Dans un bureau, des lettres vous trouverez',
-		enigma_text: ` Cela commence à faire quelques temps que vous travaillez au Bureau des Énigmes. Il serait temps de vous aérer un petit peu. Pourquoi ne pas prendre un peu l’air.<br><br>
+		enigma_text: ` Cela commence à faire quelques temps que ici à gratter du papier. Il serait temps de vous aérer un petit peu. Pourquoi ne pas prendre un peu l’air.<br><br>
 		<b>1</b> 48.390394<b>;</b>-4.4860760000000255 </br>
 		<b>2</b> 49.1193089<b>;</b>6.1757155999999895 </br>
 		<b>3</b> 43.23295100000001<b>;</b>0.07808199999999488 </br>
@@ -102,13 +102,13 @@ const data = [
 		name: 'Interlude musical',
 		enigma_text: 'C’est un petit peu silencieux ici. Ne me fixez pas ainsi cela me gène. Et puis vous savez, la réponse ne se trouve pas toujours juste sous vos yeux. Et puis, il faut aussi parfois prendre le temps.',
 		url: '5d9d63cd7036191540ec90e0d5c52ce2', // solfège
-		hint: '',
-		end_text: 'histoire-1',
+		hint: 'DAGEDAG...AAE',
+		end_text: 'J’espère que ce petit interlude musical vous a plu. Cela faisait longtemps que je ne m’étais pas dégourdi les doigts.',
 		type: 'flag',
-		flag: '',
+		flag: 'DAGDAGEDFEAAACAAEAAACAAE',
 		first_time_visited: null,
 		delay_to_hint: 2,
-		custom_js: '',
+		custom_js: 'log13.js',
 		custom_html: 'log13',
 		custom_css: ''
 	},
@@ -141,7 +141,7 @@ const data = [
 		custom_css: ''
 	},
 	{
-		name: 'Heure du décès 5h26...',
+		name: 'Heure du décès 5h26',
 		enigma_text: 'Je ne suis pas très fier de ce que je vais vous demander. Mais voyez-vous, ma mémoire me fait défaut, pourriez-vous m’aider à retrouver un petit quelque chose ? C’est une photo, mais ne la divulguez pas, c’est assez embarrassant. C\'est à propos d\'un dérapage dans une soirée étudiante à brest en 2006',
 		url: 'b65c055bda730e900eca91ca524f0387', // no limit
 		hint: 'Ils etaient tous en fluo',
@@ -156,24 +156,24 @@ const data = [
 	},
 	{
 		name: 'Le coup de grâce',
-		enigma_text: 'Vous savez jouer aux échecs ? C’est mon petit péché mignon. J’étais imbattable dans ma jeunesse.<br> Je vous propose la chose suivante : vous avez 3 coups, à vous de réussir à me battre. Bon courage !<br><br>Ah oui, pensez à me parler en notation algébrique abrégée, c\'est le protocole.',
+		enigma_text: 'Vous savez jouer aux échecs ? C’est mon petit péché mignon. J’étais imbattable dans ma jeunesse.<br>Je vous propose la chose suivante : vous avez 3 coups, à vous de réussir à me battre. Bon courage !<br><br>Ah oui, pensez à me parler en notation algébrique abrégée, c\'est le protocole.',
 		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
 		hint: 'Cf7#',
 		end_text: 'Incroyable ! Ça faisait vraiment longtemps que quelqu\'un n\'avait pas réussi à me battre !.',
 		type: 'flag',
 		flag: 'De8+ Cxe8 Cf7#',
 		first_time_visited: null,
-		delay_to_hint: 3,
+		delay_to_hint: 4,
 		custom_js: 'log7.js',
 		custom_html: 'log7',
 		custom_css: 'log7.css'
 	},
 	{
-		name: 'Une preuve de leur existance ?',
-		enigma_text: 'Cette photo a du etre prise à leur base secrete, trouve où elle se situe !',
-		end_text: 'histoire0',
+		name: 'Destination de vacances',
+		enigma_text: 'Il est temps de retourner prendre l’air, mais il s\'agit d’explorer un peu plus loin cette fois.<br>Je vous assure que cette épreuve va vous donner du fil à retordre. Voyez-vous, je connais bien cet endroit, mais impossible de me souvenir des coordonnées.<br>Encore un mauvais tour de ma mémoire vous voyez.',
+		end_text: 'Excellent, je vais enfin pouvoir retourner en vac… Travailler, travailler bien sûr. Vous m’avez rendu un bon service.',
 		url: '852488ddd9570bc877783bf4397563e0', // earth
-		hint: 'Le grand frère aime ce genre de detaille ;)',
+		hint: 'Le grand frère aime ce genre de détails',
 		type: 'geo',
 		latA: 2.292228269475794,
 		longA: -73.8783434260763,
@@ -188,15 +188,15 @@ const data = [
 	{
 		// 0 255 151
 		// 156 0 255
-		name: 'Les codes couleurs',
+		name: 'Jeux de couleurs',
 		enigma_text: 'Le lien inconnu, les couleurs relira et la sortie vous montrera',
 		url: '4f4adcbf8c6f66dcfc8a3282ac2bf10a', // 404
-		end_text: 'end_text_3',
-		hint: 'histoire5 ',
+		end_text: 'Et en plus de cela vous êtes un artiste ! Décidement vous me surprendrez toujours !',
+		hint: 'Le lien cassé est sympa, il vous donnera du RGB',
 		type: 'flag',
 		flag: '#4e80cb',
 		first_time_visited: null,
-		delay_to_hint: 5,
+		delay_to_hint: 4,
 		custom_js: 'log6.js',
 		custom_html: 'log6',
 		custom_css: ''
@@ -206,12 +206,12 @@ const data = [
 		enigma_text: '',
 		url: '8732a49c2224037527f75c117f1e9b77', // Le compte est bon
 		hint: '(...)^.../(...)+...',
-		end_text: 'histoire6',
+		end_text: 'Bravo pour avoir terminé ces tests élémentaires. Dépêchons-nous, passons à la suite !',
 		type: 'eval',
 		flag: '42',
 		caracter: ['18', '+', '5', '334', '(', '(', ')', '+', '1', ')^', '3', '/', '11', '*', '+', '23'],
 		first_time_visited: null,
-		delay_to_hint: 3,
+		delay_to_hint: 5,
 		custom_js: 'log8.js',
 		custom_html: 'log8',
 		custom_css: 'log8.css'

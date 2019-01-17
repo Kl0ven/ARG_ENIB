@@ -128,7 +128,7 @@ function evalVerify (req, res, e) {
 }
 
 function endPage (req, res) {
-	res.render('partials/endPage', {});
+	res.render('partials/endPage', {number: 15});
 }
 // export function
 module.exports = {
