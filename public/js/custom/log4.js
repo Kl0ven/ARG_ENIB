@@ -1,8 +1,32 @@
 /* global $:true location:true */
 
-let r = [1, 1, 0, 0, 'x']; // string will be visible even with uglifier
-let q = 'Comment ça va ?#Bof#Bien !|Ceci est un petit test amusant !#Non#Oui|Où est la gauche ?#Gauche#Droite|Ou est la droite ?#Droite#Gauche|Est-ce que tu aimes le fromage ?#Non#Oui';
-q = q.split('|');
+let r = ['x', 0, 0, 0, 0, 0, 1, 0, 'x', 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'x', 'x', 'x']; // string will be visible even with uglifier
+let q = ['Comment allez-vous ?#Bien#Pas bien',
+	'Je vais vous poser quelques questions, ça vous va ?#Oui#Non',
+	'Ou est la gauche ?#Gauche#Droite',
+	'Cliquez sur droite#Droite#Gauche',
+	'Je dois aussi vous poser quelques questions de mathématiques, Pour être sûr que vous restez éveillés, ça vous va ?#Oui#Non',
+	'Complétez la suite logique : 1,2,3,4, …#5#6',
+	'Combien font 8x9 ?#56#72',
+	'Et (387*459)/34 ?#5224.50#5223.5',
+	'Le demi est ?#Trop cher#Trop petit',
+	'Haut haut bas bas gauche droite gauche droite B … et après ?#B start#A start',
+	'[Question 10/150] On continue ?#Non#Oui',
+	'Tant que j’y pense, le mot de passe est “password”, vous vous en souviendrez, pas vrai ?#Oui#Non',
+	'C’était mieux ?#Avant#En vrai, c’est pas si mal maintenant il faut arrêter d’être aigri',
+	'On la remplit avec quoi la voiture de Evo ?#Du diesel#De l’essence',
+	'Et elle démarre ?#Oui#Non',
+	'En quelle année l’ENIB a t’elle été créée ?#1968#1961',
+	'Qu’est-ce que vous préférez ?#l’ENIB#l’INSA de Strasbourg',
+	'Quand est sorti le Goëland de mars ?#Mars#Avril',
+	'Quand est sorti le Goëland de septembre ?#Septembre#Novembre',
+	'Le percent c’est ?#Demain#Le 23 mai',
+	'J’ai perdu le fil, à quelle question est-t-on déjà ?#21#22',
+	'22 ?#23#ALLEZ !',
+	'Un whiskey ?#Non#Juste un doigt',
+	'Le potentiel futur prez’ BDE c’est ?#Bender#Fenwick',
+	'Mais de toute façon quelle importance car le meilleur BDE c’est ?#Odyssée#Odyssée',
+	'Allez, le questionnaire est terminé ! N’oubliez pas de convertir le mot de passe que je vous avais transmis en md5 afin de pouvoir sortir d’ici !#Ca marche !#Ok !'];
 let questionDiv;
 let denyB;
 let allowB;
