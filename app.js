@@ -15,6 +15,17 @@ const app = express();
 // protection against various attack vector
 app.use(helmet());
 
+function requireHTTPS (req, res, next) {
+	// The 'x-forwarded-proto' check is for Heroku
+	if (!req.secure && req.get('x-forwarded-proto') !== 'https' && config.env !== 'development') {
+		return res.redirect('https://' + req.get('host') + req.url);
+	}
+	next();
+}
+
+// force https
+app.use(requireHTTPS);
+
 // robots.txt
 app.use(robots({UserAgent: '*', Disallow: '/'}));
 
