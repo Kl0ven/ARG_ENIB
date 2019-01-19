@@ -1,0 +1,26 @@
+{
+  "name": "confetti-js",
+  "version": "0.0.14",
+  "description": "Easily Generate random confetti for your above-the-fold content",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "gulp watch",
+    "build": "gulp default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agezao/confetti-js.git"
+  },
+  "author": "Gabriel Age <0800.grc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Agezao/confetti-js/issues"
+  },
+  "homepage": "https://github.com/Agezao/confetti-js#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^1.4.0"
+  }
+}
