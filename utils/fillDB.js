@@ -82,7 +82,7 @@ const data = [
 	},
 	{
 		name: 'Dans un bureau, des lettres vous trouverez',
-		enigma_text: ` Cela commence à faire quelques temps que ici à gratter du papier. Il serait temps de vous aérer un petit peu. Pourquoi ne pas prendre un peu l’air.<br><br>
+		enigma_text: ` Cela commence à faire quelques temps que vous êtes ici à gratter du papier. Il serait temps de vous aérer un petit peu. Pourquoi ne pas prendre un peu l’air.<br><br>
 		<b>1</b> 48.390394<b>;</b>-4.4860760000000255 </br>
 		<b>2</b> 49.1193089<b>;</b>6.1757155999999895 </br>
 		<b>3</b> 43.23295100000001<b>;</b>0.07808199999999488 </br>
@@ -156,7 +156,7 @@ const data = [
 	},
 	{
 		name: 'Le coup de grâce',
-		enigma_text: 'Vous savez jouer aux échecs ? C’est mon petit péché mignon. J’étais imbattable dans ma jeunesse.<br>Je vous propose la chose suivante : vous avez 3 coups, à vous de réussir à me battre. Bon courage !<br><br>Ah oui, pensez à me parler en notation algébrique abrégée, c\'est le protocole.',
+		enigma_text: 'Vous savez jouer aux échecs ? C’est mon petit péché mignon. J’étais imbattable dans ma jeunesse.<br>Je vous propose la chose suivante : c\'est votre tour, vous avez 3 coups, à vous de réussir à me battre. Bon courage !<br><br>Ah oui, pensez à me parler en notation algébrique abrégée, c\'est le protocole.',
 		url: '742c94f216ddd7a9f9eadea32b536dd0', // echec
 		hint: 'Cf7#',
 		end_text: 'Incroyable ! Ça faisait vraiment longtemps que quelqu\'un n\'avait pas réussi à me battre !.',
