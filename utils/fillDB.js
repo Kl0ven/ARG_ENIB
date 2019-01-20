@@ -5,7 +5,7 @@ let sequelize = require('../models').sequelize;
 const data = [
 	{
 		name: 'Petite introduction',
-		enigma_text: 'Si vous êtes ici, c\'est que vous possédez au moins un des 4 codes nécéssaires pour entrer. Il vous en manque peut-être, pensez à lire une source d\'information fiable, à vous sociabiliser, en vrai ou sur les réseaux, et surtout, lisez vos mails ! ',
+		enigma_text: 'Si vous êtes ici, c\'est que vous possédez au moins un des 4 codes nécessaires pour entrer. Il vous en manque peut-être, pensez à lire une source d\'information fiable, les affichages officiels, à vous sociabiliser avec vos camarades, et surtout, lisez vos mails ! ',
 		url: '94102692ffe0f1b664a863d0cd3cfefc', // entry
 		hint: 'Allez, un coup de pouce, lisez le journal, vos mails, passez au foyer, et pensez à checker votre Facebook !',
 		end_text: 'Ah ! Je vois que vous avez enfin trouvé l’entrée. Bienvenue au Bureau des Énigmes !<br>Asseyez-vous je vous en prie. Un café ?<br> C’est avec beaucoup de joie et un soupçon d’excitation que je vous accueille ici, car après tout, nous allons passer un certain temps ensemble.<br> J’espère que vous vous plairez ici, n’hésitez pas à vous entourer intelligemment, l’endroit est spacieux.<br> Je vous laisse, j’ai une course à faire.A très bientôt… je l’espère.',
@@ -82,13 +82,13 @@ const data = [
 	},
 	{
 		name: 'Dans un bureau, des lettres vous trouverez',
-		enigma_text: ` Cela commence à faire quelques temps que vous êtes ici à gratter du papier. Il serait temps de vous aérer un petit peu. Pourquoi ne pas prendre un peu l’air.<br><br>
+		enigma_text: `Cela commence à faire quelques temps que vous êtes ici à gratter du papier. Il serait temps de vous aérer un petit peu. Pourquoi ne pas prendre un peu l’air.<br><br>
 		<b>1</b> 48.390394<b>;</b>-4.4860760000000255 </br>
 		<b>2</b> 49.1193089<b>;</b>6.1757155999999895 </br>
 		<b>3</b> 43.23295100000001<b>;</b>0.07808199999999488 </br>
 		<b>4</b> 45.439695<b>;</b>4.387177899999983 </br>`,
 		url: '7ec8336709bf8a8d71d0ffff69127903', // inter
-		hint: ' Tiens, le bureau n\'a pas fini d\'être vidé ! R.I.P.',
+		hint: 'Tiens, le bureau n\'a pas fini d\'être vidé ! R.I.P.',
 		end_text: 'Vous n’avez pas eu trop froid ? Venez vous réchauffer, je vais avoir quelques travaux à vous faire faire ici.',
 		type: 'flag',
 		flag: 'tabrseme',
@@ -100,7 +100,7 @@ const data = [
 	},
 	{
 		name: 'Interlude musical',
-		enigma_text: 'C’est un petit peu silencieux ici. Ne me fixez pas ainsi cela me gène. Et puis vous savez, la réponse ne se trouve pas toujours juste sous vos yeux. Et puis, il faut aussi parfois prendre le temps.',
+		enigma_text: 'C’est un petit peu silencieux ici. Ne me fixez pas ainsi cela me gène. Vous savez, la réponse ne se trouve pas toujours juste sous vos yeux. Et puis, il faut aussi parfois prendre le temps.',
 		url: '5d9d63cd7036191540ec90e0d5c52ce2', // solfège
 		hint: 'DAGEDAG...AAE',
 		end_text: 'J’espère que ce petit interlude musical vous a plu. Cela faisait longtemps que je ne m’étais pas dégourdi les doigts.',
@@ -144,7 +144,7 @@ const data = [
 		name: 'Heure du décès 5h26',
 		enigma_text: 'Je ne suis pas très fier de ce que je vais vous demander. Mais voyez-vous, ma mémoire me fait défaut, pourriez-vous m’aider à retrouver un petit quelque chose ? C’est une photo, mais ne la divulguez pas, c’est assez embarrassant. C\'est à propos d\'un dérapage dans une soirée étudiante à brest en 2006',
 		url: 'b65c055bda730e900eca91ca524f0387', // no limit
-		hint: 'Ils etaient tous en fluo',
+		hint: 'Ils étaient tous en fluo',
 		end_text: 'Je compte sur votre discrétion. Je vais enfin pouvoir supprimer ce… disons, petit écart.',
 		type: 'flag',
 		flag: 'pb130091',
@@ -170,7 +170,7 @@ const data = [
 	},
 	{
 		name: 'Destination de vacances',
-		enigma_text: 'Il est temps de retourner prendre l’air, mais il s\'agit d’explorer un peu plus loin cette fois.<br>Je vous assure que cette épreuve va vous donner du fil à retordre. Voyez-vous, je connais bien cet endroit, mais impossible de me souvenir des coordonnées.<br>Encore un mauvais tour de ma mémoire vous voyez.',
+		enigma_text: 'Il est temps de retourner prendre l’air, mais il s\'agit d’explorer un peu plus loin cette fois.<br>Je vous assure que cette épreuve va vous donner du fil à retordre. Voyez-vous, je connais bien cet endroit, mais impossible de me souvenir de ses coordonnées.<br>Encore un mauvais tour de ma mémoire vous voyez.',
 		end_text: 'Excellent, je vais enfin pouvoir retourner en vac… Travailler, travailler bien sûr. Vous m’avez rendu un bon service.',
 		url: '852488ddd9570bc877783bf4397563e0', // earth
 		hint: 'Le grand frère aime ce genre de détails',
