@@ -86,7 +86,7 @@ function verify (req, res) {
 
 // this function verify a flag typed enigma
 function flagVerify (req, res, e) {
-	return e.flag === req.body.flag;
+	return e.flag.toLowerCase() === req.body.flag.toLowerCase();
 }
 
 // this function verify a geo typed enigma

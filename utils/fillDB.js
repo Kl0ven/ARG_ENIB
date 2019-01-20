@@ -119,7 +119,7 @@ const data = [
 		end_text: 'C’est beaucoup mieux à présent, je vous en remercie. Vous allez finir par me remplacer si ça continue !',
 		hint: 'Leur clignonement, ça ressemble à un code...',
 		type: 'flag',
-		flag: 'sedundnes',
+		flag: 'sedundnesslp',
 		first_time_visited: null,
 		delay_to_hint: 4,
 		custom_js: 'log5.js',

@@ -26,24 +26,14 @@ function sendRep () {
 				$('#winningModal').modal();
 			} else {
 				// display wrong status
-				$('#success').html("<div class='alert alert-danger'>");
-				$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-				.append('</button>');
-				$('#success > .alert-danger')
-				.append('<strong>Désolé, mauvaise réponse :(</strong>');
-				$('#success > .alert-danger')
-				.append('</div>');
+				$('#success').append("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Désolé, mauvaise réponse :(</strong></div>");
 				// clear all fields
 				// $('#repfrom').trigger('reset');
 			}
 		},
 		error: function (e) {
 			// Fail message
-			$('#success').html("<div class='alert alert-danger'>");
-			$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-			.append('</button>');
-			$('#success > .alert-danger').append($('<strong>').text('Sorry , it seems that the server is not responding. Please try again later!'));
-			$('#success > .alert-danger').append('</div>');
+			$('#success').append("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Sorry , it seems that the server is not responding. Please try again later!</strong></div>");
 			// clear all fields
 			// $('#repfrom').trigger('reset');
 		},

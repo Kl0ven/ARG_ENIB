@@ -18,15 +18,18 @@ function blinkLedRecursive (led, sequence, index) {
 
 $(document).ready(function () {
 	let color = ['green', 'orange', 'red', 'purple', 'blue'];
-	let ledSequence = [ [ 22, 42, 21 ],
-  [ 14 ],
-  [ 74, 47, 13 ],
-  [ 37, 20, 50 ],
-  [ 61, 18 ],
-  [ 99, 10, 43 ],
-  [ 86, 36 ],
-  [ 43 ],
-  [ 33, 48, 25 ] ];
+	let ledSequence = [ [ 0, 27, 5 ],
+	[ 21 ],
+	[ 99, 29, 18 ],
+	[ 5, 19, 89 ],
+	[ 67, 12 ],
+	[ 62, 0, 5 ],
+	[ 84, 44 ],
+	[ 13 ],
+	[ 48, 27, 24 ],
+	[ 46, 1, 13 ],
+	[ 40, 65, 41, 36 ],
+	[ 18, 79, 53, 11 ] ];
 
 	for (let i = 0; i < ledSequence.length; i++) {
 		var randColor = color[Math.floor(Math.random() * color.length)];
