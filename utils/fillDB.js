@@ -5,7 +5,7 @@ let sequelize = require('../models').sequelize;
 const data = [
 	{
 		name: 'Petite introduction',
-		enigma_text: 'Si vous êtes ici, c\'est que vous possédez au moins un des 4 codes nécessaires pour entrer. Il vous en manque peut-être, pensez à lire une source d\'information fiable, les affichages officiels, à vous sociabiliser avec vos camarades, et surtout, lisez vos mails ! ',
+		enigma_text: 'Si vous êtes ici, c\'est que vous possédez au moins un des 4 codes nécessaires pour entrer. Il vous en manque peut-être, pensez à lire une source d\'information fiable, à parcourir les liens de la page d\'accueil, à vous sociabiliser avec vos camarades, et surtout, lisez vos mails ! ',
 		url: '94102692ffe0f1b664a863d0cd3cfefc', // entry
 		hint: 'Allez, un coup de pouce, lisez le journal, vos mails, passez au foyer, et pensez à checker votre Facebook !',
 		end_text: 'Ah ! Je vois que vous avez enfin trouvé l’entrée. Bienvenue au Bureau des Énigmes !<br>Asseyez-vous je vous en prie. Un café ?<br> C’est avec beaucoup de joie et un soupçon d’excitation que je vous accueille ici, car après tout, nous allons passer un certain temps ensemble.<br> J’espère que vous vous plairez ici, n’hésitez pas à vous entourer intelligemment, l’endroit est spacieux.<br> Je vous laisse, j’ai une course à faire.A très bientôt… je l’espère.',
