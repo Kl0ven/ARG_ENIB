@@ -1,6 +1,6 @@
 /* global $:true location:true */
 
-let r = ['x', 0, 0, 0, 0, 0, 1, 0, 'x', 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 'x', 'x', 'x']; // string will be visible even with uglifier
+let r = ['x', 0, 0, 0, 0, 0, 1, 0, 'x', 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 'x', 'x', 'x']; // string will be visible even with uglifier
 let q = ['Comment allez-vous ?#Bien#Pas bien',
 	'Je vais vous poser quelques questions, ça vous va ?#Oui#Non',
 	'Ou est la gauche ?#Gauche#Droite',
@@ -23,7 +23,15 @@ let q = ['Comment allez-vous ?#Bien#Pas bien',
 	'Le percent c’est ?#Demain#Le 23 mai',
 	'J’ai perdu le fil, à quelle question est-t-on déjà ?#21#22',
 	'22 ?#23#ALLEZ !',
-	'Un whiskey ?#Non#Juste un doigt',
+	'Quel est le surnom du futur ex prèz BDE ?#Bhymbhau#Bhymbau',
+	'Quelle est la forme du foyer et de la MDA ?#Une roue#Un engrenage',
+	'Et le toit#Résiste#S\'écroule',
+	'Dans le BDE, le DD c\'est#Un club#Un pôle',
+	'Quel était le thème du Gala de 2017 ?#New Orleans#New Delhi',
+	'Qui est tombé le premier ?#Le bouleau#Le lampadaire',
+	'Quel est le statut de la junior de l\'ENIB ?#Une Pépinière Junior Entreprise©#Bientôt plus rien du tout, parce qu\'ils n\'ont pas fait les papiers',
+	'Quel est l\'ingrédient principal du sandwich raclette ?#La raclette#Les oignons grillés',
+	'Les quoi ?#Oignons#Onions',
 	'Le potentiel futur prez’ BDE c’est ?#Bender#Fenwick',
 	'Mais de toute façon quelle importance car le meilleur BDE c’est ?#Odyssée#Odyssée',
 	'Allez, le questionnaire est terminé ! N’oubliez pas de convertir le mot de passe que je vous avais transmis en md5 afin de pouvoir sortir d’ici !#Ca marche !#Ok !'];

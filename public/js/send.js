@@ -72,7 +72,7 @@ function sendWinnerName () {
 			$('#winnersuccess').html("<div class='alert alert-success'>");
 			$('#winnersuccess > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
 			.append('</button>');
-			$('#winnersuccess > .alert-success').append($('<strong>').text('Ton nom est gravé à jamais !'));
+			$('#winnersuccess > .alert-success').append($('<strong>').text('Votre nom est gravé à jamais !'));
 			$('#winnersuccess > .alert-success').append('</div>');
 			$('#sendWinnerbtn').hide();
 			$('#formwinner').hide();
