@@ -41,7 +41,6 @@ function index (req, res, next) {
 // this function is use to verify the enigma if it find is it's call
 // a special function for the type of enigma
 function verify (req, res) {
-	console.log(req.body.url.substring(1));
 	enigma.findOne({
 		where: {url: req.body.url.substring(1)}
 	}).then(e => {
@@ -112,14 +111,12 @@ function evalVerify (req, res, e) {
 			if (string.includes(cara[c])) {
 				string = string.replace(cara[c], '');
 			} else {
-				// console.log('there is no ' + cara[c] + ' in ' + string + '');
 				return false;
 			}
 		}
 		if (string === '') {
 			return true;
 		} else {
-			// console.log('string not empty ' + string);
 			return false;
 		}
 	} else {

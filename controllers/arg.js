@@ -45,24 +45,7 @@ function index (req, res) {
 	});
 }
 
-function resestAntiCheatId (req, res) {
-	antiCheatId.destroy({
-		where: {
-			created_at: {[Op.lt]: new Date(new Date() - 1 * 60 * 60 * 1000)}
-		}
-	}).then(() => {
-		antiCheatId.count().then(c => {
-			res.send({status: true, count: c});
-		}).catch(e => {
-			sendErr(req, res, e);
-		});
-	}).catch(e => {
-		sendErr(req, res, e);
-	});
-}
-
 function getInfos (req, res) {
-	console.log(req.body);
 	enigma.findOne({
 		where: {id: req.body.id}
 	}).then(e => {
@@ -112,7 +95,6 @@ function saveInfos (req, res) {
 // export function
 module.exports = {
 	index: index,
-	resestAntiCheatId: resestAntiCheatId,
 	getInfos: getInfos,
 	saveInfos: saveInfos
 };

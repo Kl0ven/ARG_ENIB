@@ -10,6 +10,8 @@ const user = require('./models').user;
 const flash = require('connect-flash');
 const db = require('./models').sequelize;
 const robots = require('express-robots-txt');
+const schedule = require('node-schedule');
+const deleteACI = require('./utils/deleteAntiCheatId');
 const app = express();
 
 // protection against various attack vector
@@ -47,7 +49,6 @@ app.use(session({secret: 'Arg_Enib', store: myStore, resave: true, saveUninitial
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-// myStore.sync();
 require('./config/passport')(passport, user);
 
 // view engine setup
@@ -60,6 +61,8 @@ app.engine('hbs', hbs({
 }));
 app.set('view engine', 'hbs');
 
+// delete AntiCheatId older than 12 hours every 2 hours
+schedule.scheduleJob('* */2 * * *', deleteACI);
 // use flash message
 app.use(flash());
 
