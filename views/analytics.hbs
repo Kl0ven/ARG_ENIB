@@ -42,24 +42,41 @@
 				{{/each}}
 			</tbody>
 		</table>
-		<table class="table table-dark table-striped">
+
+
+
+		<table class="table table-dark ">
 			<thead>
 				<tr>
+					<th></th>
 					<th scope="col">Nom</th>
-					<th scope="col">enigma #</th>
-					<th scope="col">date</th>
+					<th style="width:30%;" scope="col">date</th>
+					<th style="width:10%;"></th>
 				</tr>
 			</thead>
 			<tbody>
 				{{#each winners}}
 				<tr>
-					<th scope="row">{{name}}</th>
-					<td>{{id_enigma}}</td>
-					<td class="date">{{date}}</td>
+					<td style="width:5%;">{{this.enigma_id}}</td>
+					<td></td>
+					<td></td>
+					<td style="width:10%;"> <button type="button" class="btn" data-toggle="collapse" data-target=".row{{@index}}">+</button>{{this.length}}</td>
 				</tr>
+				{{#each this.list}}
+				<tr class="row{{@../index}} collapse out">
+					<td></td>
+					<td scope="row">{{name}}</td>
+					<td style="width:30%;" class="date">{{date}}</td>
+					<td></td>
+				</tr>
+				{{/each}}
 				{{/each}}
 			</tbody>
 		</table>
+
+
+
+
 	</div>
 
 	<!-- Modal -->

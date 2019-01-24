@@ -27,7 +27,7 @@ function index (req, res) {
 					let tmp = [];
 					for (var i = 0; i < w.length; i++) {
 						if (w[i].enigma_id !== firstId) {
-							dataWinner.push(tmp);
+							dataWinner.push({list: tmp, length: tmp.length, enigma_id: firstId});
 							tmp = [];
 							firstId = w[i].enigma_id;
 						}
