@@ -23,13 +23,21 @@ function index (req, res) {
 		session.count().then(d => {
 			antiCheatId.count().then(c => {
 				winner.findAll({order: ['enigma_id', 'date']}).then(w => {
+					let firstId = 1;
+					let tmp = [];
 					for (var i = 0; i < w.length; i++) {
-						dataWinner.push({
+						if (w[i].enigma_id !== firstId) {
+							dataWinner.push(tmp);
+							tmp = [];
+							firstId = w[i].enigma_id;
+						}
+						tmp.push({
 							id_enigma: w[i].enigma_id,
 							name: w[i].name,
 							date: w[i].date
 						});
 					}
+					console.log(dataWinner);
 					res.render('analytics', {enigmas: dataEnigma, winners: dataWinner, pending: c, session: d, layout: false});
 				}).catch(e => {
 					sendErr(req, res, e);
