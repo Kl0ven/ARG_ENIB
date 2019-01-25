@@ -100,9 +100,58 @@ function saveInfos (req, res) {
 		res.send({status: false});
 	});
 }
+
+function getData (req, res) {
+	let dataEnigma = [];
+	let dataWinner = [];
+	enigma.findAll({order: ['id']}).then(e => {
+		for (var i = 0; i < e.length; i++) {
+			dataEnigma.push({
+				name: e[i].name,
+				id: e[i].id,
+				first_time_visited: e[i].first_time_visited != null ? e[i].first_time_visited : '-',
+				first_time_visited_null: e[i].first_time_visited == null,
+				remaining: e[i].time_before_hint,
+				hold_update: e[i].first_time_visited == null || e[i].time_before_hint.remaining === 0,
+				symbole: e[i].first_time_visited == null ? '-' : 'Done'
+			});
+		}
+		session.count().then(d => {
+			antiCheatId.count().then(c => {
+				winner.findAll({order: ['enigma_id', 'date']}).then(w => {
+					let firstId = 1;
+					let tmp = [];
+					for (var i = 0; i < w.length; i++) {
+						if (w[i].enigma_id !== firstId) {
+							dataWinner.push({list: tmp, length: tmp.length, enigma_id: firstId});
+							tmp = [];
+							firstId = w[i].enigma_id;
+						}
+						tmp.push({
+							id_enigma: w[i].enigma_id,
+							name: w[i].name,
+							date: w[i].date
+						});
+					}
+					console.log(dataWinner);
+					res.send({enigmas: dataEnigma, winners: dataWinner, pending: c, session: d});
+				}).catch(e => {
+					sendErr(req, res, e);
+				});
+			}).catch(e => {
+				sendErr(req, res, e);
+			});
+		}).catch(e => {
+			sendErr(req, res, e);
+		});
+	}).catch(e => {
+		sendErr(req, res, e);
+	});
+}
 // export function
 module.exports = {
 	index: index,
 	getInfos: getInfos,
-	saveInfos: saveInfos
+	saveInfos: saveInfos,
+	getData: getData
 };

@@ -9,7 +9,25 @@ $('document').ready(() => {
 	});
 	let refreshRate = 1000;
 	setInterval(update, refreshRate, refreshRate);
+	setInterval(refreshACI, 10000);
 });
+
+function refreshACI () {
+	$.ajax({
+		url: './F704F7C577D67AC8BFDF3EC16343365CB41AB3059DB8A2922C27D89AA2B079A350EDC8BB53D3388222F262290826EE02E99F58E865E232AA5BF3A23A0B2FC3F8',
+		type: 'POST',
+		cache: false,
+		contentType: 'application/json',
+		success: function (mes) {
+			console.log(mes);
+			$('#pendingN').text(mes.pending);
+			$('#sessionN').text(mes.session);
+		},
+		error: function (e) {
+			log('Failure', 'Server not responding.', 'danger');
+		}
+	});
+}
 
 function update (elapse) {
 	$('.updateTime').each(function (i) {
@@ -80,12 +98,12 @@ function fetchData (item) {
 				$('#hint').val(mes.hint);
 				$('#exampleModal').modal();
 			} else {
-				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
+				log('Failure', 'Server return wrong status.', 'danger');
 			}
 			$('#count').text(mes.count);
 		},
 		error: function (e) {
-			$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
+			log('Failure', 'Server not responding.', 'danger');
 		}
 	});
 }
@@ -106,17 +124,30 @@ function saveData () {
 			contentType: 'application/json',
 			success: function (mes) {
 				if (mes.status) {
-					$('#logmes').append('<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sucess</strong> Changes saved</div>');
+					log('Sucess', 'Changes saved', 'success');
 				} else {
-					$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
+					log('Failure', 'Server return wrong status.', 'danger');
 				}
 				$('#count').text(mes.count);
 			},
 			error: function (e) {
-				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
+				log('Failure', 'Server not responding.', 'danger');
 			}
 		});
 	}
 
 	$('#exampleModal').modal('hide');
 }
+
+function log (prefix, message, type) {
+	let id = ID();
+	$('#logmes').prepend('<div id="' + id + '" class="alert alert-' + type + ' alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>' + prefix + '</strong>  ' + message + '</div>');
+	setTimeout(() => { $('#' + id).fadeOut(100, () => { $('#' + id).remove(); }); }, 10000);
+}
+
+var ID = function () {
+	// Math.random should be unique because of its seeding algorithm.
+	// Convert it to base 36 (numbers + letters), and grab the first 9 characters
+	// after the decimal.
+	return '_' + Math.random().toString(36).substr(2, 9);
+};
