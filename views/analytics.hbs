@@ -43,11 +43,11 @@
 			</thead>
 			<tbody>
 				{{#each enigmas}}
-				<tr>
-					<th scope="row">{{id}}</th>
-					<td><a onclick="fetchData({{id}});" style="cursor: pointer;">{{name}}</a></td>
-					<td class="{{#unless first_time_visited_null}}date{{/unless}}">{{first_time_visited}}</td>
-					<td class="{{#unless hold_update}}updateTime{{/unless}}" id="{{remaining.remaining}}">{{#if hold_update}}{{symbole}}{{/if}}</td>
+				<tr id="enigma{{this.id}}">
+					<th class="item1" scope="row">{{id}}</th>
+					<td class="item2" ><a onclick="fetchData({{id}});" style="cursor: pointer;">{{name}}</a></td>
+					<td class="item3 {{#unless first_time_visited_null}}date{{/unless}}" value="{{first_time_visited}}">{{#if first_time_visited_null}}-{{/if}}</td>
+					<td class="item4 {{#unless hold_update}}updateTime{{/unless}}" id="{{remaining.remaining}}">{{#if hold_update}}{{symbole}}{{/if}}</td>
 				</tr>
 				{{/each}}
 			</tbody>
@@ -55,7 +55,7 @@
 
 
 
-		<table class="table table-dark ">
+		<table class="table table-dark " id="winnertable">
 			<thead>
 				<tr>
 					<th></th>
@@ -66,17 +66,17 @@
 			</thead>
 			<tbody>
 				{{#each winners}}
-				<tr>
+				<tr id="winnerEnigma{{this.rid}}" class="section row{{this.rid}}">
 					<td style="width:5%;">{{this.enigma_id}}</td>
 					<td></td>
 					<td></td>
-					<td style="width:10%;"> <button type="button" class="btn" data-toggle="collapse" data-target=".row{{@index}}">+</button>{{this.length}}</td>
+					<td style="width:10%;"> <button type="button" class="btn" data-toggle="collapse" data-target=".hiderow{{this.rid}}">+</button> <span id="winnerEnigmaN{{this.rid}}"> {{this.length}}</span></td>
 				</tr>
 				{{#each this.list}}
-				<tr class="row{{@../index}} collapse out">
+				<tr class="row{{../this.rid}} hiderow{{../this.rid}} collapse out">
 					<td></td>
 					<td scope="row">{{name}}</td>
-					<td style="width:30%;" class="date">{{date}}</td>
+					<td style="width:30%;" class="date" value="{{date}}"></td>
 					<td></td>
 				</tr>
 				{{/each}}

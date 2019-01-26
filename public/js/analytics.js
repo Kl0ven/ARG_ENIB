@@ -3,16 +3,16 @@
 $('document').ready(() => {
 	$('.date').each(function (i) {
 		// e[i].first_time_visited.toLocaleDateString('fr-FR') + ' ' + e[i].first_time_visited.toLocaleTimeString('fr-FR', { hour12: false })
-		let date = new Date($(this).text());
+		let date = new Date($(this).attr('value'));
 		let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
 		$(this).text(dateString);
 	});
 	let refreshRate = 1000;
 	setInterval(update, refreshRate, refreshRate);
-	setInterval(refreshACI, 10000);
+	setInterval(refresh, 11000);
 });
 
-function refreshACI () {
+function refresh () {
 	$.ajax({
 		url: './F704F7C577D67AC8BFDF3EC16343365CB41AB3059DB8A2922C27D89AA2B079A350EDC8BB53D3388222F262290826EE02E99F58E865E232AA5BF3A23A0B2FC3F8',
 		type: 'POST',
@@ -22,6 +22,45 @@ function refreshACI () {
 			console.log(mes);
 			$('#pendingN').text(mes.pending);
 			$('#sessionN').text(mes.session);
+			for (let i in mes.enigmas) {
+				let e = mes.enigmas[i];
+				if ($('#enigma' + e.id + ' > .item3').text() === '-' && e.first_time_visited !== '-') {
+					let date = new Date(e.first_time_visited);
+					let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
+					$('#enigma' + e.id + ' > .item3').text(dateString);
+					$('#enigma' + e.id + ' > .item4').addClass('updateTime');
+					$('#enigma' + e.id + ' > .item4').attr('id', e.remaining.remaining);
+				}
+			}
+			for (let i in mes.winners) {
+				let w = mes.winners[i];
+				let idrevised = w.enigma_id - 1;
+				let nb = $('.row' + idrevised).length - 1;
+				nb = nb < 0 ? 0 : nb;
+				if (nb === 0) {
+					$('#winnertable > tbody').append(`<tr id="winnerEnigma${idrevised}" class="section row${idrevised}">
+						<td style="width:5%;">${w.enigma_id}</td>
+						<td></td>
+						<td></td>
+						<td style="width:10%;"> <button type="button" class="btn" data-toggle="collapse" data-target=".hiderow${idrevised}">+</button> <span id="winnerEnigmaN${idrevised}"> ${w.length}</span></td>
+					</tr>`);
+				}
+				if (nb !== w.length) {
+					let visible = $('.row' + idrevised).last().hasClass('show') ? 'show' : '';
+					console.log('id', idrevised);
+					$('#winnerEnigmaN' + idrevised).text(w.length);
+					for (let j = nb; j < w.length; j++) {
+						let date = new Date(w.list[j].date);
+						let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
+						$('.row' + idrevised).last().after(`<tr class=" hiderow${idrevised} row${idrevised} collapse out ${visible}">
+						<td></td>
+						<td scope="row">${w.list[j].name}</td>
+						<td style="width:30%;">${dateString}</td>
+						<td></td>
+						</tr>`);
+					}
+				}
+			}
 		},
 		error: function (e) {
 			log('Failure', 'Server not responding.', 'danger');

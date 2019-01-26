@@ -23,11 +23,15 @@ function index (req, res) {
 		session.count().then(d => {
 			antiCheatId.count().then(c => {
 				winner.findAll({order: ['enigma_id', 'date']}).then(w => {
+					console.log(w);
 					let firstId = 1;
 					let tmp = [];
 					for (var i = 0; i < w.length; i++) {
+						console.log('for loop ' + i);
 						if (w[i].enigma_id !== firstId) {
-							dataWinner.push({list: tmp, length: tmp.length, enigma_id: firstId});
+							if (tmp.length !== 0) {
+								dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
+							}
 							tmp = [];
 							firstId = w[i].enigma_id;
 						}
@@ -37,7 +41,9 @@ function index (req, res) {
 							date: w[i].date
 						});
 					}
-					console.log(dataWinner);
+					if (tmp.length !== 0) {
+						dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
+					}
 					res.render('analytics', {enigmas: dataEnigma, winners: dataWinner, pending: c, session: d, layout: false});
 				}).catch(e => {
 					sendErr(req, res, e);
@@ -123,7 +129,9 @@ function getData (req, res) {
 					let tmp = [];
 					for (var i = 0; i < w.length; i++) {
 						if (w[i].enigma_id !== firstId) {
-							dataWinner.push({list: tmp, length: tmp.length, enigma_id: firstId});
+							if (tmp.length !== 0) {
+								dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
+							}
 							tmp = [];
 							firstId = w[i].enigma_id;
 						}
@@ -132,6 +140,9 @@ function getData (req, res) {
 							name: w[i].name,
 							date: w[i].date
 						});
+					}
+					if (tmp.length !== 0) {
+						dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
 					}
 					console.log(dataWinner);
 					res.send({enigmas: dataEnigma, winners: dataWinner, pending: c, session: d});
