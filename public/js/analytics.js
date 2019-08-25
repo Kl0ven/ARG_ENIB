@@ -3,13 +3,70 @@
 $('document').ready(() => {
 	$('.date').each(function (i) {
 		// e[i].first_time_visited.toLocaleDateString('fr-FR') + ' ' + e[i].first_time_visited.toLocaleTimeString('fr-FR', { hour12: false })
-		let date = new Date($(this).text());
+		let date = new Date($(this).attr('value'));
 		let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
 		$(this).text(dateString);
 	});
 	let refreshRate = 1000;
 	setInterval(update, refreshRate, refreshRate);
+	setInterval(refresh, 11000);
 });
+
+function refresh () {
+	$.ajax({
+		url: './F704F7C577D67AC8BFDF3EC16343365CB41AB3059DB8A2922C27D89AA2B079A350EDC8BB53D3388222F262290826EE02E99F58E865E232AA5BF3A23A0B2FC3F8',
+		type: 'POST',
+		cache: false,
+		contentType: 'application/json',
+		success: function (mes) {
+			console.log(mes);
+			$('#pendingN').text(mes.pending);
+			$('#sessionN').text(mes.session);
+			for (let i in mes.enigmas) {
+				let e = mes.enigmas[i];
+				if ($('#enigma' + e.id + ' > .item3').text() === '-' && e.first_time_visited !== '-') {
+					let date = new Date(e.first_time_visited);
+					let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
+					$('#enigma' + e.id + ' > .item3').text(dateString);
+					$('#enigma' + e.id + ' > .item4').addClass('updateTime');
+					$('#enigma' + e.id + ' > .item4').attr('id', e.remaining.remaining);
+				}
+			}
+			for (let i in mes.winners) {
+				let w = mes.winners[i];
+				let idrevised = w.enigma_id - 1;
+				let nb = $('.row' + idrevised).length - 1;
+				nb = nb < 0 ? 0 : nb;
+				if (nb === 0) {
+					$('#winnertable > tbody').append(`<tr id="winnerEnigma${idrevised}" class="section row${idrevised}">
+						<td style="width:5%;">${w.enigma_id}</td>
+						<td></td>
+						<td></td>
+						<td style="width:10%;"> <button type="button" class="btn" data-toggle="collapse" data-target=".hiderow${idrevised}">+</button> <span id="winnerEnigmaN${idrevised}"> ${w.length}</span></td>
+					</tr>`);
+				}
+				if (nb !== w.length) {
+					let visible = $('.row' + idrevised).last().hasClass('show') ? 'show' : '';
+					console.log('id', idrevised);
+					$('#winnerEnigmaN' + idrevised).text(w.length);
+					for (let j = nb; j < w.length; j++) {
+						let date = new Date(w.list[j].date);
+						let dateString = date.toLocaleDateString('fr-FR') + ' ' + date.toLocaleTimeString('fr-FR', { hour12: false });
+						$('.row' + idrevised).last().after(`<tr class=" hiderow${idrevised} row${idrevised} collapse out ${visible}">
+						<td></td>
+						<td scope="row">${w.list[j].name}</td>
+						<td style="width:30%;">${dateString}</td>
+						<td></td>
+						</tr>`);
+					}
+				}
+			}
+		},
+		error: function (e) {
+			log('Failure', 'Server not responding.', 'danger');
+		}
+	});
+}
 
 function update (elapse) {
 	$('.updateTime').each(function (i) {
@@ -36,30 +93,6 @@ function getDate (msec) {
 	let secString = sec !== 0 ? sec + 's ' : '';
 	return dayString + hoursString + minuteString + secString;
 };
-
-function resestAntiCheatId () {
-	var txt;
-	var r = confirm('Es tu sur de toi !');
-	if (r === true) {
-		$.ajax({
-			url: './CDDB32DBE1A524A9501D5446B29523B16CCA8D9B0700749B5C645AB63C0C0112E93CA8FC50D5EE35045D7896ED9595B0F2A23033077D375A12214CFF15FDBB38',
-			type: 'POST',
-			cache: false,
-			contentType: 'application/json',
-			success: function (mes) {
-				if (mes.status) {
-					$('#logmes').append('<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sucess</strong> Id older than 6 hours have been deleted.</div>');
-				} else {
-					$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
-				}
-				$('#count').text(mes.count);
-			},
-			error: function (e) {
-				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
-			}
-		});
-	}
-}
 
 function fetchData (item) {
 	$.ajax({
@@ -104,12 +137,12 @@ function fetchData (item) {
 				$('#hint').val(mes.hint);
 				$('#exampleModal').modal();
 			} else {
-				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
+				log('Failure', 'Server return wrong status.', 'danger');
 			}
 			$('#count').text(mes.count);
 		},
 		error: function (e) {
-			$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
+			log('Failure', 'Server not responding.', 'danger');
 		}
 	});
 }
@@ -130,17 +163,30 @@ function saveData () {
 			contentType: 'application/json',
 			success: function (mes) {
 				if (mes.status) {
-					$('#logmes').append('<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Sucess</strong> Changes saved</div>');
+					log('Sucess', 'Changes saved', 'success');
 				} else {
-					$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server return wrong status.</div>');
+					log('Failure', 'Server return wrong status.', 'danger');
 				}
 				$('#count').text(mes.count);
 			},
 			error: function (e) {
-				$('#logmes').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Failure</strong> Server not responding.</div>');
+				log('Failure', 'Server not responding.', 'danger');
 			}
 		});
 	}
 
 	$('#exampleModal').modal('hide');
 }
+
+function log (prefix, message, type) {
+	let id = ID();
+	$('#logmes').prepend('<div id="' + id + '" class="alert alert-' + type + ' alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>' + prefix + '</strong>  ' + message + '</div>');
+	setTimeout(() => { $('#' + id).fadeOut(100, () => { $('#' + id).remove(); }); }, 10000);
+}
+
+var ID = function () {
+	// Math.random should be unique because of its seeding algorithm.
+	// Convert it to base 36 (numbers + letters), and grab the first 9 characters
+	// after the decimal.
+	return '_' + Math.random().toString(36).substr(2, 9);
+};

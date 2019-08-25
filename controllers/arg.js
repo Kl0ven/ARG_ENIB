@@ -23,12 +23,26 @@ function index (req, res) {
 		session.count().then(d => {
 			antiCheatId.count().then(c => {
 				winner.findAll({order: ['enigma_id', 'date']}).then(w => {
+					console.log(w);
+					let firstId = 1;
+					let tmp = [];
 					for (var i = 0; i < w.length; i++) {
-						dataWinner.push({
+						console.log('for loop ' + i);
+						if (w[i].enigma_id !== firstId) {
+							if (tmp.length !== 0) {
+								dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
+							}
+							tmp = [];
+							firstId = w[i].enigma_id;
+						}
+						tmp.push({
 							id_enigma: w[i].enigma_id,
 							name: w[i].name,
 							date: w[i].date
 						});
+					}
+					if (tmp.length !== 0) {
+						dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
 					}
 					res.render('analytics', {enigmas: dataEnigma, winners: dataWinner, pending: c, session: d, layout: false});
 				}).catch(e => {
@@ -45,24 +59,7 @@ function index (req, res) {
 	});
 }
 
-function resestAntiCheatId (req, res) {
-	antiCheatId.destroy({
-		where: {
-			created_at: {[Op.lt]: new Date(new Date() - 1 * 60 * 60 * 1000)}
-		}
-	}).then(() => {
-		antiCheatId.count().then(c => {
-			res.send({status: true, count: c});
-		}).catch(e => {
-			sendErr(req, res, e);
-		});
-	}).catch(e => {
-		sendErr(req, res, e);
-	});
-}
-
 function getInfos (req, res) {
-	console.log(req.body);
 	enigma.findOne({
 		where: {id: req.body.id}
 	}).then(e => {
@@ -109,10 +106,63 @@ function saveInfos (req, res) {
 		res.send({status: false});
 	});
 }
+
+function getData (req, res) {
+	let dataEnigma = [];
+	let dataWinner = [];
+	enigma.findAll({order: ['id']}).then(e => {
+		for (var i = 0; i < e.length; i++) {
+			dataEnigma.push({
+				name: e[i].name,
+				id: e[i].id,
+				first_time_visited: e[i].first_time_visited != null ? e[i].first_time_visited : '-',
+				first_time_visited_null: e[i].first_time_visited == null,
+				remaining: e[i].time_before_hint,
+				hold_update: e[i].first_time_visited == null || e[i].time_before_hint.remaining === 0,
+				symbole: e[i].first_time_visited == null ? '-' : 'Done'
+			});
+		}
+		session.count().then(d => {
+			antiCheatId.count().then(c => {
+				winner.findAll({order: ['enigma_id', 'date']}).then(w => {
+					let firstId = 1;
+					let tmp = [];
+					for (var i = 0; i < w.length; i++) {
+						if (w[i].enigma_id !== firstId) {
+							if (tmp.length !== 0) {
+								dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
+							}
+							tmp = [];
+							firstId = w[i].enigma_id;
+						}
+						tmp.push({
+							id_enigma: w[i].enigma_id,
+							name: w[i].name,
+							date: w[i].date
+						});
+					}
+					if (tmp.length !== 0) {
+						dataWinner.push({list: tmp, length: tmp.length, rid: firstId - 1, enigma_id: firstId});
+					}
+					console.log(dataWinner);
+					res.send({enigmas: dataEnigma, winners: dataWinner, pending: c, session: d});
+				}).catch(e => {
+					sendErr(req, res, e);
+				});
+			}).catch(e => {
+				sendErr(req, res, e);
+			});
+		}).catch(e => {
+			sendErr(req, res, e);
+		});
+	}).catch(e => {
+		sendErr(req, res, e);
+	});
+}
 // export function
 module.exports = {
 	index: index,
-	resestAntiCheatId: resestAntiCheatId,
 	getInfos: getInfos,
-	saveInfos: saveInfos
+	saveInfos: saveInfos,
+	getData: getData
 };
