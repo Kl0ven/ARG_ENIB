@@ -30,3 +30,5 @@ node_modules
 public/js/\.cache/
 
 public/js/custom/\.cache/
+
+.env
