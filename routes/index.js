@@ -1,3 +1,4 @@
+/* eslint max-len: ["error", { "code": 300 }] */
 const app = module.exports = require('express')();
 const enigmaController = require('../controllers/enigma');
 const winnerController = require('../controllers/winner');
@@ -7,7 +8,7 @@ const config = require('../config/config');
 const rateLimit = require('express-rate-limit');
 const isLoggedIn = require('../utils/auth');
 const passport = require('passport');
-const limiter = rateLimit(Object.assign(config.limiter, {message: config.limitMessage}));
+const limiter = rateLimit(Object.assign(config.limiter, { message: config.limitMessage }));
 
 /* GET home page. */
 app.get('/', limiter, enigmaController.index);
@@ -25,21 +26,21 @@ app.get('/E8FA58F5583E9B42D382255A72AC3BE99BDA351D142D90DE62FED0465FD637C6609AA2
 app.get('/455F388DFF873BF190F6EB28241FC340C50FBDDF292361AAC0F40B29D18EB574DA76D7ACF61469EF799CE3A9B3590F3AD829612220DA9A79C72C17FBA2B91314', limiter, authController.signin);
 
 app.post('/signin', passport.authenticate('local-signin', {
-	successRedirect: '/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20',
-	failureRedirect: '/455F388DFF873BF190F6EB28241FC340C50FBDDF292361AAC0F40B29D18EB574DA76D7ACF61469EF799CE3A9B3590F3AD829612220DA9A79C72C17FBA2B91314',
-	failureFlash: true
+    successRedirect: '/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20',
+    failureRedirect: '/455F388DFF873BF190F6EB28241FC340C50FBDDF292361AAC0F40B29D18EB574DA76D7ACF61469EF799CE3A9B3590F3AD829612220DA9A79C72C17FBA2B91314',
+    failureFlash: true
 }
 ));
 
 if (config.env === 'development') {
-	app.get('/signup', authController.signup);
+    app.get('/signup', authController.signup);
 
-	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect: '/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20',
-		failureRedirect: '/signup',
-		failureFlash: true
-	}
-));
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect: '/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20',
+        failureRedirect: '/signup',
+        failureFlash: true
+    }
+    ));
 }
 // logout
 app.get('/logout', authController.logout);
