@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: postgres_arg
+    environment:
+      POSTGRES_DB: 'ARG_ENIB'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dev
+    ports:
+      - '5432:5432'
+    volumes:
+      - "db_data:/var/lib/postgresql/data"
+
+  web:
+    container_name: ARG_ENIB
+    build: .
+    command: nodemon server.js
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - db
+
+
+volumes:
+  db_data:

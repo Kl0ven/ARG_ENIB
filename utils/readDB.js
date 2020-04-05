@@ -7,14 +7,14 @@ function display () {
     return Enigma.findAll({
         order: ['id']
     }).then(data => {
-        for (const e of data) {
-            console.log(data[e].dataValues);
-            if (data[e].dataValues.first_time_visited != null) {
+        data.forEach(element => {
+            console.log(element.dataValues);
+            if (element.dataValues.first_time_visited != null) {
                 console.log('first_time_visited in france = ' +
-                data[e].dataValues.first_time_visited.toLocaleDateString('fr-FR') + ' ' +
-                data[e].dataValues.first_time_visited.toLocaleTimeString());
+                    element.dataValues.first_time_visited.toLocaleDateString('fr-FR') + ' ' +
+                    element.dataValues.first_time_visited.toLocaleTimeString());
             }
-        }
+        });
         Winner.findAll({ order: ['enigma_id', 'date'] }).then(w => {
             for (let i = 0; i < w.length; i++) {
                 console.log(w[i].dataValues);
