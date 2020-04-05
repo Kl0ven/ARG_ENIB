@@ -248,8 +248,8 @@ sequelize.sync({ force: true }).then(function () {
 
 function display () {
     return Enigma.findAll().then(data => {
-        for (const e of data) {
-            console.log(data[e].dataValues);
-        }
+        data.forEach(element => {
+            console.log(element.dataValues);
+        });
     });
 }

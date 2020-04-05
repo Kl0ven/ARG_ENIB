@@ -9,7 +9,7 @@ const db = {};
 console.log(process.env.DATABASE_URL);
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
-    operatorsAliases: false,
+    operatorsAliases: '0',
     logging: (config.env === 'development') ? console.log : false
 });
 

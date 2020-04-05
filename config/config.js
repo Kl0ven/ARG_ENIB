@@ -12,7 +12,12 @@ config.limitMessage = 'Too many requests for this ip, pls stop' +
 
 // loading .env if on developement
 if (config.env === 'development') {
-    require('dotenv').config();
-    console.log('coucoucazdkjvnmekvnmevnmefnvmkefnvekfnvmj');
+    const result = require('dotenv').config();
+    if (result.error) {
+        throw result.error;
+    }
+    else {
+        console.log('.env loaded !');
+    }
 }
 module.exports = config;
