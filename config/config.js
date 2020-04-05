@@ -19,4 +19,9 @@ if (config.env === 'development') {
         console.info('.env loaded !');
     }
 }
+
+if (typeof process.env.SECRET_KEY === 'undefined') {
+    throw new Error('No SERCRET_KEY');
+}
+config.SECRET_KEY = process.env.SECRET_KEY;
 module.exports = config;

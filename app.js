@@ -47,7 +47,7 @@ const myStore = new SequelizeStore({
 
 // session secret
 app.use(session({
-    secret: 'Arg_Enib',
+    secret: config.SECRET_KEY,
     store: myStore,
     resave: true,
     saveUninitialized: true }));
