@@ -15,9 +15,8 @@ if (config.env === 'development') {
     const result = require('dotenv').config();
     if (result.error) {
         throw result.error;
-    }
-    else {
-        console.log('.env loaded !');
+    } else {
+        console.info('.env loaded !');
     }
 }
 module.exports = config;

@@ -22,11 +22,9 @@ function index (req, res) {
         session.count().then(d => {
             antiCheatId.count().then(c => {
                 winner.findAll({ order: ['enigma_id', 'date'] }).then(w => {
-                    console.log(w);
                     let firstId = 1;
                     let tmp = [];
                     for (let i = 0; i < w.length; i++) {
-                        console.log('for loop ' + i);
                         if (w[i].enigma_id !== firstId) {
                             if (tmp.length !== 0) {
                                 dataWinner.push({
@@ -113,11 +111,11 @@ function saveInfos (req, res) {
         e.save().then(() => {
             res.send({ status: true });
         }).catch(e => {
-            console.log('error in saveInfos while saving ', e);
+            console.error('error in saveInfos while saving ', e);
             res.send({ status: false });
         });
     }).catch(e => {
-        console.log('error in saveInfos while querying', e);
+        console.error('error in saveInfos while querying', e);
         res.send({ status: false });
     });
 }
@@ -169,7 +167,6 @@ function getData (req, res) {
                             enigma_id: firstId
                         });
                     }
-                    console.log(dataWinner);
                     res.send({ enigmas: dataEnigma, winners: dataWinner, pending: c, session: d });
                 }).catch(e => {
                     sendErr(req, res, e);

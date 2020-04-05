@@ -9,7 +9,7 @@ function signup (req, res) {
 
 function logout (req, res) {
     req.session.destroy(function (err) {
-        console.log(err);
+        console.error(err);
         res.redirect('/');
     });
 }

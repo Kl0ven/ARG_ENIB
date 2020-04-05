@@ -13,8 +13,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         getterMethods: {
             enigma_id: function () {
-                console.log('enigma_id', this.getDataValue('enigma_id'));
-                console.log(this)
                 return this.getDataValue('enigma_id');
             },
             name: function () {

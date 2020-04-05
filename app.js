@@ -74,7 +74,7 @@ app.use(flash());
 
 // if on production
 if (config.env !== 'development') {
-    console.log('using minify');
+    console.info('using minify');
     app.enable('trust proxy');
     app.use(obfuscator({
         src: `${__dirname}/public/`,

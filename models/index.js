@@ -5,8 +5,6 @@ const basename = path.basename(module.filename);
 const config = require('../config/config');
 const db = {};
 
-
-console.log(process.env.DATABASE_URL);
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     operatorsAliases: '0',
@@ -30,7 +28,7 @@ Object.keys(db).forEach(modelName => {
 });
 
 db.enigma.hasOne(db.enigma, { as: 'Next' });
-db.enigma.hasMany(db.winner, { as: 'Winners' });
+db.enigma.hasMany(db.winner, { as: 'Winners', foreignKey: 'enigma_id' });
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 module.exports = db;

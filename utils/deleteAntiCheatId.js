@@ -8,12 +8,12 @@ function resestAntiCheatId (fireDate) {
         }
     }).then(() => {
         antiCheatId.count().then(c => {
-            console.log('deleting antiCheatId @ ' + fireDate);
+            console.info('deleting antiCheatId @ ' + fireDate);
         }).catch(e => {
-            console.log('error while deleting antiCheatId', e);
+            console.error('error while deleting antiCheatId', e);
         });
     }).catch(e => {
-        console.log('error while deleting antiCheatId', e);
+        console.error('error while deleting antiCheatId', e);
     });
 }
 
