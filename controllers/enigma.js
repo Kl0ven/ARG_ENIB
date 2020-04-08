@@ -114,7 +114,7 @@ function evalVerify (req, res, e) {
         const cara = e.caracters.sort(function (a, b) {
             return b.length - a.length;
         });
-        const string = req.body.evalequation;
+        let string = req.body.evalequation;
         for (const c in cara) {
             if (string.includes(cara[c])) {
                 string = string.replace(cara[c], '');
