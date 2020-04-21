@@ -70,8 +70,8 @@ function verify (req, res) {
                                 res.send({
                                     status: 1,
                                     text: e.end_text,
-                                    url: `E8FA58F5583E9B42D382255A72AC3BE99BDA351D142D90DE62FED0465FD63
-                                    7C6609AA2DD79AE8DB1B68E65CA3DBEFFF39CE7703F204005B1A5D94FC194D8DD51`,
+                                    // eslint-disable-next-line max-len
+                                    url: `3235385FE0FF3A081A579BFE8A4A6F1EBB1E732D014076748879B34AFAC8061B307B868ECA06CD814ED7D904E222B91F42666101B926D4EDBA95EF62065DAC67`,
                                     id: id
                                 });
                             }).catch(err => {
