@@ -11,7 +11,7 @@ const passport = require('passport');
 const limiter = rateLimit(Object.assign(config.limiter, { message: config.limitMessage }));
 
 /* GET home page. */
-app.get('/', limiter, enigmaController.index);
+app.get('/index', limiter, enigmaController.index);
 
 // requet to verify anwser
 app.post('/verify', limiter, enigmaController.verify);
