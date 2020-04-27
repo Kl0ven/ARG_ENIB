@@ -105,5 +105,23 @@ module.exports = [
         custom_js: 'photo_enib.js',
         custom_html: 'photo_enib',
         custom_css: ''
+    },
+    {
+        name: 'Opération quoi ?',
+        enigma_text: `Ok on lui a demandé de nous transmettre des infos sur cette fameuse opération, voila ce qu'il nous répondu :<br><br>
+                      "Je ne peux pas vous en parler ici. Trop dangereux. Je vous transmet ce message via une façon détournée. Voici l'information pour y accéder : 4 - 3 - 21 - 341 <a href="/images/raw.txt" download>raw.txt</a>. Transmettez moi le nom de l'opération contenu dans le message pour que je sache que vous l'avez bien trouvé." <br><br>
+                      Ok donc il faut trouver un message via cette suite de chiffre et ce fichier... A vous de jouer !`,
+        url: 'e0c9228f32b36d9a2653fcef8c74f9fc', // babel
+        end_text: `Ok donc les reptiliens ont voulu se venger pour une histoire de maltraitance de poules. Compréhensible, c'est un peu leur lointains cousins je suppose. Mais bon il s'est bien rendu compte que si on fait organise tout ça c'est pas pour heurter qui que ce soit mais bien pour s'amuser. Il m'a m'a l'air tout a fait sympathique ce reptilien en fait, faudra l'inviter a boire un verre un de ces quatres.<br><br>
+                   C'est bien beau cette histoire, mais après lui avoir demandé confirmation, il nous affirme que ce ne sont pas eux qui sont à l'origine de notre mystère. Il n'aurait aucun intêret à annuler le % cette année, il voulait même y participer.<br><br>
+                   Encore une fausse piste...`,
+        hint: 'TODO',
+        type: 'flag',
+        flag: 'Percent Froid',
+        first_time_visited: null,
+        delay_to_hint: 4,
+        custom_js: '',
+        custom_html: 'library',
+        custom_css: ''
     }
 ];
