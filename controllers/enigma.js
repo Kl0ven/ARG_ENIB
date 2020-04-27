@@ -133,7 +133,7 @@ function evalVerify (req, res, e) {
 }
 
 function endPage (req, res) {
-    res.render('partials/endPage', { number: 15 });
+    res.render('partials/endPage', { number: 14 });
 }
 // export function
 module.exports = {
