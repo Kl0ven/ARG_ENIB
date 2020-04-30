@@ -1,3 +1,4 @@
+/* eslint max-len: ["error", { "code": 300 }] */
 const app = module.exports = require('express')();
 const enigmaController = require('../controllers/enigma');
 const winnerController = require('../controllers/winner');
@@ -7,10 +8,10 @@ const config = require('../config/config');
 const rateLimit = require('express-rate-limit');
 const isLoggedIn = require('../utils/auth');
 const passport = require('passport');
-const limiter = rateLimit(Object.assign(config.limiter, {message: config.limitMessage}));
+const limiter = rateLimit(Object.assign(config.limiter, { message: config.limitMessage }));
 
 /* GET home page. */
-app.get('/', limiter, enigmaController.index);
+app.get('/abcdefghijklmnopqrstu', limiter, enigmaController.index);
 
 // requet to verify anwser
 app.post('/verify', limiter, enigmaController.verify);
@@ -19,42 +20,42 @@ app.post('/verify', limiter, enigmaController.verify);
 app.post('/savewinner', limiter, winnerController.saveWinner);
 
 // endpage
-app.get('/E8FA58F5583E9B42D382255A72AC3BE99BDA351D142D90DE62FED0465FD637C6609AA2DD79AE8DB1B68E65CA3DBEFFF39CE7703F204005B1A5D94FC194D8DD51', limiter, enigmaController.endPage);
+app.get('/3235385FE0FF3A081A579BFE8A4A6F1EBB1E732D014076748879B34AFAC8061B307B868ECA06CD814ED7D904E222B91F42666101B926D4EDBA95EF62065DAC67', limiter, enigmaController.endPage);
 
 // sign in
-app.get('/455F388DFF873BF190F6EB28241FC340C50FBDDF292361AAC0F40B29D18EB574DA76D7ACF61469EF799CE3A9B3590F3AD829612220DA9A79C72C17FBA2B91314', limiter, authController.signin);
+app.get('/C4D814047712D944D86E786E9C93AE32672447AFE98220A8941109A3A87375E74F469CC5F4AA418E0A34BEB2E101F7FB367CAEE85BA288F3D77D285278E3C1AF', limiter, authController.signin);
 
 app.post('/signin', passport.authenticate('local-signin', {
-	successRedirect: '/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20',
-	failureRedirect: '/455F388DFF873BF190F6EB28241FC340C50FBDDF292361AAC0F40B29D18EB574DA76D7ACF61469EF799CE3A9B3590F3AD829612220DA9A79C72C17FBA2B91314',
-	failureFlash: true
+    successRedirect: '/AECEC2A895196E561BEB44F935906315385F80DA128AE24269D8D2BBBCD0EEA4C7CDC065DB742C205145B58297A09A893547EADECA57634D07B7C345E3C47C93',
+    failureRedirect: '/C4D814047712D944D86E786E9C93AE32672447AFE98220A8941109A3A87375E74F469CC5F4AA418E0A34BEB2E101F7FB367CAEE85BA288F3D77D285278E3C1AF',
+    failureFlash: true
 }
 ));
 
 if (config.env === 'development') {
-	app.get('/signup', authController.signup);
+    app.get('/signup', authController.signup);
 
-	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect: '/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20',
-		failureRedirect: '/signup',
-		failureFlash: true
-	}
-));
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect: '/AECEC2A895196E561BEB44F935906315385F80DA128AE24269D8D2BBBCD0EEA4C7CDC065DB742C205145B58297A09A893547EADECA57634D07B7C345E3C47C93',
+        failureRedirect: '/signup',
+        failureFlash: true
+    }
+    ));
 }
 // logout
 app.get('/logout', authController.logout);
 
 // analytic
-app.get('/503297AB82C66970C90EA68C336AD24537C580CF4BE1C39750E25E71E8AE218D48510C0166ED4AEB55BD3DC07E8E5BDCD58DDCFF9CEBD9830C629E3796633D20', limiter, isLoggedIn, argController.index);
+app.get('/AECEC2A895196E561BEB44F935906315385F80DA128AE24269D8D2BBBCD0EEA4C7CDC065DB742C205145B58297A09A893547EADECA57634D07B7C345E3C47C93', limiter, isLoggedIn, argController.index);
 
 // get analytics data
-app.post('/F704F7C577D67AC8BFDF3EC16343365CB41AB3059DB8A2922C27D89AA2B079A350EDC8BB53D3388222F262290826EE02E99F58E865E232AA5BF3A23A0B2FC3F8', isLoggedIn, argController.getData);
+app.post('/DDC9EBAFBA3732B5CFC7DC252D39B9376101FE1C41F3309425F1490C0EF39694F154AE566E710DB990A47FDCF9523DAB6C8EC815538822AF1645776DFF4E1249', isLoggedIn, argController.getData);
 
 // request info on enigma
-app.post('/E349C2FE2560FBBD0EC052DDF37F91BC0C26C3B209FBC9D2FE62C818BD4BFABD6372EE5253A17F91FE834D0F5B50663F2650F71EB45EF3FB14B7EE9F88B117BD', limiter, isLoggedIn, argController.getInfos);
+app.post('/8E49843C86D4D2FE203B91B72460F13505E12BE3E4DF73E0104394FD89A5E54460BD25F9C0EF1EA4716E6D883278F4A70B15F77FAF0604DB11011153B7DC728A', limiter, isLoggedIn, argController.getInfos);
 
 // save info on enigma
-app.post('/B107665992B5EF53639F8127FD4D9FE3B85A21C5C82479952CF8868D6B3075E8B2BCA21B04B41561F3918E6AD5F69CCCF10A6857740840E7848A17E0EC9AC222', limiter, isLoggedIn, argController.saveInfos);
+app.post('/30AA27976AC1E6883B0D70EA9F8B15135697940A6F86EF7204FC73E1654484AAF5F5A8A9F20FCE5D26BAA5102E1EE96D19FE69DFB812E6A226BEFCC7C55721DF', limiter, isLoggedIn, argController.saveInfos);
 
 // enigmas or 404
 app.all('*', limiter, enigmaController.enigmaIndex);

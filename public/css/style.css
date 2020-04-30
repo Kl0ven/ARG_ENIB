@@ -64,6 +64,9 @@ a, a:link, a:hover, a:active,a:visited {
 	color: #00e50b;
 }
 
+#modaltext{
+	text-align: justify;
+}
 
 #startlink{
 	-webkit-animation: color-change 1s infinite;

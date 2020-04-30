@@ -1,22 +1,21 @@
 /**
  * Created by Pablo on 08 Jul 17.
  */
-
-const fs = require("fs");
-const url = require("url");
-const path = require("path");
+const fs = require('fs');
+const url = require('url');
+const path = require('path');
 
 const compile = require('google-closure-compiler-js');
 const obfuscator = require('javascript-obfuscator');
 
-module.exports = (options) => {
+module.exports = options => {
+    if (!options.hasOwnProperty('src')) {
+        throw new Error('express-middleware-obfuscator requires a \'src\' directory');
+    }
 
-    if(!options.hasOwnProperty("src"))
-        throw  new Error("express-middleware-obfuscator requires a 'src' directory");
-
-    const version = options.hasOwnProperty("version") ? options.version : Date.now();
+    const version = options.hasOwnProperty('version') ? options.version : Date.now();
     const src = options.src;
-    const console_enabled = options.hasOwnProperty("console_enabled") ? options.console_enabled : true;
+    const console_enabled = options.hasOwnProperty('console_enabled') ? options.console_enabled : true;
 
     return (req, res, next) => {
         const pathname = url.parse(req.url).pathname;

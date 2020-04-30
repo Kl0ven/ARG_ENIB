@@ -18,18 +18,18 @@ const app = express();
 app.use(helmet());
 
 function requireHTTPS (req, res, next) {
-	// The 'x-forwarded-proto' check is for Heroku
-	if (!req.secure && req.get('x-forwarded-proto') !== 'https' && config.env !== 'development') {
-		return res.redirect('https://' + req.get('host') + req.url);
-	}
-	next();
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && config.env !== 'development') {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
 }
 
 // force https
 app.use(requireHTTPS);
 
 // robots.txt
-app.use(robots({UserAgent: '*', Disallow: '/'}));
+app.use(robots({ UserAgent: '*', Disallow: '/' }));
 
 // session initilization
 const passport = require('passport');
@@ -41,11 +41,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // sequlize db for session id
-var myStore = new SequelizeStore({
-	db: db
+const myStore = new SequelizeStore({
+    db: db
 });
 
-app.use(session({secret: 'Arg_Enib', store: myStore, resave: true, saveUninitialized: true})); // session secret
+// session secret
+app.use(session({
+    secret: config.SECRET_KEY,
+    store: myStore,
+    resave: true,
+    saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
@@ -54,10 +60,10 @@ require('./config/passport')(passport, user);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs', hbs({
-	extname: 'hbs',
-	defaultLayout: 'main',
-	layoutsDir: path.join(__dirname, '/views/layouts/'),
-	partialsDir: [path.join(__dirname, '/views/partials/'), path.join(__dirname, '/views/enigma/')]
+    extname: 'hbs',
+    defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, '/views/layouts/'),
+    partialsDir: [path.join(__dirname, '/views/partials/'), path.join(__dirname, '/views/enigma/')]
 }));
 app.set('view engine', 'hbs');
 
@@ -68,14 +74,14 @@ app.use(flash());
 
 // if on production
 if (config.env !== 'development') {
-	console.log('using minify');
-	app.enable('trust proxy');
-	app.use(obfuscator({
-		src: `${__dirname}/public/`,
-		version: 'prod'
-	}));
+    console.info('using minify');
+    app.enable('trust proxy');
+    app.use(obfuscator({
+        src: `${__dirname}/public/`,
+        version: 'prod'
+    }));
 } else {
-	app.use(logger('dev'));
+    app.use(logger('dev'));
 }
 
 app.use(express.json());
