@@ -16,6 +16,7 @@
     "express-middleware-obfuscator": "^1.0.6",
     "express-rate-limit": "^3.3.2",
     "express-robots-txt": "^0.4.0",
+    "express-security-txt": "^4.0.1",
     "express-session": "^1.15.6",
     "hbs": "^4.1.1",
     "helmet": "^3.22.0",

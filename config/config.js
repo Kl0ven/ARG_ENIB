@@ -25,3 +25,10 @@ if (typeof process.env.SECRET_KEY === 'undefined') {
 }
 config.SECRET_KEY = process.env.SECRET_KEY;
 module.exports = config;
+
+
+config.SecOptions = {
+    contact: 'https://www.9ff541a6839f8abf1b1e66fb20da120c.agency/security/',
+    preferredLanguages: 'en',
+    _postfixComment: '255, 231, 0  106, 0, 255'
+};

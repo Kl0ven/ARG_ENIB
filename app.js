@@ -10,6 +10,7 @@ const user = require('./models').user;
 const flash = require('connect-flash');
 const db = require('./models').sequelize;
 const robots = require('express-robots-txt');
+const securityTxt = require('express-security-txt');
 const schedule = require('node-schedule');
 const deleteACI = require('./utils/deleteAntiCheatId');
 const app = express();
@@ -29,7 +30,10 @@ function requireHTTPS (req, res, next) {
 app.use(requireHTTPS);
 
 // robots.txt
-app.use(robots({ UserAgent: '*', Disallow: '/' }));
+app.use(robots(path.join(__dirname, '/robots.txt')));
+
+// Security.txt
+app.use(securityTxt.setup(config.SecOptions));
 
 // session initilization
 const passport = require('passport');
