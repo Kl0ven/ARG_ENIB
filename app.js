@@ -72,7 +72,7 @@ app.engine('hbs', hbs({
 app.set('view engine', 'hbs');
 
 // delete AntiCheatId older than 12 hours every 2 hours
-schedule.scheduleJob('* */2 * * *', deleteACI);
+schedule.scheduleJob('0 */2 * * *', deleteACI);
 // use flash message
 app.use(flash());
 
