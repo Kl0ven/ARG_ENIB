@@ -210,5 +210,24 @@ module.exports = [
         custom_js: 'spectre.js',
         custom_html: 'spectre',
         custom_css: ''
+    },
+    {
+        name: '"Veuillez spécifier votre recherche"',
+        enigma_text: `Ok donc sur le site de la DGSE il y a une fonction de recherche, mais il y a tellement d'infos qu'il faut passer par un gros questionnaire qui va recouper les information et permettre de localiser uniquement ce qu'on cherche...<br>
+                      On va tester simple en mettant juste "Bourreau ENIB" pour voir ce qu'ils ont...<br>
+                      On te laisse avec le questionnaire ? Bon courage !`,
+        url: 'b95abb5a637ffcb719d72173bac4d150', // dgse
+        end_text: `OK ! Doooonc le résultat de la recherche "Bourreau ENIB" c'eeeest...<br>
+                   Aucun résultat. AUCUN RÉSULTAT. Tout ça pour rien nickel. De toute façon fallait s’y attendre, les sites de l’Etat c’est automatiquement de la merde.<br>
+                   Faut admirer quand même la qualité de leurs informations sur la vie étudiante de l'ENIB, c'est assez impressionnant.<br>
+                   On peut tenter une autre recherche si vous voulez ? Non ? C’est une perte de temps dans tous les cas, on abandonne… Retour à la case départ.`,
+        type: 'flag',
+        flag: 'TODO', // password
+        first_time_visited: null,
+        delay_to_hint: 3,
+        hint: '',
+        custom_js: 'questions.js',
+        custom_html: 'questions',
+        custom_css: ''
     }
 ];
