@@ -1,10 +1,28 @@
 /* eslint-disable max-len */
 module.exports = [
     {
+        name: 'Kryptos',
+        enigma_text: `Alors ou chercher ? Qui pourrait être l'auteur d'une épidémie mondiale ? Si on réfléchi en termes de moyens qu'il faut pour orchestrer tout ça, on peut surement chercher au niveau de grosses organisations... Et niveau organisation spécialisée dans les mystère et les expériences pas très très légales, qui d'autre de mieux placé que la CIA ?<br>
+                      Ca me rappelle cette histoire tiens : il existe au sein même des quartiers généraux de la CIA une sculpture nommée Kryptos. Elle est constituée de plusieurs panneaux qui contiennent du texte crypté. La majeur partie à été résolue, mais une partie reste indéchiffrable.<br><br>
+                      Voici le texte en question :<br>
+                      OBKRUOXOGHULBSOLIFBBWFLRVQQPRNGKSSOTWTQSJQSSEKZZWATJKLUDIAWINFBNYPVTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR<br><br>
+                      Pour te mettre en jambe tiens, peux tu vous décrypter cette chaîne de caractère, qui pose une colle a des experts cryptologues du monde entier, et ce depuis une vingtaine d'années ?`,
+        url: 'c85cf68d1967baad7262706368642b6e', // Kryptos
+        end_text: `Non ? Oui je comprends, c'est peut être un peu chaud pour commencer. Et puis c'est vrai que ça n'a rien à voir avec notre histoire d'annulation de % et d'épidémie mondiale ! La CIA n'a même pas connaissance de l'existence de l'ENIB.. Pardon pardon je me suis un peu emporté, on se reconcentre !<br>
+                   Il faut qu'on trouve une première piste tangible...`,
+        hint: 'Tu penses etre au niveau des plus grands analystes de la CIA ?',
+        type: 'flag',
+        flag: 'non',
+        first_time_visited: null,
+        delay_to_hint: 4,
+        custom_js: '',
+        custom_html: 'kryptos',
+        custom_css: ''
+    },
+    {
         name: 'Transmission suspecte',
-        enigma_text: `Bon cette histoire de CIA, c'était peut être un peu trop gros pour nous là.Mais ne perdons pas espoir, car on a une nouvelle piste. <br>
-                      Un informateur a intercepté une communication entre quelqu'un de l'ENIB et une tierce personne.La conversation était cryptée, ce qui a alerté notre suspicion: <br>
-                      pourquoi parler en crypté si on a rien a caché? <br>
+        enigma_text: `On a une piste ! On surveille toutes les transmission aux alentours et un de nos agents a intercepté une communication entre quelqu'un de l'ENIB et une tierce personne. <br>
+                      La conversation était cryptée, ce qui a alerté notre suspicion : pourquoi parler en crypté si on a rien a caché ? <br>
                       De la conversation, on a réussi a déchiffrer 3 mots.<br><br>
                       Les 3 mots sont: <span class="watchme">plaise_démarrant_golfeur</span><br><br>
                       Avec ça, on doit pouvoir identifier qui transmettait et d'où. A vous de trouver d'où la transmission provient.`,
