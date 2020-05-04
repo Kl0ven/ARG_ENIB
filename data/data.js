@@ -14,7 +14,7 @@ module.exports = [
         type: 'flag',
         flag: 'non',
         first_time_visited: null,
-        delay_to_hint: 4,
+        delay_to_hint: 1,
         custom_js: '',
         custom_html: 'kryptos',
         custom_css: ''
@@ -60,7 +60,7 @@ module.exports = [
         flag: '42',
         caracter: ['(', '(', '(', '5', '!', '-', '10', '5', ')', '^', '3', ')', '/', '75', ')', '-', '3'],
         first_time_visited: null,
-        delay_to_hint: 5,
+        delay_to_hint: 2,
         custom_js: 'le_compte_est_bon.js',
         custom_html: 'le_compte_est_bon',
         custom_css: 'le_compte_est_bon.css'
@@ -100,7 +100,7 @@ module.exports = [
         type: 'flag',
         flag: 'sabotezlenolimit',
         first_time_visited: null,
-        delay_to_hint: 4,
+        delay_to_hint: 2,
         custom_js: 'morse.js',
         custom_html: 'morse',
         custom_css: 'morse.css'
@@ -119,7 +119,7 @@ module.exports = [
         type: 'flag',
         flag: 'boss',
         first_time_visited: null,
-        delay_to_hint: 4,
+        delay_to_hint: 2,
         custom_js: 'photo_enib.js',
         custom_html: 'photo_enib',
         custom_css: ''
@@ -137,7 +137,7 @@ module.exports = [
         type: 'flag',
         flag: 'Percent Froid',
         first_time_visited: null,
-        delay_to_hint: 4,
+        delay_to_hint: 2,
         custom_js: '',
         custom_html: 'library',
         custom_css: ''
@@ -158,7 +158,7 @@ module.exports = [
         type: 'flag',
         flag: 'justice',
         first_time_visited: null,
-        delay_to_hint: 4,
+        delay_to_hint: 2,
         custom_js: '',
         custom_html: 'hidden',
         custom_css: ''
@@ -206,7 +206,7 @@ module.exports = [
         type: 'flag',
         flag: '#b57480',
         first_time_visited: null,
-        delay_to_hint: 4,
+        delay_to_hint: 2,
         custom_js: 'spectre.js',
         custom_html: 'spectre',
         custom_css: ''
@@ -253,7 +253,7 @@ module.exports = [
         flag: 'Un canard n\'est pas fait pour grimper les murs',
         first_time_visited: null,
         delay_to_hint: 3,
-        hint: '',
+        hint: 'Cela doit être un encodage simple, peut être du base64',
         custom_js: '',
         custom_html: 'dark',
         custom_css: ''
@@ -271,8 +271,8 @@ module.exports = [
         type: 'flag',
         flag: 'Romu Chapo',
         first_time_visited: null,
-        delay_to_hint: 3,
-        hint: '',
+        delay_to_hint: 4,
+        hint: 'Il a surement caché une archive quelque part.',
         custom_js: '',
         custom_html: 'hidden2',
         custom_css: ''
