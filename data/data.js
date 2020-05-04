@@ -222,12 +222,59 @@ module.exports = [
                    Faut admirer quand même la qualité de leurs informations sur la vie étudiante de l'ENIB, c'est assez impressionnant.<br>
                    On peut tenter une autre recherche si vous voulez ? Non ? C’est une perte de temps dans tous les cas, on abandonne… Retour à la case départ.`,
         type: 'flag',
-        flag: 'TODO', // password
+        flag: 'AUCUN RÉSULTAT', // password
         first_time_visited: null,
         delay_to_hint: 3,
         hint: '',
         custom_js: 'questions.js',
         custom_html: 'questions',
+        custom_css: ''
+    },
+    {
+        name: 'Illumina quoi ?',
+        enigma_text: `On vient de recevoir un message qui se revendique comme venant des Illuminatis ! Rien que ça ! Voici ce qui est dit :<br>
+            "Nous vous observons depuis quelques temps et nous avons remarqué que vous rentrez dans les secrets sombre de l'ENIB. Nous pensons que vous êtes prêts à apprendre la vérité.<br>
+            Transmettez nous le 5eme précepte du prophète de l'ENIB.<br>
+            Toutes les informations relatives au secret de l'ENIB et bien d'autres sont disponibles sur un site. Voici des informations pour y accéder.<br><br>
+            "Pour atteindre la vérité, vous avez besoin de :<br>
+            1 pincé de : <span class="watchme">aHR0cDovLw==</span><br>
+            1 cuillère à café de : <span class="watchme">N3U3aW1ucjQ=</span><br>
+            2 cuillere a soupe de : <span class="watchme">cnBkdnJnZmo=</span><br>
+            10g de : <span class="watchme">bDV6YXZuZ3RleGp4</span><br>
+            500g de : <span class="watchme">eHJ6dWV0aHFiYm0=</span><br>
+            1/2 litre de : <span class="watchme">cGg0bHNnZ3pxaw==</span><br>
+            2 <span class="watchme">N3RnNGp5ZC5vbmlvbg==</span> de moyennes tailles<br>
+            Signé : les Illuminatis."<br>
+            Qu'est ce que c'est encore que ces histoire ? Un précepte du prophète de l'ENIB ? De qui parlent ils ? C'est peut être le bourreau ? Ok il faut qu'on découvre de quoi ils parlent pour en savoir plus.`,
+        url: '95a1446a7120e4af5c0c8878abb7e6d2', // base64
+        end_text: `Whaaaa. Ha ouais ce genre de site. Ils sont vraiment allumés par contre la, nous on parle de sérieux, d'épidémie mondiale et de % et eux sont partis dans un délire comme quoi il y a une réincarnation du Christ a l'ENIB... On les as totalement perdus les pauvres.<br>
+                   On va même pas tenter de les recontacter hein, je préfère partir sur autre chose pour oublier tout ça.`,
+        type: 'flag',
+        flag: 'Un canard n\'est pas fait pour grimper les murs',
+        first_time_visited: null,
+        delay_to_hint: 3,
+        hint: '',
+        custom_js: '',
+        custom_html: 'dark',
+        custom_css: ''
+    },
+    {
+        name: 'Back in hack.',
+        enigma_text: `Vous vous souvenez de notre mystérieux hackeur d'il y a quelques énigmes ? Selon nos sources, il a réussi à réchapper à son kidnappeur ! Voici le message qu’il a réussi à nous transmettre avant de disparaître totalement de nos radars : <br><br>
+                      “En étudiant le passé, on comprend le présent.”<br><br>
+                      Mmmh, mais qu’est ce qu’il veut bien dire ? Serait-on passé à côté d’une information qu'il nous as transmis ?<br>
+                      Si c’est notre informateur, il doit vouloir nous donner l’information sur l’identité du bourreau !<br>
+                      Transmettez-nous son nom, que l’on puisse le traquer et s’assurer qu’il ne nuise plus à l’ENIB.`,
+        url: 'af449834abd559cfb7697899a956b3c0', // chapo
+        end_text: `On a fait des recherches sur ce fameu Mr Chapo et toutes les informations concordent.<br>
+                   C’était bien lui ! Le salaud ! Créer une pandémie mondiale tout ça pour annuler un événement étudiant, c’est un tantinet abusé non ? On s’est informé sur ce qu’il devenait pour voir s’il était encore dangereux, hé bah figurez vous qu’il est en réanimation après avoir choppé le covid ! Hé bah Cheh. Il avait qu’à boire de la maximator goût secret pour avoir les anticorps nécessaires à sa survie. On espère que ça lui apprendra et qu’il ne s’amusera plus à jouer avec des virus mortels tiens.`,
+        type: 'flag',
+        flag: 'Romu Chapo',
+        first_time_visited: null,
+        delay_to_hint: 3,
+        hint: '',
+        custom_js: '',
+        custom_html: 'hidden2',
         custom_css: ''
     }
 ];
