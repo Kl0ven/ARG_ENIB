@@ -6,11 +6,11 @@ module.exports = [
                       ça me rappelle cette histoire tiens : il existe au sein même des quartiers généraux de la CIA une sculpture nommée Kryptos. Elle est constituée de plusieurs panneaux qui contiennent du texte crypté. La majeur partie à été résolue, mais une partie reste indéchiffrable.<br><br>
                       Voici le texte en question :<br>
                       OBKRUOXOGHULBSOLIFBBWFLRVQQPRNGKSSOTWTQSJQSSEKZZWATJKLUDIAWINFBNYPVTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR<br><br>
-                      Pour te mettre en jambe tiens, peux-tu nous décrypter cette chaîne de caractère, qui pose une colle a des experts cryptologues du monde entier, et ce depuis une vingtaine d'années ?`,
+                      Pour te mettre en jambe tiens, peux-tu nous décrypter cette chaîne de caractère, qui pose une colle à des experts cryptologues du monde entier, et ce depuis une vingtaine d'années ?`,
         url: 'c85cf68d1967baad7262706368642b6e', // Kryptos
         end_text: `Non ? Oui je comprends, c'est peut être un peu chaud pour commencer. Et puis c'est vrai que ça n'a rien à voir avec notre histoire d'annulation de % et d'épidémie mondiale ! La CIA n'a même pas connaissance de l'existence de l'ENIB.. Pardon, pardon je me suis un peu emporté, on se reconcentre !<br>
                    Il faut qu'on trouve une première piste tangible...`,
-        hint: 'Tu penses être au niveau des plus grands analystes de la CIA ?',
+        hint: 'Penses-tu être au niveau des plus grands analystes de la CIA ?',
         type: 'flag',
         flag: 'non',
         first_time_visited: null,
@@ -30,7 +30,7 @@ module.exports = [
                    Ça c'est une bonne piste, niveau magouille ils ont de l'expérience. Ce serait donc eux qui seraient à l'origine de cette sombre histoire ?<br>
                    Mais quel est donc le contenu de cette transmission, et que veulent-ils à l'ENIB ?`,
         url: '90003ef478d3809b4beed751018b1feb', //  3words
-        hint: `Il doit être possible de transormer 3 mots en position géographique.`,
+        hint: `Il doit être possible de transformer 3 mots en position géographique.`,
         type: 'geo',
         latA: 48.849192,
         longA: 2.368795,
@@ -67,9 +67,9 @@ module.exports = [
     },
     { // data_log 4
         name: 'Rendez vous en terre inconnue',
-        enigma_text: `Retour à la case départ donc.. Mais ne perdons pas espoir car de nouveau, une conversation suspecte a été interceptée !<br>
+        enigma_text: `Retour à la case départ donc... Mais ne perdons pas espoir car de nouveau, une conversation suspecte a été interceptée !<br>
                       Cette fois ci, seule une partie du message est cryptée, le message est le suivant :<br><br>
-                      RDV ici : ”++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>++++++++++.>+++++.------.<<++.>------------.>++.<<.>--.>++++++++++++++++.--------------.------.+++++++++++++++++.-----------------.++.+++++.” à 00h01 le 15 avril, pour parler de notre plan machiavélique contre ces salaud d’enibien !!<br>
+                      RDV ici : ”++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>++++++++++.>+++++.------.<<++.>------------.>++.<<.>--.>++++++++++++++++.--------------.------.+++++++++++++++++.-----------------.++.+++++.” à 00h01 le 15 avril, pour parler de notre plan machiavélique contre ces salauds d’enibien !!<br>
                       Ce message est plus suspect que l'historique fiscal de Patrick Balkany. Il faut trouver ce lieu de rdv pour en savoir plus.`,
         end_text: `Bugarach ? <br>
                    Village dont le pic est rempli de souterrains qui sont dit abrités par des bases extraterrestres. C’est une ville bien connue de Sylvain Duriff, rien autre que l'homme vert, le grand monarque cosmique. Ce serait donc lui qui est l’origine de cette transmission, il serait en communication avec les Aliens ? Pourquoi ? Et que veulent-ils aux enibiens ?`,
@@ -89,7 +89,7 @@ module.exports = [
     { // data_log 5
         name: 'Idée lumineuse',
         enigma_text: `Le soir du rendez vous, nous avons envoyé un drone espion, il a réussi à repérer Sylvain Duriff sur le Pic de Bugarach et à enregistrer une vidéo du ciel avant de s'écraser pour des raisons mystérieuses. <br> 
-                      Dans ciel, des lumières de couleurs vive clignotaient de façon étrange!  <br>
+                      Dans le ciel, des lumières de couleurs vives clignotaient de façon étrange!  <br>
                       Qu'est ce que ça signifie ? Ça doit être un message des aliens pour le grand Sylvain Duriff, mais quel en est le sens ?<br>
                       Voici une retranscription :`,
         url: '431d180fb4d475f30c9596ad5a7267d6', // Sabotage
@@ -108,7 +108,7 @@ module.exports = [
     { // data_log 6
         name: 'Un infiltré ?',
         enigma_text: `Retour à la case départ. Mais pas sans piste car il semblerait que notre enquête se soit ébruitée... On a reçu ce message anonyme :<br><br>
-                      Salutation Bureau des Énigmes. Je te contacte car j’ai été envoyé en mission par le passé pour annuler le %. Cette opération remonte à plus de 10 ans maintenant. Pour savoir si je peux te faire confiance et que tu me prouve tes talents d'enquêteur, transmet moi un mot de 4 lettres qui me prouve que tu m’as identifié lors de l’évenement du % ou je me suis infiltré. Pour t’aider 2 mots : <span class="watchme">lapin & cône de signalisation</span>.<br><br>
+                      Salutation Bureau des Énigmes. Je te contacte car j’ai été envoyé en mission par le passé pour annuler le %. Cette opération remonte à plus de 10 ans maintenant. Pour savoir si je peux te faire confiance et pour me prouver tes talents d'enquêteur, transmets moi un mot de 4 lettres qui me prouve que tu m’as identifié lors de l’évenement du % ou je me suis infiltré. Pour t’aider 2 mots : <span class="watchme">lapin & cône de signalisation</span>.<br><br>
                       Quoi ? Des opérations ont déja été menées pour annuler le % dans le passé ? Mais qui en est l'auteur ? Et pourquoi ?<br>
                       Il faut absolument que nous gagnions sa confiance pour en savoir plus ! A vous de trouver ce mot.`,
         url: '4022e656356543240331d4e7eb07904c', // infiltré
@@ -145,7 +145,7 @@ module.exports = [
     { // data_log 8
         name: 'Le Bourreau d\'ENI',
         enigma_text: `Alerte ! On a été hacké ! Mais il semblerait que ce mystérieux hacker ne nous veuille pas de mal... Voici le message qu'il nous a laissé :<br><br>
-                      "J'ai cru comprendre que vous cherchiez qui pourrait en vouloir à l'ENIB, mais que pour l'instant vous enchaînez les fausses pistes. Je sais qui est à l'origine de tous vos soucis. Il s'agit du Bourreau d'ENI. Si vous voulez en savoir plus, il va falloir me montrer un peu vos compétences, on rentre dans la cours de grand là.
+                      "J'ai cru comprendre que vous cherchiez qui pourrait en vouloir à l'ENIB, mais que pour l'instant vous enchaînez les fausses pistes. Je sais qui est à l'origine de tous vos soucis. Il s'agit du Bourreau d'ENI. Si vous voulez en savoir plus, il va falloir me montrer un peu vos compétences, on rentre dans la cour de grand là.
                       J'ai caché un lien vers une image au sein même de votre site, seul un programme utilise cet l'emplacement. Transmettez-moi un mot qui me prouve que vous avez trouvé l'image et je vous dirais tout ce que je sais sur le Bourreau." <br><br>
                       Il a caché une image sur notre site ? Ce hacker est compétent.. On n'a pas d'autre choix que de lui obéir, il semblerait... Et puis son histoire est intrigante, toute information est bonne à prendre.<br>
                       A vous de jouer !`,
@@ -187,7 +187,7 @@ module.exports = [
         // 156 0 255
         name: 'Habiles déductions',
         enigma_text: `Ok, donc on veut trouver des informations sur l’identité du fameux Bourreau ?<br>
-                      Faisons un petit recap de ce qu'on sait et utilisons nos talents de détective pour dégager une piste :<br>
+                      Faisons un petit récap de ce qu'on sait et utilisons nos talents de détective pour dégager une piste :<br>
                       On sait qu'il agit en France et déteste les événements étudiants avec de la bière pas chère. Il est donc de droite.<br>
                       De plus, il dispose d'une force de frappe considérable, pouvant kidnapper une personne sans que les force de l'ordre ne s'en mêlent.. Peut-être que le bourreau n'est pas une seule personne, mais une sorte d'organisation ?<br>
                       Finalement, il s'en prend aux petites écoles dans un but d’uniformisation et de centralisation d'écoles supérieures.<br>
@@ -195,7 +195,7 @@ module.exports = [
                       Hé, bah, je ne sais pas vous, mais moi ça me rappelle tout simplement le Gouvernement Français non ? Hein MACRON LA.<br>
                       Pardon, je m'emporte.<br>
                       En vrai, c'est une piste à creuser, et puis si ce ne sont pas eux, on pourra sûrement trouver des informations utiles.<br>
-                      Notre plan est de hacker le service de renseignements français, on va essayer de voir si on trouve des infos sur des opérations liées au ENIs.<br>
+                      Notre plan est de hacker le service de renseignements français, on va essayer de voir si on trouve des infos sur des opérations liées aux ENIs.<br>
                       On a fouillé le site des services de renseignements français et on est bloqué sur un système de cryptage qui nous bloque, on a besoin d’aide.<br>
                       On vous a caché les codes couleurs sur notre site, je vous laisse les trouver !`,
         url: 'bd8d11f8d55119fa2e2eb9e8c3095ee3', // spectre
@@ -266,7 +266,7 @@ module.exports = [
                       Si c’est notre informateur, il doit vouloir nous donner l’information sur l’identité du bourreau !<br>
                       Transmettez-nous son nom, que l’on puisse le traquer et s’assurer qu’il ne nuise plus à l’ENIB.`,
         url: 'af449834abd559cfb7697899a956b3c0', // chapo
-        end_text: `On a fait des recherches sur ce fameu Mr Chapo et toutes les informations concordent.<br>
+        end_text: `On a fait des recherches sur ce fameux Mr Chapo et toutes les informations concordent.<br>
                    C’était bien lui ! Le salaud ! Créer une pandémie mondiale tout ça pour annuler un événement étudiant, c’est un tantinet abusé non ? On s’est informé sur ce qu’il devenait pour voir s’il était encore dangereux, hé bah figurez vous qu’il est en réanimation après avoir choppé le covid ! Hé bah Cheh. Il avait qu’à boire de la maximator goût secret pour avoir les anticorps nécessaires à sa survie. On espère que ça lui apprendra et qu’il ne s’amusera plus à jouer avec des virus mortels tiens.`,
         type: 'flag',
         flag: 'Romu Chapo',
