@@ -38,7 +38,7 @@ const q = [
     'Le confinement se termine ?#Le 11 Mai#Jamais',
     'Qui attends son paiement parce qu’il vient d’OutreMer ?#Kayhops#Tissier',
     'Un gode peut être utiliser comme :#Une arme#Flip Bottle Challenge',
-    'Un 5A qui ne va au prochain WAF doit :#Payer un m^3#livrer une barquette piégée',
+    'Un 5A qui ne va pas au prochain WAF doit :#Payer un m^3#livrer une barquette piégée',
     'Qui peut avoir écrit des questions pareil ?#Un 5A#Un mec random qui connait toute l’histoire de l’ENIB',
     'Et 1 et 2 et … ?#3 ptits chats#Tu sais à quoi je pense mais je l’écrirai pas !',
     'Le Full Pack :#ça claque#ça clak',
@@ -56,7 +56,7 @@ const q = [
     'J’ai 4 chiens, 2 chats, 1 lapin, 2 canards et un nuage. En sachant que le premier doit être multiplié par le triple du second et que celui ci est multiplié par le quatrième et enfin soustrait par le double du 3ème, Quel est mon âge ?#23 ans#22 ans',
     'Combien y avait-il de personnes dans la promo 2015 en 1A ?#120 personnes#130 personnes',
     'Quel BDE était avant les Heroes ?#BDE Wild#BDE Snatch',
-    'Bizarre je ne trouve AUCUN RÉSULTAT alors que 30ème questions sont passées#Fuck#OK'
+    'Bizarre je ne trouve AUCUN RÉSULTAT alors que 30 questions sont passées#Fuck#OK'
 ];
 let questionDiv;
 let denyB;
